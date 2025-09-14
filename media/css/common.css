@@ -1,0 +1,209 @@
+:root {
+  --font-100px: 6.25rem;
+  --font-90px: 5.63rem;
+  --font-80px: 5rem;
+  --font-70px: 4.38rem;
+  --font-60px: 3.75rem;
+  --font-50px: 3.13rem;
+  --font-40px: 2.5rem;
+  --font-30px: 1.88rem;
+  --font-26px: 1.63rem;
+  --font-24px: 1.5rem;
+  --font-22px: 1.38rem;
+  --font-20px: 1.25rem;
+  --font-18px: 1.13rem;
+  --font-16px: 1rem;
+
+  --color-main: rgba(44, 0, 62, 1);
+  --color-point1: rgba(46, 134, 222, 1);
+  --color-point2: rgba(255, 0, 128, 1);
+  --color-sub1: rgba(245, 245, 245, 1);
+  --color-sub2: rgba(163, 163, 163, 1);
+  --main-font: rgba(245, 245, 245, 1);
+  --sub-font: rgba(204, 204, 204, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  vertical-align: top;
+  -webkit-text-size-adjust: none;
+}
+html {
+  font-size: var(--font-18px);
+}
+body {
+  font-family: "Poppins", "Noto Sans KR", "sans-serif";
+  color: var(--main-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Orbitron", "sans-serif";
+  color: var(--main-font);
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ul,
+ol,
+dl {
+  list-style: none;
+}
+img,
+video {
+  border: 0;
+  vertical-align: top;
+}
+a,
+a:link {
+  color: var(--main-font);
+  text-decoration: none;
+  display: block;
+}
+a:visited {
+  color: var(--main-font);
+}
+a:hover,
+a:active {
+  color: var(--main-font);
+  text-decoration: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
+label {
+  cursor: pointer;
+}
+.blind,
+legend,
+hr,
+caption {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: -1000em;
+}
+i,
+em,
+address {
+  font-style: normal;
+  font-weight: normal;
+}
+p,
+li,
+dd {
+  line-height: 1.5rem;
+}
+.hidden,
+#skipNav {
+  display: block;
+  position: absolute;
+  left: -1000%;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  color: rgba(44, 0, 62, 0.1);
+}
+
+/* 와이드 pc */
+/* 헤더 공통 영역 */
+#wrap {
+  width: 100%;
+  overflow: hidden;
+}
+#headerArea {
+  position: fixed;
+  z-index: 30;
+  height: 100px;
+  background: rgba(44, 0, 62, 0.8);
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+#headerArea .headerInner {
+  width: 90%;
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#headerArea .logo {
+  width: 100%;
+}
+
+#headerArea .logo a {
+  width: 40%;
+  min-width: 300px;
+  height: 80px;
+  margin-left: -10px;
+  background: url(../images/main/logo.svg) no-repeat;
+  background-size: contain;
+  text-indent: -999px;
+  overflow: hidden;
+}
+
+#headerArea #gnb ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 푸터 공통 영역 */
+#footerArea {
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  font-size: 2em;
+  padding: 30px 0;
+  background: #333;
+}
+
+/* 일반 pc */
+@media screen and (max-width: 1280px) {
+}
+
+/* 테블릿 */
+@media screen and (max-width: 1024px) {
+}
+
+/* 소형 테블릿 */
+@media screen and (max-width: 768px) {
+}
+
+/* 모바일 */
+@media screen and (max-width: 640px) {
+}
+
+/* 최소 사이즈 처리 */
+@media screen and (max-width: 480px) {
+  #wrap {
+    min-width: 320px;
+  }
+}

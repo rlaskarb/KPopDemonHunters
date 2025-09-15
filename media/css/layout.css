@@ -80,15 +80,19 @@
 
 #content .about h3,
 #content .characters h3,
-#content .trailer h3 {
+#content .trailer h3,
+#content .news h3,
+#content .gallery h3 {
   font-size: var(--font-80px);
   font-weight: 900;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 #content .about p,
 #content .characters p,
-#content .trailer p {
+#content .trailer p,
+#content .news p,
+#content .gallery p {
   font-size: var(--font-40px);
   padding-bottom: 50px;
   line-height: 3rem;
@@ -128,13 +132,14 @@
   overflow: hidden;
 }
 
-#content .about_content dl dt {
+#content .about_content h4 {
   font-size: var(--font-60px);
   font-weight: 800;
   margin-bottom: 25px;
+  text-align: left !important;
 }
 
-#content .about_content dl dd {
+#content .about_content p {
   font-size: var(--font-20px);
   line-height: 1.8rem;
   margin-bottom: 25px;
@@ -204,6 +209,7 @@
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
+  transition: transform 0.4s ease-in-out;
 }
 
 #content .characters_content dl {
@@ -241,20 +247,24 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(44, 0, 62, 0.7);
+  background: rgba(44, 0, 62, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   color: var(--color-sub1);
   font-size: var(--font-30px);
-  line-height: 1.6rem;
+  line-height: 3rem;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
 #content .characters_content:hover .description_overlay {
   opacity: 1;
+}
+
+#content .characters_content:hover img {
+  transform: scale(1.1);
 }
 
 #content .characters_content:nth-of-type(1) {
@@ -308,13 +318,11 @@
   position: relative;
 }
 
-#content .trailer_contianer {
+#content .trailer_container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
-  gap: 20px;
-  margin-bottom: 20px;
 }
 
 #content .main_trailer_display {
@@ -323,19 +331,18 @@
 }
 
 #content #mainTrailerInfo {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 #content #mainTrailerImage {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
   object-position: center;
-  margin-bottom: 20px;
   border-radius: 20px;
 }
 
@@ -347,7 +354,7 @@
 
 #content #mainTrailerInfo dd {
   font-size: var(--font-20px);
-  line-height: 1.8rem;
+  line-height: 2rem;
 }
 
 #content .main_trailer_display .play_icon {
@@ -368,11 +375,11 @@
 }
 
 #content .trailer_content {
-  width: 100%;
+  width: 90%;
+  gap: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
 }
 
 #content .trailer_content li {
@@ -381,7 +388,7 @@
 }
 
 #content .trailer_content li:hover {
-  opacity: 0.8;
+  opacity: 1;
   transform: scale(1.05);
 }
 
@@ -391,6 +398,18 @@
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
+}
+
+#content .trailer_content li.selected {
+  opacity: 1;
+  border: 5px solid var(--color-sub1);
+  border-radius: 25px;
+  transform: scale(1.05);
+  /* box-shadow: 0 0 15px var(--color-sub1); */
+}
+
+#content .trailer_content li:not(.selected) {
+  opacity: 0.6;
 }
 
 #content .trailer_more {
@@ -404,7 +423,6 @@
 }
 
 /* Popup Style */
-
 #content .trailer_popup {
   display: none;
   position: fixed;
@@ -438,7 +456,7 @@
   right: 3%;
   font-size: var(--font-40px);
   color: var(--color-sub1);
-  z-index: 500;
+  z-index: 100;
   transition: all 0.3s ease;
 }
 #content .trailer_popup .close_btn:hover {
@@ -449,11 +467,149 @@
 /* NEWS 섹션 */
 #content .news {
   width: 90%;
+  padding-top: 200px;
+  position: relative;
+}
+
+#content .news_container {
+  width: 98%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 2%;
+  grid-template-areas:
+    "a a b b"
+    "c c c c"
+    "d d e e"
+    "f f f f";
+}
+
+#content .news_content {
+  background: var(--color-sub1);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+#content .news_content img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+#content .content_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#content .news_content h4 {
+  font-size: var(--font-30px);
+  font-weight: 800;
+  color: #333;
+  text-align: center;
+}
+
+#content .news_content p {
+  font-size: var(--font-20px);
+  font-weight: 500;
+  line-height: 2rem;
+  margin-top: 30px;
+  color: #333;
+}
+
+#content .news_content:nth-of-type(1) {
+  grid-area: a;
+}
+#content .news_content:nth-of-type(2) {
+  grid-area: b;
+}
+#content .news_content:nth-of-type(3) {
+  grid-area: c;
+}
+#content .news_content:nth-of-type(4) {
+  grid-area: d;
+}
+#content .news_content:nth-of-type(5) {
+  grid-area: e;
+}
+#content .news_content:nth-of-type(6) {
+  grid-area: f;
+}
+
+#content .news_more {
+  top: 235px;
+  left: 500px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#content .news_more:hover {
+  transform: rotate(330deg);
 }
 
 /* GALLERY 섹션 */
 #content .gallery {
   width: 90%;
+  padding: 400px 0 200px;
+  position: relative;
+}
+
+#content .gallery_container {
+  width: 99%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  gap: 1%;
+  grid-template-areas:
+    "a a a b b b"
+    "a a a c d e"
+    "f g h j j j"
+    "i i i j j j";
+}
+
+#content .gallery_card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+
+#content .gallery_card:nth-of-type(1) {
+  grid-area: a;
+}
+#content .gallery_card:nth-of-type(2) {
+  grid-area: b;
+}
+#content .gallery_card:nth-of-type(3) {
+  grid-area: c;
+}
+#content .gallery_card:nth-of-type(4) {
+  grid-area: d;
+}
+#content .gallery_card:nth-of-type(5) {
+  grid-area: e;
+}
+#content .gallery_card:nth-of-type(6) {
+  grid-area: f;
+}
+#content .gallery_card:nth-of-type(7) {
+  grid-area: g;
+}
+#content .gallery_card:nth-of-type(8) {
+  grid-area: h;
+}
+#content .gallery_card:nth-of-type(9) {
+  grid-area: i;
+}
+#content .gallery_card:nth-of-type(10) {
+  grid-area: j;
 }
 
 /* 일반 pc */

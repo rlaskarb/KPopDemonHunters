@@ -68,6 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index) {
       updateTrailer(index);
     }
+
+    trailerThumbsList.querySelectorAll("li").forEach(function (li) {
+      li.classList.remove("selected");
+    });
+
+    thumbLi.classList.add("selected");
   });
 
   // 5. 유튜브 팝업 열기
@@ -99,4 +105,5 @@ document.addEventListener("DOMContentLoaded", function () {
       closePopup();
     }
   });
+  trailerThumbsList.querySelector("li").classList.add("selected");
 });

@@ -6,7 +6,9 @@
   --font-60px: 3.75rem;
   --font-50px: 3.13rem;
   --font-40px: 2.5rem;
+  --font-36px: 2.25rem;
   --font-30px: 1.88rem;
+  --font-28px: 1.75rem;
   --font-26px: 1.63rem;
   --font-24px: 1.5rem;
   --font-22px: 1.38rem;
@@ -235,10 +237,38 @@ dd {
 
 /* 일반 pc */
 @media screen and (max-width: 1280px) {
+  /* 푸터 공통 영역 */
+  #footerArea .top_move {
+    width: 63px;
+    right: 9px;
+  }
 }
 
 /* 테블릿 */
 @media screen and (max-width: 1024px) {
+  #headerArea {
+    position: fixed;
+    z-index: 30;
+    height: 80px;
+    background: rgba(44, 0, 62, 0.8);
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  #headerArea .headerInner {
+    width: 90%;
+    margin: 10px auto 0;
+  }
+
+  #headerArea .logo a {
+    min-width: 220px;
+  }
+
+  /* 푸터 공통 영역 */
+  #footerArea .top_move {
+    width: 45px;
+    right: 9px;
+  }
 }
 
 /* 소형 테블릿 */

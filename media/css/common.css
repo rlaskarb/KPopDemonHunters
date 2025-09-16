@@ -132,6 +132,10 @@ dd {
   color: rgba(44, 0, 62, 0.1);
 }
 
+#headerArea .menu_ham {
+  display: none;
+}
+
 /* 와이드 pc */
 /* 헤더 공통 영역 */
 #wrap {
@@ -181,7 +185,7 @@ dd {
 
 #footerArea .top_move {
   display: block;
-  width: 71px;
+  width: 70px;
   position: fixed;
   right: 17px;
   bottom: 100px;
@@ -194,7 +198,6 @@ dd {
 
 #footerArea .top_move img {
   width: 100%;
-  border-radius: 50%;
   object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease-in-out;
@@ -235,6 +238,19 @@ dd {
   font-size: var(--font-50px);
 }
 
+/* 
+
+
+
+
+
+
+
+
+
+
+
+*/
 /* 일반 pc */
 @media screen and (max-width: 1280px) {
   /* 푸터 공통 영역 */
@@ -244,27 +260,130 @@ dd {
   }
 }
 
-/* 테블릿 */
-@media screen and (max-width: 1024px) {
-  #headerArea {
-    position: fixed;
-    z-index: 30;
-    height: 80px;
-    background: rgba(44, 0, 62, 0.8);
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
+/* 
+
+
+
+
+여기 부터 테블릿 이여 혼동 하지말어여 
+
+
+
+
+
+*/
+
+@media screen and (max-width: 1150px) {
   #headerArea .headerInner {
-    width: 90%;
-    margin: 10px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   #headerArea .logo a {
     min-width: 220px;
   }
 
-  /* 푸터 공통 영역 */
+  #headerArea #gnb {
+    position: fixed;
+    top: 110px;
+    right: -100%;
+    width: 500px;
+    height: 400px;
+    background-color: rgba(44, 0, 62, 0.8);
+    z-index: 200;
+    transition: right 0.5s ease-in-out;
+    padding-top: 50px;
+    border-radius: 20px 0 0 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+
+  /* 네비 사라져 */
+  #headerArea #gnb .main_menu {
+    display: none;
+  }
+
+  /* 햄버거 두둥 등장  */
+  #headerArea .menu_ham {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 201;
+  }
+
+  #headerArea .menu_ham span,
+  #headerArea .menu_ham span::before,
+  #headerArea .menu_ham span::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--color-sub1);
+    position: absolute;
+    left: 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  #headerArea .menu_ham span {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-indent: -9999px;
+    transition: all 0.3s ease;
+  }
+
+  #headerArea .menu_ham span::before {
+    top: -8px;
+  }
+
+  #headerArea .menu_ham span::after {
+    top: 8px;
+  }
+
+  /* 엑스자 만들기! */
+
+  #headerArea.mn_open .menu_ham span {
+    background: transparent;
+  }
+
+  #headerArea.mn_open .menu_ham span::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  #headerArea.mn_open .menu_ham span::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  /* 클릭하면 이제 네비가 보여야하니까 */
+  #headerArea.mn_open #gnb {
+    right: 0;
+  }
+
+  #headerArea.mn_open #gnb .main_menu {
+    display: block;
+  }
+
+  #headerArea.mn_open #gnb .main_menu li {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  #headerArea.mn_open #gnb .main_menu a {
+    padding: 20px 0;
+    font-size: var(--font-22px);
+    color: #fff;
+    font-weight: 800;
+  }
+
+  #headerArea.mn_open .blind_box {
+    display: block;
+  }
+
   #footerArea .top_move {
     width: 45px;
     right: 9px;

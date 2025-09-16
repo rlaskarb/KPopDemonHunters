@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. 데이터 배열 정의
+  // ----------------------------------------------------------------
+  // 1. 기본 데이터 및 DOM 요소 변수 선언
+  // ----------------------------------------------------------------
   const trailers = [
     {
       mainImage: "./images/sub3/golden2.avif",
@@ -38,72 +40,265 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  // 2. 필요한 DOM 요소 선택
+  const trailerContainer = document.querySelector(".trailer_container");
   const trailerThumbsList = document.querySelector(".trailer_content");
-  const mainTrailerImage = document.getElementById("mainTrailerImage");
-  const mainTrailerInfo = document.getElementById("mainTrailerInfo");
-  const mainTrailerDisplay = document.querySelector(".main_trailer_display");
+  const trailerArrows = document.querySelector(".trailer_arrows");
+  const trailerDots = document.querySelector(".trailer_dots");
   const popup = document.querySelector(".trailer_popup");
   const closeBtn = document.querySelector(".close_btn");
   const youtubeIframeContainer = document.querySelector(".youtube_iframe");
 
-  let currentTrailerIndex = 0; // 현재 선택된 트레일러 인덱스 저장
+  // --- 상태 변수들 ---
+  let currentSlide = 0; // 슬라이더 현재 위치 (0부터 시작)
+  let activeDesktopIndex = 0; // 데스크탑 모드 현재 위치
+  const slideCount = trailers.length;
+  let isDragging = false;
+  let startPos = 0;
+  let dragOffset = 0;
+  let autoplayInterval = null;
 
-  // 3. 메인 컨텐츠 업데이트 함수
-  function updateTrailer(index) {
-    const trailer = trailers[index];
-    mainTrailerImage.src = trailer.mainImage;
-    mainTrailerInfo.querySelector("dt").textContent = trailer.title;
-    mainTrailerInfo.querySelector("dd").textContent = trailer.description;
+  // ----------------------------------------------------------------
+  // 2. 핵심 기능 함수들
+  // ----------------------------------------------------------------
 
-    currentTrailerIndex = index;
+  function goToSlide(index) {
+    trailerContainer.style.transition = "transform 0.5s ease-in-out";
+    trailerContainer.style.transform = `translateX(-${index * 100}%)`;
+    currentSlide = index;
+    updateDots();
   }
 
-  // 4. 썸네일 클릭 이벤트 (이벤트 위임 사용)
-  trailerThumbsList.addEventListener("click", (e) => {
-    const thumbLi = e.target.closest("li"); // 클릭된 요소의 가장 가까운 li를 찾음
-    if (!thumbLi) return; // li가 아니면 함수 종료
+  function updateDots() {
+    const currentActiveDot = trailerDots.querySelector(".active");
+    currentActiveDot?.classList.remove("active");
+    trailerDots.children[currentSlide]?.classList.add("active");
+  }
 
-    const index = thumbLi.dataset.index;
-    if (index) {
-      updateTrailer(index);
+  function updateTrailer(index) {
+    activeDesktopIndex = index;
+    const trailer = trailers[index];
+    const mainImage = document.getElementById("mainTrailerImage");
+    const mainInfo = document.getElementById("mainTrailerInfo");
+    if (mainImage && mainInfo) {
+      mainImage.src = trailer.mainImage;
+      mainInfo.querySelector("dt").textContent = trailer.title;
+      mainInfo.querySelector("dd").textContent = trailer.description;
+    }
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayInterval = setInterval(() => {
+      let nextSlide = (currentSlide + 1) % slideCount;
+      goToSlide(nextSlide);
+    }, 3000);
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+
+  // ----------------------------------------------------------------
+  // 3. 이벤트 핸들러 함수들
+  // ----------------------------------------------------------------
+
+  function handleArrowClick(e) {
+    stopAutoplay();
+    const target = e.target.closest(".arrow");
+    if (!target) return;
+
+    let nextSlide = currentSlide;
+    if (target.classList.contains("next")) {
+      nextSlide = currentSlide + 1;
+    } else {
+      nextSlide = currentSlide - 1;
     }
 
-    trailerThumbsList.querySelectorAll("li").forEach(function (li) {
-      li.classList.remove("selected");
-    });
+    if (nextSlide >= 0 && nextSlide < slideCount) {
+      goToSlide(nextSlide);
+    }
+    startAutoplay();
+  }
 
+  function handleDotClick(e) {
+    stopAutoplay();
+    const target = e.target.closest(".dot");
+    if (!target) return;
+    const index = parseInt(target.dataset.index, 10);
+    goToSlide(index);
+    startAutoplay();
+  }
+
+  function handleThumbnailClick(e) {
+    const thumbLi = e.target.closest("li");
+    if (!thumbLi) return;
+    const index = parseInt(thumbLi.dataset.index, 10);
+    updateTrailer(index);
+    trailerThumbsList.querySelector(".selected")?.classList.remove("selected");
     thumbLi.classList.add("selected");
-  });
+  }
 
-  // 5. 유튜브 팝업 열기
-  mainTrailerDisplay.addEventListener("click", () => {
-    const trailer = trailers[currentTrailerIndex];
-    if (trailer.youtubeId) {
-      youtubeIframeContainer.innerHTML = `
-        <iframe src="https://www.youtube.com/embed/${trailer.youtubeId}?autoplay=1" 
-            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      `;
-      popup.style.display = "flex"; // 팝업 보이기
+  function dragStart(e) {
+    if (!e.target.closest(".trailer_item")) return;
+    stopAutoplay();
+    isDragging = true;
+    startPos = getPositionX(e);
+    dragOffset = 0;
+    trailerContainer.style.transition = "none";
+  }
+
+  function dragging(e) {
+    if (isDragging) {
+      const currentX = getPositionX(e);
+      dragOffset = currentX - startPos;
+      trailerContainer.style.transform = `translateX(calc(-${currentSlide * 100}% + ${dragOffset}px))`;
     }
-  });
+  }
 
-  // 6. 유튜브 팝업 닫기
+  function dragEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    trailerContainer.style.transition = "transform 0.5s ease-in-out";
+    const threshold = trailerContainer.offsetWidth / 4;
+    let nextSlide = currentSlide;
+    if (dragOffset < -threshold) {
+      nextSlide = currentSlide + 1;
+    } else if (dragOffset > threshold) {
+      nextSlide = currentSlide - 1;
+    }
+
+    if (nextSlide >= 0 && nextSlide < slideCount) {
+      goToSlide(nextSlide);
+    } else {
+      goToSlide(currentSlide); // 경계를 넘으면 원래 슬라이드로 복귀
+    }
+    startAutoplay();
+  }
+
+  function getPositionX(e) {
+    return e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+  }
+
+  function openPopup(e) {
+    const mainDisplay = e.target.closest(".main_trailer_display");
+    if (!mainDisplay) return;
+    stopAutoplay();
+
+    let trailer;
+    if (window.innerWidth <= 1150) {
+      trailer = trailers[currentSlide];
+    } else {
+      trailer = trailers[activeDesktopIndex];
+    }
+
+    if (trailer && trailer.youtubeId) {
+      youtubeIframeContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${trailer.youtubeId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      popup.style.display = "flex";
+    }
+  }
+
   function closePopup() {
     popup.style.display = "none";
-    youtubeIframeContainer.innerHTML = ""; // iframe 제거하여 영상 정지
+    youtubeIframeContainer.innerHTML = "";
+    if (window.innerWidth <= 1150) {
+      startAutoplay();
+    }
+  }
+
+  // ----------------------------------------------------------------
+  // 4. 모드별 설정 및 정리(cleanup) 함수
+  // ----------------------------------------------------------------
+
+  function setupSliderMode() {
+    trailerContainer.innerHTML = trailers.map((trailer, index) => `
+        <div class="trailer_item" data-index="${index}">
+          <div class="main_trailer_display">
+            <img src="${trailer.mainImage}" alt="${trailer.title}" />
+            <div class="play_icon"><i class="fa-brands fa-youtube"></i></div>
+          </div>
+          <dl>
+            <dt>${trailer.title}</dt>
+            <dd>${trailer.description}</dd>
+          </dl>
+        </div>`).join('');
+
+    trailerDots.innerHTML = trailers.map((_, index) => `<div class="dot" data-index="${index}"></div>`).join('');
+
+    goToSlide(0);
+
+    trailerArrows.addEventListener("click", handleArrowClick);
+    trailerDots.addEventListener("click", handleDotClick);
+    trailerContainer.addEventListener("click", openPopup);
+    trailerContainer.addEventListener("mousedown", dragStart);
+    trailerContainer.addEventListener("touchstart", dragStart, { passive: true });
+    window.addEventListener("mouseup", dragEnd);
+    window.addEventListener("touchend", dragEnd);
+    window.addEventListener("mousemove", dragging);
+    window.addEventListener("touchmove", dragging);
+
+    startAutoplay();
+  }
+
+  function setupDesktopMode() {
+    trailerContainer.innerHTML = `
+      <div class="main_trailer_display">
+          <img id="mainTrailerImage" src="" alt="trailer image" />
+          <div class="play_icon"><i class="fa-brands fa-youtube"></i></div>
+      </div>
+      <dl id="mainTrailerInfo">
+          <dt></dt>
+          <dd></dd>
+      </dl>`;
+    trailerThumbsList.addEventListener("click", handleThumbnailClick);
+    trailerContainer.addEventListener("click", openPopup);
+    const firstThumb = trailerThumbsList.querySelector("li");
+    if (firstThumb) {
+      firstThumb.classList.add("selected");
+      updateTrailer(parseInt(firstThumb.dataset.index, 10));
+    }
+  }
+
+  function cleanup() {
+    stopAutoplay();
+    trailerArrows.removeEventListener("click", handleArrowClick);
+    trailerDots.removeEventListener("click", handleDotClick);
+    trailerContainer.removeEventListener("click", openPopup);
+    trailerThumbsList.removeEventListener("click", handleThumbnailClick);
+    trailerContainer.removeEventListener("mousedown", dragStart);
+    trailerContainer.removeEventListener("touchstart", dragStart, { passive: true });
+    window.removeEventListener("mouseup", dragEnd);
+    window.removeEventListener("touchend", dragEnd);
+    window.removeEventListener("mousemove", dragging);
+    window.removeEventListener("touchmove", dragging);
+  }
+
+  // ----------------------------------------------------------------
+  // 5. 초기화 및 반응형 처리
+  // ----------------------------------------------------------------
+
+  function initializeTrailer() {
+    cleanup();
+    if (window.innerWidth <= 1150) {
+      trailerThumbsList.style.display = "none";
+      trailerArrows.style.display = "flex";
+      trailerDots.style.display = "flex";
+      setupSliderMode();
+    } else {
+      trailerThumbsList.style.display = "flex";
+      trailerArrows.style.display = "none";
+      trailerDots.style.display = "none";
+      setupDesktopMode();
+    }
   }
 
   closeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     closePopup();
   });
-
   popup.addEventListener("click", (e) => {
-    // 팝업의 어두운 배경 클릭 시 닫기
-    if (e.target === popup) {
-      closePopup();
-    }
+    if (e.target === popup) closePopup();
   });
-  trailerThumbsList.querySelector("li").classList.add("selected");
+
+  window.addEventListener("resize", initializeTrailer);
+  initializeTrailer();
 });

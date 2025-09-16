@@ -34,9 +34,11 @@
   vertical-align: top;
   -webkit-text-size-adjust: none;
 }
+
 html {
   font-size: var(--font-18px);
 }
+
 body {
   font-family: "Poppins", "Noto Sans KR", "sans-serif";
   color: var(--main-font);
@@ -64,41 +66,50 @@ nav,
 section {
   display: block;
 }
+
 ul,
 ol,
 dl {
   list-style: none;
 }
+
 img,
 video {
   border: 0;
   vertical-align: top;
 }
+
 a,
 a:link {
   color: var(--main-font);
   text-decoration: none;
   display: block;
 }
+
 a:visited {
   color: var(--main-font);
 }
+
 a:hover,
 a:active {
   color: var(--main-font);
   text-decoration: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 input,
 select {
   vertical-align: middle;
 }
+
 label {
   cursor: pointer;
 }
+
 .blind,
 legend,
 hr,
@@ -109,17 +120,20 @@ caption {
   top: 0;
   left: -1000em;
 }
+
 i,
 em,
 address {
   font-style: normal;
   font-weight: normal;
 }
+
 p,
 li,
 dd {
   line-height: 1.5rem;
 }
+
 .hidden,
 #skipNav {
   display: block;
@@ -142,6 +156,7 @@ dd {
   width: 100%;
   overflow: hidden;
 }
+
 #headerArea {
   position: fixed;
   z-index: 30;
@@ -151,6 +166,7 @@ dd {
   top: 0;
   width: 100%;
 }
+
 #headerArea .headerInner {
   width: 90%;
   margin: 10px auto 0;
@@ -253,6 +269,7 @@ dd {
 */
 /* 일반 pc */
 @media screen and (max-width: 1280px) {
+
   /* 푸터 공통 영역 */
   #footerArea .top_move {
     width: 63px;
@@ -289,11 +306,11 @@ dd {
     top: 110px;
     right: -100%;
     width: 500px;
-    height: 400px;
+    height: 600px;
     background-color: rgba(44, 0, 62, 0.8);
     z-index: 200;
     transition: right 0.5s ease-in-out;
-    padding-top: 50px;
+    padding-top: 100px;
     border-radius: 20px 0 0 20px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -380,10 +397,6 @@ dd {
     font-weight: 800;
   }
 
-  #headerArea.mn_open .blind_box {
-    display: block;
-  }
-
   #footerArea .top_move {
     width: 45px;
     right: 9px;
@@ -391,12 +404,10 @@ dd {
 }
 
 /* 소형 테블릿 */
-@media screen and (max-width: 768px) {
-}
+@media screen and (max-width: 768px) {}
 
 /* 모바일 */
-@media screen and (max-width: 640px) {
-}
+@media screen and (max-width: 640px) {}
 
 /* 최소 사이즈 처리 */
 @media screen and (max-width: 480px) {

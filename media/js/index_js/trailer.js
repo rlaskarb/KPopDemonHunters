@@ -21,21 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
       mainImage: "./images/sub3/youridol2.avif",
       title: "SAJA BOYS - Your Idol",
       description:
-        "At first listen, this song feels like a sweet love letter from an idol to their fans. But listen closer. It's actually a chilling confession. It tells the story of a star who has become a perfect, polished doll for the public to adore. The addictive beat and energetic vocals are a mask, hiding the loneliness and the loss of self that comes with fame. It's a song that asks a heavy question: After giving everything, what is left of the person behind 'Your Idol'?",
+        "At first it sounds like a sweet love letter to fans, but beneath the polished image lies a chilling truth. The addictive beat hides loneliness and the loss of self, asking: what remains of the person behind ‘Your Idol’?",
       youtubeId: "1xhi2mi5cfk",
     },
     {
       mainImage: "./images/sub3/howitdone2.avif",
       title: "HUNTR/X - How It's Done",
       description:
-        "This song has no hidden secrets or sad stories. It is a pure, unstoppable explosion of confidence. From the very first second, HUNTR/X declares that they are at the top of their game. The heavy, driving beat feels like a freight train that won't stop, and the lyrics are a lesson in power and skill. This isn't a request for attention; it's a bold announcement. The message is loud and clear: Step aside and watch how it's done.",
+        "A pure explosion of confidence, with heavy beats like an unstoppable train. Bold and unapologetic, it’s not a plea for attention but a clear command: Watch how it’s done.",
       youtubeId: "uo1YZXlP3O8",
     },
     {
       mainImage: "./images/sub3/whatitsoundlike2.avif",
       title: "HUNTR/X - What It Sound Like",
       description:
-        " This song is a powerful anthem about healing and embracing imperfection. It uses the beautiful metaphor of broken glass to convey that our scars and flaws are not something to hide. Instead, they are part of our story and can be beautiful. The journey of the song is about moving from shame and loneliness to finding strength and harmony with others who are also 'broken'. The 'sound' in this title is not the sound of success, but the sound of an honest, true voice, finally free from lies. It's the sound of survivors coming together to create something beautiful from their pain.",
+        "A powerful anthem about healing and embracing imperfection. Using broken glass as a metaphor, it shows that scars and flaws are part of our story and can be beautiful. The song moves from shame to strength, as voices of survivors join together in harmony.",
       youtubeId: "Ug_pv5-r1js",
     },
   ];

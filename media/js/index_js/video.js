@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
     screenHeight = window.innerHeight;
     content.style.marginTop = screenHeight + "px";
 
-    if (screenSize > 640 && current === false) {
+    if (screenSize > 667 && current === false) {
       videoBG.style.display = "block";
       videoBG.src = "./images/main/back.mp4";
       imgBG.style.display = "none";
       current = true;
     }
-    if (screenSize <= 640) {
+    if (screenSize <= 667) {
       videoBG.style.display = "none";
       videoBG.src = "";
       imgBG.style.display = "block";

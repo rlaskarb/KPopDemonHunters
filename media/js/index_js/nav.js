@@ -40,9 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	menuLinks.forEach(function (link) {
 		link.addEventListener("click", function (e) {
-			e.preventDefault();
-			e.stopPropagation();
-
 			const clickedLi = e.target.closest("li");
 
 			if (clickedLi.classList.contains("active")) {

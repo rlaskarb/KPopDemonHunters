@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 2. 핵심 기능 함수들
   // ----------------------------------------------------------------
 
+  // 태블릿 슬라이드 특정번호 이동시키는 함수
   function goToSlide(index) {
     trailerContainer.style.transition = "transform 0.5s ease-in-out";
     trailerContainer.style.transform = `translateX(-${index * 100}%)`;
@@ -107,16 +108,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const target = e.target.closest(".arrow");
     if (!target) return;
 
-    let nextSlide = currentSlide;
+    let nextSlide;
     if (target.classList.contains("next")) {
-      nextSlide = currentSlide + 1;
+      nextSlide = (currentSlide + 1) % slideCount;
     } else {
-      nextSlide = currentSlide - 1;
+      nextSlide = (currentSlide - 1) % slideCount;
     }
 
-    if (nextSlide >= 0 && nextSlide < slideCount) {
-      goToSlide(nextSlide);
-    }
+    goToSlide(nextSlide);
+
     startAutoplay();
   }
 
@@ -140,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function dragStart(e) {
     if (!e.target.closest(".trailer_item")) return;
+    e.preventDefault(); // 브라우져의 기본이미지 드래그 동작을 막자
     stopAutoplay();
     isDragging = true;
     startPos = getPositionX(e);
@@ -151,7 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isDragging) {
       const currentX = getPositionX(e);
       dragOffset = currentX - startPos;
-      trailerContainer.style.transform = `translateX(calc(-${currentSlide * 100}% + ${dragOffset}px))`;
+      trailerContainer.style.transform = `
+      translateX(calc(-${currentSlide * 100}% + ${dragOffset}px))
+      `;
     }
   }
 
@@ -192,7 +195,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (trailer && trailer.youtubeId) {
-      youtubeIframeContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${trailer.youtubeId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      youtubeIframeContainer.innerHTML = `
+      <iframe src="https://www.youtube.com/embed/${trailer.youtubeId}?autoplay=1" 
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      `;
       popup.style.display = "flex";
     }
   }
@@ -210,7 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // ----------------------------------------------------------------
 
   function setupSliderMode() {
-    trailerContainer.innerHTML = trailers.map((trailer, index) => `
+    trailerContainer.innerHTML = trailers
+      .map(
+        (trailer, index) => `
         <div class="trailer_item" data-index="${index}">
           <div class="main_trailer_display">
             <img src="${trailer.mainImage}" alt="${trailer.title}" />
@@ -220,9 +228,13 @@ document.addEventListener("DOMContentLoaded", function () {
             <dt>${trailer.title}</dt>
             <dd>${trailer.description}</dd>
           </dl>
-        </div>`).join('');
+        </div>`
+      )
+      .join("");
 
-    trailerDots.innerHTML = trailers.map((_, index) => `<div class="dot" data-index="${index}"></div>`).join('');
+    trailerDots.innerHTML = trailers
+      .map((_, index) => `<div class="dot" data-index="${index}"></div>`)
+      .join("");
 
     goToSlide(0);
 
@@ -230,7 +242,9 @@ document.addEventListener("DOMContentLoaded", function () {
     trailerDots.addEventListener("click", handleDotClick);
     trailerContainer.addEventListener("click", openPopup);
     trailerContainer.addEventListener("mousedown", dragStart);
-    trailerContainer.addEventListener("touchstart", dragStart, { passive: true });
+    trailerContainer.addEventListener("touchstart", dragStart, {
+      passive: true,
+    });
     window.addEventListener("mouseup", dragEnd);
     window.addEventListener("touchend", dragEnd);
     window.addEventListener("mousemove", dragging);
@@ -265,7 +279,9 @@ document.addEventListener("DOMContentLoaded", function () {
     trailerContainer.removeEventListener("click", openPopup);
     trailerThumbsList.removeEventListener("click", handleThumbnailClick);
     trailerContainer.removeEventListener("mousedown", dragStart);
-    trailerContainer.removeEventListener("touchstart", dragStart, { passive: true });
+    trailerContainer.removeEventListener("touchstart", dragStart, {
+      passive: true,
+    });
     window.removeEventListener("mouseup", dragEnd);
     window.removeEventListener("touchend", dragEnd);
     window.removeEventListener("mousemove", dragging);

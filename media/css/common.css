@@ -258,18 +258,14 @@ dd {
 
 
 
-
-
-
-
+일반 pc 
 
 
 
 
 */
-/* 일반 pc */
-@media screen and (max-width: 1280px) {
 
+@media screen and (max-width: 1280px) {
   /* 푸터 공통 영역 */
   #footerArea .top_move {
     width: 63px;
@@ -404,10 +400,12 @@ dd {
 }
 
 /* 소형 테블릿 */
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+}
 
 /* 모바일 */
-@media screen and (max-width: 640px) {}
+@media screen and (max-width: 640px) {
+}
 
 /* 최소 사이즈 처리 */
 @media screen and (max-width: 480px) {

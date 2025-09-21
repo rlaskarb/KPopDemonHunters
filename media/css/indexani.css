@@ -1,0 +1,18 @@
+    .reveal {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 1s ease-in-out;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .gallery_card.reveal {
+        transform: scale(0.5);
+    }
+
+    .gallery_card.reveal.active {
+        transform: scale(1);
+    }

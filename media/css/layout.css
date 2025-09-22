@@ -82,11 +82,12 @@
 
 #content {
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   background: rgba(44, 0, 62, 0.9);
+  position: relative;
 }
 
-#content > section {
+#content>section {
   margin: 0 auto;
 }
 
@@ -697,7 +698,7 @@
 }
 
 #content .gallery_card {
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: all 0.4s ease
 }
 
 #content .gallery_card:hover {
@@ -1556,6 +1557,7 @@
 
 /* 더이상 조절은 없다  */
 @media screen and (max-width: 467px) {
+
   #content .about h3,
   #content .characters h3,
   #content .trailer h3,

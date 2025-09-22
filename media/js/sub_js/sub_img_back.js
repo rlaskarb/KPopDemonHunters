@@ -12,9 +12,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
     contentElement.style.marginTop = screenHeight + "px";
     if (screenWidth > 855) {
-      imgBGElement.src = "./images/sub" + value + "/sub" + value + "_big.jpg";
+      imgBGElement.src = "./images/sub" + value + "/sub" + value + "_big.avif";
     } else {
-      imgBGElement.src = "./images/sub" + value + "/sub" + value + "_small.jpg";
+      imgBGElement.src = "./images/sub" + value + "/sub" + value + "_small.avif";
     }
   }
 

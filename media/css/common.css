@@ -148,6 +148,103 @@ dd {
   color: rgba(44, 0, 62, 0.1);
 }
 
+.down {
+  display: block;
+  font-size: var(--font-20px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20%;
+}
+
+.down .scroll {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  z-index: -1;
+  animation: swipe-down 5s ease-in-out infinite;
+}
+
+.down .scroll::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 0;
+  background: var(--color-sub1);
+  border-radius: 10px;
+  opacity: 0;
+  animation: light-trail 5s ease-in-out infinite;
+}
+
+@keyframes swipe-down {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  40% {
+    transform: translateY(80px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(80px);
+    opacity: 0.2;
+  }
+}
+
+@keyframes light-trail {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+
+  20% {
+    height: 0;
+    opacity: 1;
+  }
+
+  30% {
+    height: 80px;
+    opacity: 0.8;
+  }
+
+  40% {
+    height: 80px;
+    opacity: 0;
+  }
+
+  100% {
+    height: 80px;
+    opacity: 0;
+  }
+}
+
+/* down 영역 */
+.down img {
+  width: 100%;
+  margin-top: 50%;
+}
+
+#wrap .videoBox .down .fa-apple {
+  font-size: 1.5rem;
+  padding-bottom: 8px;
+}
+
+#wrap .videoBox .down .fa-angles-down {
+  font-size: 1rem;
+}
+
 #headerArea .menu_ham {
   display: none;
 }
@@ -305,15 +402,15 @@ dd {
 }
 
 #footerArea .footer_sns li a:hover .fa-youtube {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 #footerArea .footer_sns li a:hover .fa-instagram {
-  color: #E4405F;
+  color: #e4405f;
 }
 
 #footerArea .footer_sns li a:hover .fa-square-facebook {
-  color: #1877F2;
+  color: #1877f2;
 }
 
 #footerArea .footer_sns li a:hover .fa-square-github {
@@ -332,7 +429,6 @@ dd {
 */
 
 @media screen and (max-width: 1280px) {
-
   /* 푸터 공통 영역 */
   #footerArea .top_move {
     width: 63px;
@@ -475,7 +571,6 @@ dd {
 
 /* 소형 테블릿 */
 @media screen and (max-width: 855px) {
-
   #headerArea {
     height: 80px;
   }
@@ -488,7 +583,6 @@ dd {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 
   #wrap #imgBG {
@@ -549,12 +643,6 @@ dd {
 
 /* 모바일 */
 @media screen and (max-width: 667px) {
-
-
-
-
-
-
   #footerArea .top_move {
     width: 40px;
     right: 9px;
@@ -617,7 +705,6 @@ dd {
 }
 
 @media screen and (max-width: 467px) {
-
   #headerArea .logo a {
     min-width: 170px;
   }

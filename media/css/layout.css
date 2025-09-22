@@ -46,102 +46,6 @@
   scroll-snap-align: start;
 }
 
-.down {
-  display: block;
-  font-size: var(--font-20px);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 20%;
-}
-
-.down .scroll {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
-  z-index: -1;
-  animation: swipe-down 5s ease-in-out infinite;
-}
-
-.down .scroll::after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 0;
-  background: var(--color-sub1);
-  border-radius: 10px;
-  opacity: 0;
-  animation: light-trail 5s ease-in-out infinite;
-}
-
-@keyframes swipe-down {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-
-  20% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  40% {
-    transform: translateY(80px);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: translateY(80px);
-    opacity: 0.2;
-  }
-}
-
-@keyframes light-trail {
-  0% {
-    height: 0;
-    opacity: 0;
-  }
-
-  20% {
-    height: 0;
-    opacity: 1;
-  }
-
-  30% {
-    height: 80px;
-    opacity: 0.8;
-  }
-
-  40% {
-    height: 80px;
-    opacity: 0;
-  }
-
-  100% {
-    height: 80px;
-    opacity: 0;
-  }
-}
-
-.down img {
-  width: 100%;
-  margin-top: 50%;
-}
-
-#wrap .videoBox .down .fa-apple {
-  font-size: 1.5rem;
-  padding-bottom: 8px;
-}
-
-#wrap .videoBox .down .fa-angles-down {
-  font-size: 1rem;
-}
-
 #videoBG {
   position: fixed;
   /*고정=>fixed/ 스크롤처리=>absolute */
@@ -182,7 +86,7 @@
   background: rgba(44, 0, 62, 0.9);
 }
 
-#content>section {
+#content > section {
   margin: 0 auto;
 }
 
@@ -444,9 +348,7 @@
   align-items: center;
   justify-content: center;
   gap: 0 3%;
-
 }
-
 
 #content .pc_main_display {
   position: relative;
@@ -586,7 +488,6 @@
 #content .trailer-swiper .swiper-button-prev {
   color: var(--color-sub1);
 }
-
 
 /* Popup Style */
 #content .trailer_popup {
@@ -879,7 +780,6 @@
     font-size: var(--font-60px);
   }
 
-
   #content .trailer_popup .youtube_iframe {
     position: relative;
     width: 100%;
@@ -1058,7 +958,6 @@
   #content .trailer_wrapper {
     width: 100%;
     margin: 0 auto;
-
   }
 
   #content .trailer-swiper .swiper-button-prev,
@@ -1082,8 +981,6 @@
     max-width: 900px;
     max-height: 550px;
   }
-
-
 
   /* NEWS 섹션 */
   #content .news {
@@ -1253,7 +1150,6 @@
 
   /* TRAILER 섹션  */
 
-
   #content .trailer-swiper .swiper-button-prev,
   #content .trailer-swiper .swiper-button-next {
     display: none;
@@ -1275,7 +1171,6 @@
     max-width: 750px;
     max-height: 450px;
   }
-
 
   /* NEWS 섹션 */
   #content .news {
@@ -1626,8 +1521,6 @@
     line-height: 1.4rem;
   }
 
-
-
   /* NEWS 섹션 */
   #content .news {
     padding-top: 100px;
@@ -1663,7 +1556,6 @@
 
 /* 더이상 조절은 없다  */
 @media screen and (max-width: 467px) {
-
   #content .about h3,
   #content .characters h3,
   #content .trailer h3,
@@ -1712,9 +1604,6 @@
     line-height: 0.9rem;
     text-align: left;
   }
-
-
-
 
   /* trailer */
   #content .trailer-swiper .swiper-slide dt {

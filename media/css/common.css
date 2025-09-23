@@ -5,6 +5,7 @@
   --font-70px: 4.38rem;
   --font-60px: 3.75rem;
   --font-50px: 3.13rem;
+  --font-44px: 2.75rem;
   --font-40px: 2.5rem;
   --font-36px: 2.25rem;
   --font-34px: 2.13rem;
@@ -430,7 +431,6 @@ dd {
 */
 
 @media screen and (max-width: 1280px) {
-
   /* 푸터 공통 영역 */
   #footerArea .top_move {
     width: 63px;

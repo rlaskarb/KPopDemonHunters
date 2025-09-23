@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		screenSize = window.innerWidth;
 		screenHeight = window.innerHeight;
 
-		if (screenSize > 855 && current === false) {
+		if (screenSize > 768 && current === false) {
 			videoBG.style.display = "block";
 			videoBG.src = "./images/main/go.webm";
 			imgBG.style.display = "none";
 			current = true;
 		}
-		if (screenSize <= 855) {
+		if (screenSize <= 768) {
 			videoBG.style.display = "none";
 			videoBG.src = "";
 			imgBG.style.display = "block";

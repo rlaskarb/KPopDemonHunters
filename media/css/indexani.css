@@ -1,18 +1,32 @@
-    .reveal {
-        opacity: 0;
-        transform: translateY(100px);
-        transition: all 1s ease-in-out;
-    }
+/* index 애니매이션 효과 */
+.reveal {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-in-out;
+}
 
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .gallery_card.reveal {
-        transform: scale(0.5);
-    }
+.gallery_card.reveal {
+  transform: scale(0.5);
+}
 
-    .gallery_card.reveal.active {
-        transform: scale(1);
-    }
+.gallery_card.reveal.active {
+  transform: scale(1);
+}
+
+/* about 애니매이션 효과 */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

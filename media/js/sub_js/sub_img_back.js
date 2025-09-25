@@ -11,10 +11,11 @@ window.addEventListener("DOMContentLoaded", function () {
     const screenHeight = window.innerHeight;
 
     contentElement.style.marginTop = screenHeight + "px";
-    if (screenWidth > 855) {
+    if (screenWidth > 768) {
       imgBGElement.src = "./images/sub" + value + "/sub" + value + "_big.avif";
     } else {
-      imgBGElement.src = "./images/sub" + value + "/sub" + value + "_small.avif";
+      imgBGElement.src =
+        "./images/sub" + value + "/sub" + value + "_small.avif";
     }
   }
 

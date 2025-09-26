@@ -166,7 +166,8 @@ dd {
   align-items: center;
   color: #fff;
   z-index: -1;
-  animation: swipe-down 5s ease-in-out infinite;
+
+  animation: swipe-down 3s ease-in-out infinite;
 }
 
 .down .scroll::after {
@@ -180,7 +181,7 @@ dd {
   background: var(--color-sub1);
   border-radius: 10px;
   opacity: 0;
-  animation: light-trail 5s ease-in-out infinite;
+  animation: light-trail 3s ease-in-out infinite;
 }
 
 @keyframes swipe-down {
@@ -211,7 +212,6 @@ dd {
     opacity: 1;
   }
 
-
   100% {
     height: 80px;
     opacity: 0;
@@ -219,9 +219,14 @@ dd {
 }
 
 /* down 영역 */
-.down img {
+.down .scroll img {
   width: 70%;
   margin-top: 50%;
+  transition: transform 0.7s ease;
+}
+
+.down .scroll img:hover {
+  transform: rotate(360deg);
 }
 
 #wrap .videoBox .down .fa-apple {
@@ -417,7 +422,6 @@ dd {
 */
 
 @media screen and (max-width: 1280px) {
-
   /* 푸터 공통 영역 */
   #footerArea .top_move {
     width: 63px;
@@ -560,7 +564,6 @@ dd {
 
 /* 소형 테블릿 */
 @media screen and (max-width: 855px) {
-
   /* down 영역 */
   .down img {
     width: 55%;

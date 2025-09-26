@@ -1,0 +1,229 @@
+[
+  {
+    "id": "huntrix",
+    "groupName": "HUNTRIX",
+    "characters": [
+      {
+        "name": "RUMI",
+        "age": "24",
+        "mbti": "INFJ",
+        "position": "Main Vocal",
+        "description": "Rumi is a compassionate leader with a strong sense of purpose. She deeply cherishes the Huntrix members and loves to eat gimbap and ramen. She despises having to hide her true identity and the demons that threaten the world. Rumi continues to fight every day to live as her authentic self and to protect the people she holds dear.",
+        "images": [
+          "./images/sub2/rumi1.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "ZOEY",
+        "age": "22",
+        "mbti": "ENFP",
+        "position": "Main Rapper",
+        "description": "Zoey is the cute, bright, and lively youngest member. She cherishes Rumi and Mira, loves baths and snacks. Though a bit oblivious and easily charmed by good looks, her true power emerges when she's performing or battling, revealing an intense charisma as she raps or fights evil spirits.",
+        "images": [
+          "./images/sub2/zoey.avif",
+          "./images/sub2/sub2_4.avif",
+          "./images/sub2/sub2_5.avif",
+          "./images/sub2/sub2_6.avif"
+        ]
+      },
+      {
+        "name": "MIRA",
+        "age": "23",
+        "mbti": "ISTP",
+        "position": "Main Visual",
+        "description": "Mira is the gutsy, girl crush type member. She cherishes Rumi and Zoey more than family and absolutely loves the Huntrix members' mundane daily lives and sofas. Despite her tough exterior, she actually has very low self-esteem, making her a warm-hearted girl who constantly relies on and protects her fellow Huntrix members.",
+        "images": [
+          "./images/sub2/mira.avif",
+          "./images/sub2/sub2_7.avif",
+          "./images/sub2/sub2_8.avif",
+          "./images/sub2/sub2_9.avif"
+        ]
+      }
+    ],
+    "backImage": ["./images/sub2/sub2_10.avif", "./images/sub2/sub2_11.avif"],
+    "storyTitle": "A Suffocating Silence",
+    "storyDescription": "The moment the truth was revealed, the space once filled with joy and laughter was replaced with despair.",
+    "storyImg": [
+      "./images/sub2/sub2_12.avif",
+      "./images/sub2/sub2_13.avif",
+      "./images/sub2/sub2_14.avif",
+      "./images/sub2/sub2_15.avif",
+      "./images/sub2/sub2_16.avif",
+      "./images/sub2/sub2_17.avif"
+    ],
+    "storyDescription2": "The truth they learned was not of betrayal, but of an unspoken pain. Watching her flee, they could only stare at her retreating back, their hearts breaking. They were left to face the unbearable silence, knowing they couldn't follow her."
+  },
+
+  {
+    "id": "saja_boys",
+    "groupName": "SAJA BOYS",
+    "characters": [
+      {
+        "name": "JINU",
+        "age": "400",
+        "mbti": "ENTP",
+        "position": "Main Vocal",
+        "description": "Jinwoo is the leader of the Lion Boys and the closest villain to the Demon King, Gwi-Ma. He is the only one who has managed to maintain his humanity. He hates himself for having to abandon his family because of Gwi-Ma and despises the Demon King so much that he wants to destroy him.",
+        "images": [
+          "./images/sub2/jinu.avif",
+          "./images/sub2/sub2_19.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "MYSTERY",
+        "age": "375",
+        "mbti": "INTP",
+        "position": "Sub Vocal",
+        "description": "Mystery has a hairstyle that conceals his face and is the individual whom Huntrix's Zoey showed great interest in. As the sub-vocal of  Sajaboyz, Zoey's close observation and strong interest have led many readers to speculate that he is exceptionally handsome. His distinctive feature is his beautiful, clear voice.",
+        "images": [
+          "./images/sub2/mystsry.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "ABBY",
+        "age": "326",
+        "mbti": "ESTP",
+        "position": "Main Dancer",
+        "description": "Abby is a muscular, macho man with a prominent six-pack. He serves as the main dancer and lead rapper for the  Sajaboys. He makes a memorable impression on readers by giving autographs where he places paper on his stomach and sketches his six-pack. ",
+        "images": [
+          "./images/sub2/abby.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "BABY",
+        "age": "276",
+        "mbti": "ISFP",
+        "position": "Main Rapper",
+        "description": "Baby serves as the main rapper of the Sajaboys group, and with his very youthful face, he also takes on the position of the youngest member. He handles spicy food well, and in the story, his voice is particularly impressive when he raps, making him a memorable character.",
+        "images": [
+          "./images/sub2/baby.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "ROMANCE",
+        "age": "381",
+        "mbti": "ESFP",
+        "position": "Lead Vocal",
+        "description": "Romance is an impressive character with a 5:5 pink heart-shaped hairstyle and a androgynous appearance. He is the lead vocalist for the Sajaboys and is primarily in charge of the high-note sections during performances. With a look that is more popular overseas than in his home country, he is a character with global appeal.",
+        "images": [
+          "./images/sub2/romance.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      }
+    ],
+
+    "backImage": ["./images/sub2/sub2_10.avif", "./images/sub2/sub2_11.avif"],
+    "storyTitle": "Your Idol",
+    "storyDescription": "A loving trap, disguised in a sweet voice to claim your very soul.",
+    "storyImg": [
+      "./images/sub2/sub2_12.avif",
+      "./images/sub2/sub2_13.avif",
+      "./images/sub2/sub2_14.avif",
+      "./images/sub2/sub2_15.avif",
+      "./images/sub2/sub2_16.avif",
+      "./images/sub2/sub2_17.avif"
+    ],
+    "storyDescription2": "The Lion Boys, who appeared to stop the Gate of Souls, are steadily achieving their goals. They are now turning the Huntrix's crisis into an opportunity, preparing to deliver the final blow."
+  },
+
+  {
+    "id": "other",
+    "groupName": "OTHER",
+    "characters": [
+      {
+        "name": "GWI-MA",
+        "age": "long time",
+        "mbti": "ENTJ",
+        "position": "Producer",
+        "description": "The ultimate villain, an ancient King of Evil Spirits, and ruler of the demon realm, also serving as the Deadboys' producer. He can monitor and forcefully summon evil spirits, making escape impossible. As the final antagonist, Guima also possesses the power to enchant with whispers.",
+        "images": [
+          "./images/sub2/gwima2.avif",
+          "./images/sub2/gwima.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "DUFFY",
+        "age": "176",
+        "mbti": "INFP",
+        "position": "야옹",
+        "description": "야옹 ",
+        "images": [
+          "./images/sub2/mystsry.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "서씨",
+        "age": "180",
+        "mbti": "INTJ",
+        "position": "짹",
+        "description": "짹짹 ",
+        "images": [
+          "./images/sub2/abby.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "바비",
+        "age": "36",
+        "mbti": "ESFJ",
+        "position": "Huntrix Manager",
+        "description": "show me the money",
+        "images": [
+          "./images/sub2/baby.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      },
+      {
+        "name": "셀린",
+        "age": "45",
+        "mbti": "ISTJ",
+        "position": "old huntrix",
+        "description": "뭐 왜 !",
+        "images": [
+          "./images/sub2/romance.avif",
+          "./images/sub2/sub2_1.avif",
+          "./images/sub2/sub2_2.avif",
+          "./images/sub2/sub2_3.avif"
+        ]
+      }
+    ],
+
+    "backImage": ["./images/sub2/sub2_10.avif", "./images/sub2/sub2_11.avif"],
+    "storyTitle": "엑스트라들",
+    "storyDescription": "무시하지마라",
+    "storyImg": [
+      "./images/sub2/sub2_12.avif",
+      "./images/sub2/sub2_13.avif",
+      "./images/sub2/sub2_14.avif",
+      "./images/sub2/sub2_15.avif",
+      "./images/sub2/sub2_16.avif",
+      "./images/sub2/sub2_17.avif"
+    ],
+    "storyDescription2": "이미지도 준비 못했다 "
+  }
+]

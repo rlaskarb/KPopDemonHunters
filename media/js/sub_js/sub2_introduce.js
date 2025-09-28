@@ -43,13 +43,21 @@ function createTabMenu() {
 function renderContent(groupId) {
 	const contentContainer = document.getElementById("character_content");
 	contentContainer.innerHTML = ""; // 기존 컨탠츠 삭제
+	const groupTitleDisplay = document.getElementById("group_title_display");
 
 	// 선택된 데이터 그룹찾기
 	const selectedGroup = characterGroups.find(function (group) {
 		return group.id === groupId;
 	});
 	if (!selectedGroup) {
+		if (!groupTitleDisplay) {
+			groupTitleDisplay.textContent = "";
+		}
 		return;
+	}
+
+	if (groupTitleDisplay) {
+		groupTitleDisplay.textContent = selectedGroup.groupName;
 	}
 
 	// 케릭터 카드 렌더링
@@ -85,13 +93,13 @@ function renderContent(groupId) {
 		swiperArea.appendChild(swiperContainer);
 
 		// 3. (소개글 1 영역)
-		const inforArea = document.createElement("div");
-		inforArea.className = "character-info-area";
-		inforArea.innerHTML = `
-   <h4>${character.name}</h4>
-   <p>Age : ${character.age}</p>
-   <p>MBTI : ${character.mbti}</p>
-   <p>Position : ${character.position}</p>
+		const infoArea = document.createElement("div");
+		infoArea.className = "character-info-area";
+		infoArea.innerHTML = `
+   			<h4>${character.name}</h4>
+   			<p>Age : ${character.age}</p>
+   			<p>MBTI : ${character.mbti}</p>
+   			<p>Position : ${character.position}</p>
     `;
 
 		// 4. 소개글 2 영역
@@ -102,12 +110,13 @@ function renderContent(groupId) {
 
 		// 5. 나머지 이미지 영역
 
-		const image1Area = document.createElement("div");
-		image1Area.className = "character-image1-area";
-		const img1 = document.createElement("img");
-		img1.src = character.images[2];
-		img1.alt = `${character.name} img1`;
-		image1Area.appendChild(img1);
+		const video1 = document.createElement("video");
+		video1.className = "character-image1-area";
+		video1.autoplay = true;
+		video1.loop = true;
+		video1.muted = true;
+		video1.src = character.images[2];
+		video1.alt = `${character.name} video`;
 
 		const image2Area = document.createElement("div");
 		image2Area.className = "character-image2-area";
@@ -119,14 +128,14 @@ function renderContent(groupId) {
 		// 6. 모든 요소 메인 컨테이너 추가
 
 		characterCard.appendChild(swiperArea);
-		characterCard.appendChild(inforArea);
+		characterCard.appendChild(infoArea);
 		characterCard.appendChild(descriptionArea);
-		characterCard.appendChild(image1Area);
+		characterCard.appendChild(video1);
 		characterCard.appendChild(image2Area);
 
 		contentContainer.appendChild(characterCard);
 
-		new Swiper(swiperContainer, {
+		const sub2Swiper = new Swiper(swiperContainer, {
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
@@ -134,20 +143,65 @@ function renderContent(groupId) {
 			loop: true,
 			allowTouch: true,
 			touchEventTarget: "wrapper",
+			slidesPerView: 1,
 		});
+
+		setTimeout(() => {
+			sub2Swiper.update();
+		}, 100);
 	});
 
+	// 배경이미지 블라인드 효과 주기
+	const blindContainer = document.createElement("div");
+	blindContainer.className = "blind-container";
+
+	const blindImage1 = document.createElement("div");
+	blindImage1.className = "blind-image image1";
+	blindImage1.style.backgroundImage = `url(${selectedGroup.backImage[0]})`;
+	blindContainer.appendChild(blindImage1);
+
+	const blindImage2 = document.createElement("div");
+	blindImage2.className = "blind-image image2";
+	blindImage2.style.backgroundImage = `url(${selectedGroup.backImage[1]})`;
+	blindContainer.appendChild(blindImage2);
+
+	// 어둡게 만드는 오버레이 추가
+	const darkOverlay = document.createElement("div");
+	darkOverlay.className = "dark-overlay";
+	blindContainer.appendChild(darkOverlay);
+
+	// 이 코드를 storySection 생성 코드 바로 위에 추가
+	contentContainer.appendChild(blindContainer);
+
+	//  스토리 섹션 반복
 	const storySection = document.createElement("div");
 	storySection.className = "story-section";
 	storySection.innerHTML = `
-        <h4>${selectedGroup.storyTitle}</h4>
-        <p>${selectedGroup.storyDescription}</p>
-        <div class="story-grid-images">
-            ${selectedGroup.storyImg
-							.map((imgSrc) => `<img src="${imgSrc}" alt="스토리 이미지">`)
-							.join("")}
-        </div>
-        <p>${selectedGroup.storyDescription2}</p>
-    `;
+	    <h3>${selectedGroup.storyTitle}</h3>
+	    <p>${selectedGroup.storyDescription}</p>
+	    <div class="story-grid-images">
+	        ${selectedGroup.storyImg
+						.map((imgSrc) => `<img src="${imgSrc}" alt="스토리 이미지">`)
+						.join("")}
+	    </div>
+	    <p>${selectedGroup.storyDescription2}</p>
+	`;
 	contentContainer.appendChild(storySection);
+
+	window.addEventListener("scroll", () => {
+		const container = document.querySelector(".blind-container");
+		const image2 = document.querySelector(".blind-image.image2");
+
+		if (container && image2) {
+			const containerTop = container.getBoundingClientRect().top;
+			const scrollReveal = 1000; /* 이 값을 조절해 효과 시작 지점을 바꿀 수 있습니다. */
+
+			if (containerTop < scrollReveal) {
+				const revealPercentage = (scrollReveal - containerTop) / scrollReveal;
+				image2.style.clipPath = `inset(${200 - revealPercentage * 100}% 0 0)`;
+			} else {
+				image2.style.clipPath = "inset(100% 0 0)";
+			}
+		}
+	});
 }

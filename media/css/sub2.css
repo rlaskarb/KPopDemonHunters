@@ -31,7 +31,7 @@
   padding-bottom: 100px;
 }
 
-#content>section {
+#content > section {
   margin: 0 auto;
 }
 
@@ -47,7 +47,7 @@
 /* 네비 */
 
 #content .sub_nav {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   padding-top: 100px;
   display: flex;
@@ -62,7 +62,6 @@
   text-align: center;
   background: var(--color-sub1);
   border-radius: 15px;
-
 }
 
 #content .sub_nav li a {
@@ -76,7 +75,6 @@
   padding-top: 100px;
   font-size: var(--font-60px);
 }
-
 
 #content #character_content .character-card-grid {
   width: 90%;
@@ -101,7 +99,7 @@
 
 #content #character_content .character-card-grid img {
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 20px;
 }
@@ -109,7 +107,7 @@
 #content #character_content .character-card-grid video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 20px;
 }
@@ -140,17 +138,15 @@
   line-height: 2rem;
 }
 
-
 #content #character_content .character-card-grid .character-description-area {
   grid-area: c;
 }
 
 #content #character_content .character-card-grid .character-description-area p {
-  font-size: var(--font-30px);
-  padding: 50px 20px 0;
-  line-height: 3rem;
+  font-size: var(--font-28px);
+  padding: 15px;
+  line-height: 2.5rem;
 }
-
 
 #content #character_content .character-card-grid .character-image1-area {
   grid-area: d;
@@ -160,62 +156,34 @@
   grid-area: e;
 }
 
-
-
-
 /* 배경 이미지 */
 
-#content #character_content {
-  position: relative;
-}
-
-/* 블라인드 효과를 적용할 컨테이너 */
-.blind-container {
-  width: 100%;
-  height: 1000px;
-  /* 원하는 높이로 설정 */
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* 어둡게 만드는 오버레이 */
-.dark-overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  /* 이미지 위에 오도록 설정 */
-  /* 투명한 색상에서 어두운 보라색으로 그라데이션 */
-  background: linear-gradient(to top, rgba(44, 0, 62, 0.5) 50%, rgba(44, 0, 62, 0) 100%);
-  transition: opacity 0.5s ease-in-out;
-  opacity: 1;
-  /* 초기 상태는 불투명하게 만듭니다. */
-}
-
-/* 배경 이미지 */
-.blind-image {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-size: cover;
-  background-position: center;
-}
-
-/* 이미지1: 아래로 내려가는 효과를 위해 fixed를 사용 */
 .blind-image.image1 {
+  padding-top: 200px;
+  margin: 0 auto;
   background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%;
+  height: 650px;
+  margin-bottom: 10%;
+  border-radius: 2vw;
+  background-position: center 100px;
 }
 
 /* 이미지2: 드러나게 만들 이미지 */
 .blind-image.image2 {
+  margin: 0 auto;
   background-attachment: fixed;
-
-  clip-path: inset(100% 0 0);
-  /* 초기 상태에서 완전히 가려지게 합니다. */
-  transition: clip-path 0.5s ease-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%;
+  height: 650px;
+  margin-bottom: 10%;
+  border-radius: 2vw;
+  background-position: center 100px;
 }
 
 /* 스토리 섹션 */
@@ -230,7 +198,10 @@
 }
 
 #content .story-section p {
-  font-size: var(--font-26px);
+  width: 90%;
+  margin: 0 auto;
+  font-size: var(--font-28px);
+  line-height: 2rem;
   margin-bottom: 50px;
 }
 
@@ -246,22 +217,147 @@
 #content .story-section .story-grid-images img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 20px;
 }
 
-
-
 #content .story-section p:nth-last-of-type(1) {
-  width: 80%;
-  font-size: var(--font-30px);
-  line-height: 2rem;
-  margin: 100px auto 0;
-
+  width: 90%;
+  margin: 100px auto 250px;
+  font-size: var(--font-36px);
+  line-height: 3.2rem;
 }
 
+/* 
 
+
+
+
+
+중간 pc 글씨크기 변경
+
+
+
+
+
+*/
+@media screen and (max-width: 1720px) {
+  #content .sub_nav {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    font-size: var(--font-34px);
+  }
+
+  #content .character-group-header {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+    font-size: var(--font-50px);
+  }
+
+  #content #character_content .character-card-grid {
+    width: 90%;
+    margin: 70px auto;
+    padding: 50px;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "a b e"
+      "c c d";
+
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 174, 255, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  #content #character_content .character-card-grid .character-info-area {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+    grid-area: b;
+  }
+
+  #content #character_content .character-card-grid .character-info-area h4 {
+    font-size: var(--font-40px);
+  }
+
+  #content #character_content .character-card-grid .character-info-area p {
+    font-size: var(--font-24px);
+    line-height: 2rem;
+  }
+
+  #content
+    #character_content
+    .character-card-grid
+    .character-description-area
+    p {
+    font-size: var(--font-22px);
+    padding: 10px;
+    line-height: 1.8rem;
+  }
+
+  /* 배경 이미지 */
+
+  .blind-image.image1 {
+    padding-top: 200px;
+    margin: 0 auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    height: 600px;
+    margin-bottom: 10%;
+    border-radius: 2vw;
+    background-position: center 100px;
+  }
+
+  /* 이미지2: 드러나게 만들 이미지 */
+  .blind-image.image2 {
+    margin: 0 auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    height: 600px;
+    margin-bottom: 10%;
+    border-radius: 2vw;
+    background-position: center 100px;
+  }
+
+  #content .story-section h3 {
+    font-size: var(--font-50px);
+    margin-bottom: 20px;
+  }
+
+  #content .story-section p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: var(--font-24px);
+    line-height: 2rem;
+    margin-bottom: 50px;
+  }
+
+  #content .story-section p:nth-last-of-type(1) {
+    width: 90%;
+    margin: 100px auto 250px;
+    font-size: var(--font-30px);
+    line-height: 2.8rem;
+  }
+}
 
 /*
 
@@ -279,7 +375,147 @@
 
 
 */
-@media screen and (max-width: 1280px) {}
+@media screen and (max-width: 1280px) {
+  #content h2 {
+    position: absolute;
+    top: -500px;
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-60px);
+    color: var(--main-font);
+  }
+
+  #content .sub_nav {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    font-size: var(--font-30px);
+  }
+
+  #content .character-group-header {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+    font-size: var(--font-44px);
+  }
+
+  #content #character_content .character-card-grid {
+    width: 95%;
+    margin: 70px auto;
+    padding: 30px;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "a b e"
+      "c c d";
+
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 174, 255, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  #content #character_content .character-card-grid:hover {
+    box-shadow: 0 0 50px rgba(0, 174, 255, 1);
+  }
+
+  #content #character_content .character-card-grid .character-swiper-area {
+    width: 100%;
+    overflow: hidden;
+    grid-area: a;
+  }
+
+  #content #character_content .character-card-grid .character-info-area {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+    grid-area: b;
+  }
+
+  #content
+    #character_content
+    .character-card-grid
+    .character-description-area
+    p {
+    font-size: var(--font-22px);
+    padding: 10px;
+    line-height: 1.5rem;
+  }
+
+  /* 배경 이미지 */
+
+  .blind-image.image1 {
+    padding-top: 200px;
+    margin: 0 auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 10%;
+    border-radius: 2vw;
+    background-position: center 100px;
+  }
+
+  /* 이미지2: 드러나게 만들 이미지 */
+  .blind-image.image2 {
+    margin: 0 auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 10%;
+    border-radius: 2vw;
+    background-position: center 100px;
+  }
+
+  /* 스토리 섹션 */
+  #content .story-section {
+    width: 90%;
+    margin: 200px auto 0;
+  }
+
+  #content .story-section h3 {
+    font-size: var(--font-50px);
+    margin-bottom: 20px;
+  }
+
+  #content .story-section p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: var(--font-24px);
+    line-height: 2rem;
+    margin-bottom: 50px;
+  }
+
+  #content .story-section .story-grid-images {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: auto;
+    gap: 1%;
+  }
+
+  #content .story-section p:nth-last-of-type(1) {
+    width: 90%;
+    margin: 100px auto 200px;
+    font-size: var(--font-30px);
+    line-height: 2.3rem;
+  }
+}
 
 /* 
 
@@ -299,7 +535,179 @@
 
 
 */
-@media screen and (max-width: 1150px) {}
+@media screen and (max-width: 1150px) {
+  #content h2 {
+    position: absolute;
+    top: -500px;
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-50px);
+    color: var(--main-font);
+  }
+
+  #content .sub_nav {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    font-size: var(--font-20px);
+    font-weight: 800;
+  }
+
+  #content .sub_nav li {
+    width: 33.33%;
+    text-align: center;
+    background: var(--color-sub1);
+    border-radius: 15px;
+  }
+
+  #content .sub_nav li a {
+    color: var(--color-point1);
+    padding: 15px 20px;
+  }
+
+  #content .character-group-header {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+    font-size: var(--font-40px);
+  }
+
+  #content #character_content .character-card-grid {
+    width: 95%;
+    margin: 70px auto;
+    padding: 30px;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "a b "
+      "c c ";
+
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 174, 255, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  #content #character_content .character-card-grid:hover {
+    box-shadow: 0 0 50px rgba(0, 174, 255, 1);
+  }
+
+  #content #character_content .character-card-grid .character-swiper-area {
+    width: 100%;
+    padding: 15px 0;
+    overflow: hidden;
+    grid-area: a;
+  }
+
+  #content #character_content .character-card-grid .character-info-area {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+    grid-area: b;
+  }
+
+  #content #character_content .character-card-grid .character-info-area h4 {
+    font-size: var(--font-40px);
+  }
+
+  #content #character_content .character-card-grid .character-info-area p {
+    font-size: var(--font-24px);
+    line-height: 2rem;
+  }
+
+  #content #character_content .character-card-grid .character-description-area {
+    grid-area: c;
+  }
+
+  #content
+    #character_content
+    .character-card-grid
+    .character-description-area
+    p {
+    font-size: var(--font-22px);
+    padding-top: 20px;
+    line-height: 1.5rem;
+  }
+
+  #content #character_content .character-card-grid .character-image1-area,
+  #content #character_content .character-card-grid .character-image2-area {
+    display: none;
+  }
+
+  /* 배경 이미지 */
+
+  .blind-image.image1 {
+    padding-top: 200px;
+    margin: 0 auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 10%;
+    border-radius: 2vw;
+    background-position: center 100px;
+  }
+
+  /* 이미지2: 드러나게 만들 이미지 */
+  .blind-image.image2 {
+    margin: 0 auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 10%;
+    border-radius: 2vw;
+    background-position: center 100px;
+  }
+
+  /* 스토리 섹션 */
+  #content .story-section {
+    width: 90%;
+    margin: 200px auto 0;
+  }
+
+  #content .story-section h3 {
+    font-size: var(--font-40px);
+    margin-bottom: 20px;
+  }
+
+  #content .story-section p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: var(--font-20px);
+    line-height: 2rem;
+    margin-bottom: 50px;
+  }
+
+  #content .story-section .story-grid-images {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: auto;
+    gap: 1%;
+  }
+
+  #content .story-section p:nth-last-of-type(1) {
+    width: 90%;
+    margin: 100px auto 200px;
+    font-size: var(--font-26px);
+    line-height: 2rem;
+  }
+}
 
 /* 
 
@@ -318,7 +726,115 @@
 
 
 */
-@media screen and (max-width: 855px) {}
+@media screen and (max-width: 855px) {
+  #content h2 {
+    position: absolute;
+    top: -350px;
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-40px);
+    color: var(--main-font);
+  }
+
+  #content .sub_nav {
+    width: 99%;
+    font-size: var(--font-18px);
+    font-weight: 800;
+  }
+
+  #content .sub_nav li a {
+    color: var(--color-point1);
+    padding: 15px 20px;
+  }
+
+  #content .character-group-header {
+    font-size: var(--font-40px);
+  }
+
+  #content #character_content .character-card-grid {
+    width: 95%;
+    margin: 70px auto;
+    padding: 20px;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "a b "
+      "c c ";
+  }
+
+  #content #character_content .character-card-grid .character-swiper-area {
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+    grid-area: a;
+  }
+
+  #content #character_content .character-card-grid .character-info-area {
+    width: 95%;
+    gap: 3%;
+  }
+
+  #content #character_content .character-card-grid .character-info-area h4 {
+    font-size: var(--font-36px);
+  }
+
+  #content #character_content .character-card-grid .character-info-area p {
+    font-size: var(--font-20px);
+    line-height: 2rem;
+  }
+
+  #content
+    #character_content
+    .character-card-grid
+    .character-description-area
+    p {
+    font-size: var(--font-18px);
+    padding-top: 15px;
+    line-height: 1.3rem;
+  }
+
+  #content #character_content .character-card-grid .character-image1-area,
+  #content #character_content .character-card-grid .character-image2-area {
+    display: none;
+  }
+
+  /* 배경 이미지 */
+
+  .blind-image.image1 {
+    height: 400px;
+  }
+
+  /* 이미지2: 드러나게 만들 이미지 */
+  .blind-image.image2 {
+    height: 400px;
+  }
+
+  /* 스토리 섹션 */
+  #content .story-section {
+    width: 90%;
+    margin: 200px auto 0;
+  }
+
+  #content .story-section h3 {
+    font-size: var(--font-36px);
+    margin-bottom: 15px;
+  }
+
+  #content .story-section p {
+    font-size: var(--font-18px);
+    line-height: 1rem;
+    margin-bottom: 40px;
+  }
+
+  #content .story-section p:nth-last-of-type(1) {
+    width: 90%;
+    margin: 70px auto 100px;
+    font-size: var(--font-24px);
+    line-height: 2rem;
+  }
+}
 
 /* 
 
@@ -336,7 +852,123 @@
 
 
 */
-@media screen and (max-width: 667px) {}
+@media screen and (max-width: 667px) {
+  #content h2 {
+    position: absolute;
+    top: -350px;
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-40px);
+    color: var(--main-font);
+  }
+
+  #content .sub_nav {
+    width: 99%;
+    font-size: var(--font-18px);
+  }
+
+  #content .sub_nav li {
+    width: 33.33%;
+    text-align: center;
+    background: var(--color-sub1);
+    border-radius: 15px;
+  }
+
+  #content .sub_nav li a {
+    color: var(--color-point1);
+    padding: 15px 5px;
+  }
+
+  #content .character-group-header {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+    font-size: var(--font-40px);
+  }
+
+  #content #character_content .character-card-grid {
+    width: 95%;
+    margin: 70px auto;
+    padding: 20px;
+    display: grid;
+    gap: 3%;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "a "
+      "b ";
+  }
+
+  #content #character_content .character-card-grid .character-swiper-area {
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+    grid-area: a;
+  }
+
+  #content #character_content .character-card-grid .character-info-area h4 {
+    font-size: var(--font-36px);
+  }
+
+  #content #character_content .character-card-grid .character-info-area p {
+    font-size: var(--font-20px);
+    line-height: 2rem;
+  }
+
+  #content #character_content .character-card-grid .character-description-area {
+    display: none;
+  }
+
+  /* 배경 이미지 */
+
+  .blind-image.image1 {
+    height: 400px;
+  }
+
+  /* 이미지2: 드러나게 만들 이미지 */
+  .blind-image.image2 {
+    height: 400px;
+  }
+
+  /* 스토리 섹션 */
+  #content .story-section {
+    width: 90%;
+    margin: 200px auto 0;
+  }
+
+  #content .story-section h3 {
+    font-size: var(--font-30px);
+    margin-bottom: 15px;
+  }
+
+  #content .story-section p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: var(--font-14px);
+    line-height: 1rem;
+    margin-bottom: 30px;
+  }
+
+  #content .story-section .story-grid-images {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: auto;
+    gap: 1%;
+  }
+
+  #content .story-section .story-grid-images img:nth-of-type(5) {
+    display: none;
+  }
+
+  #content .story-section p:nth-last-of-type(1) {
+    width: 90%;
+    margin: 150px auto 100px;
+    font-size: var(--font-20px);
+    line-height: 1.8rem;
+  }
+}
 
 /* 
 
@@ -354,7 +986,42 @@
 
 
 */
-@media screen and (max-width: 565px) {}
+@media screen and (max-width: 565px) {
+  #content h2 {
+    font-size: var(--font-36px);
+  }
+
+  #content .sub_nav {
+    font-size: var(--font-16px);
+  }
+
+  #content .sub_nav li a {
+    color: var(--color-point1);
+    padding: 10px 0;
+  }
+
+  #content .character-group-header {
+    font-size: var(--font-30px);
+  }
+
+  /* 배경 이미지 */
+  .blind-image.image1 {
+    height: 400px;
+  }
+
+  .blind-image.image2 {
+    height: 400px;
+  }
+
+  /* 스토리 섹션 */
+
+  #content .story-section p:nth-last-of-type(1) {
+    width: 90%;
+    margin: 100px auto 100px;
+    font-size: var(--font-20px);
+    line-height: 1.5rem;
+  }
+}
 
 /* 
 
@@ -372,4 +1039,56 @@
 
 
 */
-@media screen and (max-width: 467px) {}
+@media screen and (max-width: 467px) {
+  #content h2 {
+    font-size: var(--font-30px);
+  }
+
+  #content .sub_nav {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    font-size: var(--font-20px);
+  }
+
+  #content .sub_nav li {
+    width: 90%;
+    margin-bottom: 3%;
+  }
+
+  #content .sub_nav li a {
+    color: var(--color-point1);
+    padding: 10px 0;
+  }
+
+  #content .character-group-header {
+    font-size: var(--font-30px);
+  }
+
+  /* 배경 이미지 */
+  .blind-image.image1 {
+    height: 400px;
+  }
+
+  .blind-image.image2 {
+    height: 400px;
+  }
+
+  /* 스토리 섹션 */
+
+  #content .story-section h3 {
+    font-size: var(--font-26px);
+    margin-bottom: 15px;
+  }
+
+  #content .story-section p:nth-last-of-type(1) {
+    width: 90%;
+    margin: 100px auto 100px;
+    font-size: var(--font-18px);
+    line-height: 1.3rem;
+  }
+}

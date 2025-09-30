@@ -18,24 +18,38 @@ document.addEventListener("DOMContentLoaded", function () {
 function createTabMenu() {
   const tabMenu = document.querySelector(".sub_nav");
 
-  characterGroups.forEach(function (group) {
+  // JSON 데이터를 기반으로 메뉴를 만듭니다.
+  characterGroups.forEach(function (group, index) {
     const li = document.createElement("li");
     const h3 = document.createElement("h3");
     const a = document.createElement("a");
-
     a.href = "#";
     a.textContent = group.groupName;
     a.dataset.groupId = group.id;
+
+    // 첫 번째 메뉴에만 'current' 클래스를 추가합니다.
+    if (index === 0) {
+      a.classList.add("current");
+    }
+
     li.appendChild(h3);
     h3.appendChild(a);
     tabMenu.appendChild(li);
   });
 
+  // 탭 메뉴 클릭 이벤트 리스너
   tabMenu.addEventListener("click", function (event) {
     event.preventDefault();
     const clickedElement = event.target.closest("a");
     const groupId = clickedElement.dataset.groupId;
     renderContent(groupId);
+
+    // 클릭 시 모든 current 클래스 제거 후, 클릭된 요소에만 추가
+    const navLinks = document.querySelectorAll(".sub_nav li a");
+    navLinks.forEach(function (link) {
+      link.classList.remove("current");
+    });
+    clickedElement.classList.add("current");
   });
 }
 

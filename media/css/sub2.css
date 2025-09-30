@@ -69,6 +69,13 @@
   padding: 15px 20px;
 }
 
+#content .sub_nav li a.current,
+#content .sub_nav li a:hover {
+  background: var(--color-point1);
+  color: var(--color-sub1);
+  border-radius: 15px;
+}
+
 #content .character-group-header {
   width: 90%;
   margin: 0 auto;
@@ -245,48 +252,13 @@
 @media screen and (max-width: 1720px) {
   #content .sub_nav {
     width: 85%;
-    margin: 0 auto;
     padding-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 2%;
     font-size: var(--font-34px);
   }
 
   #content .character-group-header {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 100px;
     font-size: var(--font-50px);
-  }
-
-  #content #character_content .character-card-grid {
-    width: 90%;
-    margin: 70px auto;
-    padding: 50px;
-    display: grid;
-    gap: 3%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-template-areas:
-      "a b e"
-      "c c d";
-
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 174, 255, 0.5);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  #content #character_content .character-card-grid .character-info-area {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6%;
-    grid-area: b;
   }
 
   #content #character_content .character-card-grid .character-info-area h4 {
@@ -306,36 +278,6 @@
     font-size: var(--font-22px);
     padding: 10px;
     line-height: 1.8rem;
-  }
-
-  /* 배경 이미지 */
-
-  .blind-image.image1 {
-    padding-top: 200px;
-    margin: 0 auto;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 90%;
-    height: 600px;
-    margin-bottom: 10%;
-    border-radius: 2vw;
-    background-position: center 100px;
-  }
-
-  /* 이미지2: 드러나게 만들 이미지 */
-  .blind-image.image2 {
-    margin: 0 auto;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 90%;
-    height: 600px;
-    margin-bottom: 10%;
-    border-radius: 2vw;
-    background-position: center 100px;
   }
 
   #content .story-section h3 {
@@ -376,22 +318,7 @@
 
 */
 @media screen and (max-width: 1280px) {
-  #content h2 {
-    position: absolute;
-    top: -500px;
-    width: 100%;
-    text-align: center;
-    font-size: var(--font-60px);
-    color: var(--main-font);
-  }
-
   #content .sub_nav {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 2%;
     font-size: var(--font-30px);
   }
@@ -406,39 +333,7 @@
   #content #character_content .character-card-grid {
     width: 95%;
     margin: 70px auto;
-    padding: 30px;
-    display: grid;
-    gap: 3%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-template-areas:
-      "a b e"
-      "c c d";
-
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 174, 255, 0.5);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  #content #character_content .character-card-grid:hover {
-    box-shadow: 0 0 50px rgba(0, 174, 255, 1);
-  }
-
-  #content #character_content .character-card-grid .character-swiper-area {
-    width: 100%;
-    overflow: hidden;
-    grid-area: a;
-  }
-
-  #content #character_content .character-card-grid .character-info-area {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6%;
-    grid-area: b;
+    padding: 30px 30px 35px 30px;
   }
 
   #content
@@ -454,38 +349,15 @@
   /* 배경 이미지 */
 
   .blind-image.image1 {
-    padding-top: 200px;
-    margin: 0 auto;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
     height: 600px;
-    margin-bottom: 10%;
-    border-radius: 2vw;
-    background-position: center 100px;
   }
 
   /* 이미지2: 드러나게 만들 이미지 */
   .blind-image.image2 {
-    margin: 0 auto;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
     height: 600px;
-    margin-bottom: 10%;
-    border-radius: 2vw;
-    background-position: center 100px;
   }
 
   /* 스토리 섹션 */
-  #content .story-section {
-    width: 90%;
-    margin: 200px auto 0;
-  }
 
   #content .story-section h3 {
     font-size: var(--font-50px);
@@ -494,19 +366,8 @@
 
   #content .story-section p {
     width: 90%;
-    margin: 0 auto;
     font-size: var(--font-24px);
     line-height: 2rem;
-    margin-bottom: 50px;
-  }
-
-  #content .story-section .story-grid-images {
-    width: 90%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column: auto;
-    gap: 1%;
   }
 
   #content .story-section p:nth-last-of-type(1) {
@@ -537,31 +398,15 @@
 */
 @media screen and (max-width: 1150px) {
   #content h2 {
-    position: absolute;
     top: -500px;
-    width: 100%;
-    text-align: center;
     font-size: var(--font-50px);
-    color: var(--main-font);
   }
 
   #content .sub_nav {
     width: 90%;
-    margin: 0 auto;
-    padding-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 2%;
     font-size: var(--font-20px);
     font-weight: 800;
-  }
-
-  #content .sub_nav li {
-    width: 33.33%;
-    text-align: center;
-    background: var(--color-sub1);
-    border-radius: 15px;
   }
 
   #content .sub_nav li a {
@@ -578,23 +423,11 @@
 
   #content #character_content .character-card-grid {
     width: 95%;
-    margin: 70px auto;
-    padding: 30px;
-    display: grid;
-    gap: 3%;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     grid-template-areas:
       "a b "
       "c c ";
-
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 174, 255, 0.5);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  #content #character_content .character-card-grid:hover {
-    box-shadow: 0 0 50px rgba(0, 174, 255, 1);
   }
 
   #content #character_content .character-card-grid .character-swiper-area {
@@ -606,13 +439,6 @@
 
   #content #character_content .character-card-grid .character-info-area {
     width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6%;
-    grid-area: b;
   }
 
   #content #character_content .character-card-grid .character-info-area h4 {
@@ -622,10 +448,6 @@
   #content #character_content .character-card-grid .character-info-area p {
     font-size: var(--font-24px);
     line-height: 2rem;
-  }
-
-  #content #character_content .character-card-grid .character-description-area {
-    grid-area: c;
   }
 
   #content
@@ -646,38 +468,15 @@
   /* 배경 이미지 */
 
   .blind-image.image1 {
-    padding-top: 200px;
-    margin: 0 auto;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 600px;
-    margin-bottom: 10%;
-    border-radius: 2vw;
-    background-position: center 100px;
+    height: 500px;
   }
 
   /* 이미지2: 드러나게 만들 이미지 */
   .blind-image.image2 {
-    margin: 0 auto;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 600px;
-    margin-bottom: 10%;
-    border-radius: 2vw;
-    background-position: center 100px;
+    height: 500px;
   }
 
   /* 스토리 섹션 */
-  #content .story-section {
-    width: 90%;
-    margin: 200px auto 0;
-  }
 
   #content .story-section h3 {
     font-size: var(--font-40px);
@@ -795,27 +594,7 @@
     line-height: 1.3rem;
   }
 
-  #content #character_content .character-card-grid .character-image1-area,
-  #content #character_content .character-card-grid .character-image2-area {
-    display: none;
-  }
-
-  /* 배경 이미지 */
-
-  .blind-image.image1 {
-    height: 400px;
-  }
-
-  /* 이미지2: 드러나게 만들 이미지 */
-  .blind-image.image2 {
-    height: 400px;
-  }
-
   /* 스토리 섹션 */
-  #content .story-section {
-    width: 90%;
-    margin: 200px auto 0;
-  }
 
   #content .story-section h3 {
     font-size: var(--font-36px);
@@ -854,24 +633,19 @@
 */
 @media screen and (max-width: 667px) {
   #content h2 {
-    position: absolute;
     top: -350px;
-    width: 100%;
-    text-align: center;
     font-size: var(--font-40px);
-    color: var(--main-font);
   }
 
   #content .sub_nav {
     width: 99%;
-    font-size: var(--font-18px);
+    flex-direction: column;
+    font-size: var(--font-24px);
   }
 
   #content .sub_nav li {
-    width: 33.33%;
-    text-align: center;
-    background: var(--color-sub1);
-    border-radius: 15px;
+    width: 70%;
+    margin: 10px 0;
   }
 
   #content .sub_nav li a {
@@ -880,18 +654,12 @@
   }
 
   #content .character-group-header {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 100px;
     font-size: var(--font-40px);
   }
 
   #content #character_content .character-card-grid {
     width: 95%;
-    margin: 70px auto;
     padding: 20px;
-    display: grid;
-    gap: 3%;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     grid-template-areas:
@@ -902,8 +670,6 @@
   #content #character_content .character-card-grid .character-swiper-area {
     width: 100%;
     padding: 10px 0;
-    overflow: hidden;
-    grid-area: a;
   }
 
   #content #character_content .character-card-grid .character-info-area h4 {
@@ -921,29 +687,12 @@
 
   /* 배경 이미지 */
 
-  .blind-image.image1 {
-    height: 400px;
-  }
-
-  /* 이미지2: 드러나게 만들 이미지 */
-  .blind-image.image2 {
-    height: 400px;
-  }
-
-  /* 스토리 섹션 */
-  #content .story-section {
-    width: 90%;
-    margin: 200px auto 0;
-  }
-
   #content .story-section h3 {
     font-size: var(--font-30px);
     margin-bottom: 15px;
   }
 
   #content .story-section p {
-    width: 90%;
-    margin: 0 auto;
     font-size: var(--font-14px);
     line-height: 1rem;
     margin-bottom: 30px;
@@ -963,7 +712,6 @@
   }
 
   #content .story-section p:nth-last-of-type(1) {
-    width: 90%;
     margin: 150px auto 100px;
     font-size: var(--font-20px);
     line-height: 1.8rem;
@@ -1046,11 +794,6 @@
 
   #content .sub_nav {
     width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 2%;
     font-size: var(--font-20px);
   }
@@ -1086,7 +829,6 @@
   }
 
   #content .story-section p:nth-last-of-type(1) {
-    width: 90%;
     margin: 100px auto 100px;
     font-size: var(--font-18px);
     line-height: 1.3rem;

@@ -19,7 +19,7 @@
   height: auto;
   min-height: 100%;
   /*동영상 높이를 꽉차게*/
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-42%);
   z-index: -100;
 }
 
@@ -31,7 +31,7 @@
   padding-bottom: 100px;
 }
 
-#content>section {
+#content > section {
   margin: 0 auto;
 }
 
@@ -99,7 +99,6 @@
 
 #content .grid-item:hover img {
   filter: brightness(120%);
-
 }
 
 /* 
@@ -110,7 +109,6 @@
 
 */
 @media screen and (max-width: 1280px) {
-
   #content h2 {
     top: -450px;
     font-size: var(--font-70px);
@@ -173,7 +171,6 @@
     line-height: 1.5rem;
   }
 
-
   #content .grid-item:nth-child(3),
   #content .grid-item:nth-child(5),
   #content .grid-item:nth-child(8),
@@ -185,8 +182,6 @@
   #content .grid-item:nth-child(23) {
     display: none;
   }
-
-
 }
 
 /* 
@@ -207,12 +202,10 @@
 
 */
 @media screen and (max-width: 855px) {
-
   #content h2 {
-    top: -450px;
-    font-size: var(--font-60px);
+    top: -440px;
+    font-size: var(--font-50px);
   }
-
 
   #content .grid-item,
   #content .grid-sizer {
@@ -230,7 +223,6 @@
     font-size: var(--font-18px);
     line-height: 1.5rem;
   }
-
 
   #content .grid-item:nth-child(12),
   #content .grid-item:nth-child(29),
@@ -256,10 +248,9 @@
 
 */
 @media screen and (max-width: 667px) {
-
   #content h2 {
-    top: -400px;
-    font-size: var(--font-50px);
+    top: -430px;
+    font-size: var(--font-44px);
   }
 
   #content .grid-item,
@@ -270,7 +261,7 @@
 
   #content .gallery-header h3 {
     padding: 70px 0 10px 0;
-    font-size: var(--font-30px);
+    font-size: var(--font-36px);
   }
 
   #content .gallery-header p {
@@ -305,16 +296,14 @@
 
 */
 @media screen and (max-width: 565px) {
-
   #content h2 {
-    top: -400px;
+    top: -430px;
     font-size: var(--font-44px);
   }
 
-
   #content .gallery-header h3 {
     padding: 70px 0 10px 0;
-    font-size: var(--font-24px);
+    font-size: var(--font-34px);
   }
 
   #content .gallery-header p {
@@ -329,27 +318,21 @@
 
 
 
-
-
-
 모바일 3
-
-
 
 
 
 
 */
 @media screen and (max-width: 467px) {
-
   #content h2 {
-    top: -400px;
-    font-size: var(--font-30px);
+    top: -430px;
+    font-size: var(--font-34px);
   }
 
   #content .gallery-header h3 {
     padding: 70px 0 15px 0;
-    font-size: var(--font-20px);
+    font-size: var(--font-30px);
   }
 
   #content .gallery-header p {

@@ -48,7 +48,7 @@
 }
 
 #content .trailer_video {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -59,9 +59,12 @@
 }
 
 #content .trailer_video .trailer-swiper {
+  width: 100%;
   box-sizing: border-box;
-  position: relative;
+  position: relative; 
+  overflow: hidden;
 }
+
 
 #content .trailer_video .trailer-swiper .swiper-slide img {
   width: 100%;
@@ -78,33 +81,11 @@
   line-height: 2.8rem;
 }
 
-#content .trailer_video .trailer-swiper .swiper-button-next,
-#content .trailer_video .trailer-swiper .swiper-button-prev {
-  color: var(--color-sub1);
-  font-size: var(--font-30px);
-  top: 35%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+
+#content .trailer_video .trailer-swiper .swiper-scrollbar{
+  color: var(--color-point1);
 }
 
-#content .trailer_video .trailer-swiper .swiper-pagination {
-  bottom: -40px;
-}
-
-#content .trailer_video .trailer-swiper .swiper-pagination-bullet {
-  background: var(--color-sub1);
-  opacity: 1;
-  width: 13px;
-  height: 13px;
-  margin: 0 10px;
-  transition: all 0.5s ease;
-}
-
-#content .trailer_video .trailer-swiper .swiper-pagination-bullet-active {
-  background: var(--color-point1);
-  transform: scale(1.2);
-}
 
 #content .youtube_container h3 {
   width: 90%;

@@ -53,6 +53,29 @@ function createTabMenu() {
   });
 }
 
+// 스크롤 이벤트 핸들러 함수를 분리
+function handleBlindScroll() {
+  const container = document.querySelector(".blind-container");
+  const image2 = document.querySelector(".blind-image.image2");
+
+  //실제로 이미지가 존재하는지 확인
+  if (container && image2) {
+    const containerTop = container.getBoundingClientRect().top; // 위치추적
+    const scrollReveal = 100; // 화면상단에 100px 안으로 들어왔을때
+
+
+    if (containerTop < scrollReveal) {
+      const revealPercentage = (scrollReveal - containerTop) / scrollReveal;
+      image2.style.clipPath = `inset(${100 - revealPercentage * 100}% 0 0)`;
+    } else {
+      image2.style.clipPath = "inset(100% 0 0)";
+    }
+  }
+}
+
+window.addEventListener("scroll", handleBlindScroll);
+
+
 // 콘텐츠 렌더링 함수(핵심)
 function renderContent(groupId) {
   const contentContainer = document.getElementById("character_content");
@@ -80,6 +103,9 @@ function renderContent(groupId) {
     // 새로운 케릭터 카드 컨테이너를 만든다.
     const characterCard = document.createElement("div");
     characterCard.className = "character-card-grid";
+
+    const cardContent = document.createElement("div");
+    cardContent.className = "character-card-content";
 
     // 카드에 들어갈 모든 요소를 만들고 조립한다.
     const swiperArea = document.createElement("div");
@@ -141,12 +167,13 @@ function renderContent(groupId) {
 
     // 6. 모든 요소 메인 컨테이너 추가
 
-    characterCard.appendChild(swiperArea);
-    characterCard.appendChild(infoArea);
-    characterCard.appendChild(descriptionArea);
-    characterCard.appendChild(video1);
-    characterCard.appendChild(image2Area);
+    cardContent.appendChild(swiperArea);
+    cardContent.appendChild(infoArea);
+    cardContent.appendChild(descriptionArea);
+    cardContent.appendChild(video1);
+    cardContent.appendChild(image2Area)
 
+    characterCard.appendChild(cardContent);
     contentContainer.appendChild(characterCard);
 
     const sub2Swiper = new Swiper(swiperContainer, {
@@ -158,6 +185,7 @@ function renderContent(groupId) {
       allowTouch: true,
       touchEventTarget: "wrapper",
       slidesPerView: 1,
+      spaceBetween: 20,
     });
 
     setTimeout(() => {
@@ -190,27 +218,12 @@ function renderContent(groupId) {
 	    <p>${selectedGroup.storyDescription}</p>
 	    <div class="story-grid-images">
 	        ${selectedGroup.storyImg
-            .map((imgSrc) => `<img src="${imgSrc}" alt="스토리 이미지">`)
-            .join("")}
+      .map((imgSrc) => `<img src="${imgSrc}" alt="스토리 이미지">`)
+      .join("")}
 	    </div>
 	    <p>${selectedGroup.storyDescription2}</p>
 	`;
   contentContainer.appendChild(storySection);
 
-  window.addEventListener("scroll", () => {
-    const container = document.querySelector(".blind-container");
-    const image2 = document.querySelector(".blind-image.image2");
 
-    if (container && image2) {
-      const containerTop = container.getBoundingClientRect().top;
-      const scrollReveal = 10; /* 이 값을 조절해 효과 시작 지점을 바꿀 수 있습니다. */
-
-      if (containerTop < scrollReveal) {
-        const revealPercentage = (scrollReveal - containerTop) / scrollReveal;
-        image2.style.clipPath = `inset(${100 - revealPercentage * 100}% 0 0)`;
-      } else {
-        image2.style.clipPath = "inset(100% 0 0)";
-      }
-    }
-  });
 }

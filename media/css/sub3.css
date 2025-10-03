@@ -45,6 +45,7 @@
   text-align: center;
   font-size: var(--font-70px);
   color: var(--main-font);
+  text-shadow: 1px 1px 10px rgba(0, 174, 255, 1);
 }
 
 /* 예고편 영상 */

@@ -9,16 +9,12 @@
 
 #imgBG {
   position: fixed;
-  /*고정=>fixed/ 스크롤처리=>absolute */
   left: 50%;
   top: 50%;
-  /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
   width: auto;
   min-width: 100%;
-  /*동영상 너비를 꽉차게*/
   height: auto;
   min-height: 100%;
-  /*동영상 높이를 꽉차게*/
   transform: translateX(-50%) translateY(-45%);
   z-index: -100;
 }
@@ -31,7 +27,7 @@
   padding-bottom: 100px;
 }
 
-#content > section {
+#content>section {
   margin: 0 auto;
 }
 
@@ -42,6 +38,7 @@
   text-align: center;
   font-size: var(--font-70px);
   color: var(--main-font);
+  text-shadow: 1px 1px 10px rgba(0, 174, 255, 1);
 }
 
 /* 네비 */
@@ -71,8 +68,9 @@
 
 #content .sub_nav li a.current,
 #content .sub_nav li a:hover {
-  background: var(--color-point1);
+  background: linear-gradient(70deg, var(--color-point1), var(--color-sub1));
   color: var(--color-sub1);
+  text-shadow: 1px 1px 10px rgba(0, 174, 255, 0.5);
   border-radius: 15px;
 }
 
@@ -86,29 +84,65 @@
 #content #character_content .character-card-grid {
   width: 90%;
   margin: 100px auto;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+#content #character_content .character-card-grid::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(90deg, var(--color-point1) 35%, var(--color-sub1), var(--color-point2));
+  background-size: 300% 300%;
+  border-radius: 25px;
+  z-index: 0;
+  animation: flowingBorder 7s ease-in-out infinite;
+}
+
+@keyframes flowingBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+#content #character_content .character-card-grid .character-card-content {
+  position: relative;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  margin: 5px;
   padding: 50px;
+  box-sizing: border-box;
+  background-color: var(--color-main);
+  border-radius: 15px;
+  z-index: 2;
   display: grid;
   gap: 3%;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
   grid-template-areas:
     "a b e"
     "c c d";
-
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 174, 255, 0.5);
-  transition: box-shadow 0.3s ease-in-out;
 }
 
-#content #character_content .character-card-grid:hover {
-  box-shadow: 0 0 50px rgba(0, 174, 255, 1);
-}
 
 #content #character_content .character-card-grid img {
   max-width: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
+
 }
 
 #content #character_content .character-card-grid video {
@@ -117,12 +151,14 @@
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
+
 }
 
 #content #character_content .character-card-grid .character-swiper-area {
   width: 100%;
   overflow: hidden;
   grid-area: a;
+
 }
 
 #content #character_content .character-card-grid .character-info-area {
@@ -133,39 +169,55 @@
   justify-content: center;
   align-items: center;
   gap: 10%;
+  box-shadow: 1px 1px 20px rgba(245, 245, 245, 0.3);
+  border-radius: 20px;
   grid-area: b;
+
 }
 
 #content #character_content .character-card-grid .character-info-area h4 {
   font-size: var(--font-50px);
+
 }
 
 #content #character_content .character-card-grid .character-info-area p {
   font-size: var(--font-30px);
   line-height: 2rem;
+
 }
 
 #content #character_content .character-card-grid .character-description-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   grid-area: c;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px rgba(245, 245, 245, 0.3);
+
+
 }
 
 #content #character_content .character-card-grid .character-description-area p {
   font-size: var(--font-28px);
   padding: 15px;
   line-height: 2.5rem;
+
 }
 
 #content #character_content .character-card-grid .character-image1-area {
   grid-area: d;
+
 }
 
 #content #character_content .character-card-grid .character-image2-area {
   grid-area: e;
+
 }
 
 /* 배경 이미지 */
 
-.blind-image.image1 {
+#content .blind-image.image1 {
   padding-top: 200px;
   margin: 0 auto;
   background-attachment: fixed;
@@ -174,13 +226,13 @@
   background-size: cover;
   width: 90%;
   height: 650px;
-  margin-bottom: 10%;
-  border-radius: 2vw;
-  background-position: center 100px;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  background-position: center center;
 }
 
 /* 이미지2: 드러나게 만들 이미지 */
-.blind-image.image2 {
+#content .blind-image.image2 {
   margin: 0 auto;
   background-attachment: fixed;
   background-position: center;
@@ -188,9 +240,15 @@
   background-size: cover;
   width: 90%;
   height: 650px;
-  margin-bottom: 10%;
-  border-radius: 2vw;
+  border-radius: 20px;
   background-position: center 100px;
+}
+
+#content .blind-image.image1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* 스토리 섹션 */
@@ -250,6 +308,7 @@
 
 */
 @media screen and (max-width: 1720px) {
+
   #content .sub_nav {
     width: 85%;
     padding-top: 100px;
@@ -265,16 +324,14 @@
     font-size: var(--font-40px);
   }
 
+
+
   #content #character_content .character-card-grid .character-info-area p {
     font-size: var(--font-24px);
     line-height: 2rem;
   }
 
-  #content
-    #character_content
-    .character-card-grid
-    .character-description-area
-    p {
+  #content #character_content .character-card-grid .character-description-area p {
     font-size: var(--font-22px);
     padding: 10px;
     line-height: 1.8rem;
@@ -317,10 +374,10 @@
 
 
 */
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1292px) {
   #content .sub_nav {
     gap: 2%;
-    font-size: var(--font-30px);
+    font-size: var(--font-28px);
   }
 
   #content .character-group-header {
@@ -333,14 +390,19 @@
   #content #character_content .character-card-grid {
     width: 95%;
     margin: 70px auto;
-    padding: 30px 30px 35px 30px;
   }
 
-  #content
-    #character_content
-    .character-card-grid
-    .character-description-area
-    p {
+  #content #character_content .character-card-grid .character-card-content {
+    padding: 20px;
+  }
+
+  #content #character_content .character-card-grid .character-info-area p {
+    font-size: var(--font-22px);
+    line-height: 2rem;
+
+  }
+
+  #content #character_content .character-card-grid .character-description-area p {
     font-size: var(--font-22px);
     padding: 10px;
     line-height: 1.5rem;
@@ -348,12 +410,14 @@
 
   /* 배경 이미지 */
 
-  .blind-image.image1 {
+  #content .blind-image.image1 {
+    background-size: contain;
     height: 600px;
   }
 
   /* 이미지2: 드러나게 만들 이미지 */
-  .blind-image.image2 {
+  #content .blind-image.image2 {
+    background-size: contain;
     height: 600px;
   }
 
@@ -405,13 +469,13 @@
   #content .sub_nav {
     width: 90%;
     gap: 2%;
-    font-size: var(--font-20px);
+    font-size: var(--font-24px);
     font-weight: 800;
   }
 
   #content .sub_nav li a {
     color: var(--color-point1);
-    padding: 15px 20px;
+    padding: 15px 0;
   }
 
   #content .character-group-header {
@@ -421,10 +485,13 @@
     font-size: var(--font-40px);
   }
 
-  #content #character_content .character-card-grid {
-    width: 95%;
+
+
+
+  #content #character_content .character-card-grid .character-card-content {
+    margin: 5px;
+    padding: 20px;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
     grid-template-areas:
       "a b "
       "c c ";
@@ -450,11 +517,7 @@
     line-height: 2rem;
   }
 
-  #content
-    #character_content
-    .character-card-grid
-    .character-description-area
-    p {
+  #content #character_content .character-card-grid .character-description-area p {
     font-size: var(--font-22px);
     padding-top: 20px;
     line-height: 1.5rem;
@@ -469,11 +532,13 @@
 
   .blind-image.image1 {
     height: 500px;
+    background-position: 50% 50%;
   }
 
-  /* 이미지2: 드러나게 만들 이미지 */
+
   .blind-image.image2 {
     height: 500px;
+    background-position: center center;
   }
 
   /* 스토리 섹션 */
@@ -550,18 +615,14 @@
     font-size: var(--font-40px);
   }
 
-  #content #character_content .character-card-grid {
-    width: 95%;
-    margin: 70px auto;
-    padding: 20px;
-    display: grid;
-    gap: 3%;
+  #content #character_content .character-card-grid .character-card-content {
+    padding: 10px;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
     grid-template-areas:
       "a b "
       "c c ";
   }
+
 
   #content #character_content .character-card-grid .character-swiper-area {
     width: 100%;
@@ -584,15 +645,30 @@
     line-height: 2rem;
   }
 
-  #content
-    #character_content
-    .character-card-grid
-    .character-description-area
-    p {
+  #content #character_content .character-card-grid .character-description-area p {
     font-size: var(--font-18px);
     padding-top: 15px;
     line-height: 1.3rem;
   }
+
+
+  .blind-image.image1 {
+    height: 500px;
+    background-position: 50% 50%;
+  }
+
+  .blind-image.image1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .blind-image.image2 {
+    height: 500px;
+    background-position: center center;
+  }
+
 
   /* 스토리 섹션 */
 
@@ -640,7 +716,7 @@
   #content .sub_nav {
     width: 99%;
     flex-direction: column;
-    font-size: var(--font-24px);
+    font-size: var(--font-26px);
   }
 
   #content .sub_nav li {
@@ -657,11 +733,9 @@
     font-size: var(--font-40px);
   }
 
-  #content #character_content .character-card-grid {
-    width: 95%;
-    padding: 20px;
+  #content #character_content .character-card-grid .character-card-content {
+    padding: 0;
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
     grid-template-areas:
       "a "
       "b ";
@@ -669,7 +743,8 @@
 
   #content #character_content .character-card-grid .character-swiper-area {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px;
+    overflow: hidden;
   }
 
   #content #character_content .character-card-grid .character-info-area h4 {
@@ -740,7 +815,7 @@
   }
 
   #content .sub_nav {
-    font-size: var(--font-16px);
+    font-size: var(--font-20px);
   }
 
   #content .sub_nav li a {

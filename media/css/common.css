@@ -302,7 +302,7 @@ dd {
   bottom: -4px;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-point1), var(--color-point2));
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
   transition: all 0.3s ease-in-out;
   transform: translateX(-50%);
 }
@@ -312,7 +312,7 @@ dd {
 }
 
 #headerArea #gnb .main_menu h3 a:hover {
-  background: linear-gradient(90deg, var(--color-point1), var(--color-point2));
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

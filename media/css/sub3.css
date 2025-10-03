@@ -1,6 +1,6 @@
 /* 와이드 pc  */
 .korea {
-  font-family: "Noto Sans KR", "sans-serif" !important;
+  font-family: "Noto Sans KR", "sans-serif";
 }
 
 .videoBox {
@@ -34,7 +34,7 @@
   padding-bottom: 100px;
 }
 
-#content > section {
+#content>section {
   margin: 0 auto;
 }
 
@@ -47,6 +47,7 @@
   color: var(--main-font);
 }
 
+/* 예고편 영상 */
 #content .trailer_video {
   width: 80%;
   margin: 0 auto;
@@ -60,32 +61,91 @@
 
 #content .trailer_video .trailer-swiper {
   width: 100%;
+  margin: 0 auto;
   box-sizing: border-box;
-  position: relative; 
+  position: relative;
   overflow: hidden;
+}
+
+#content .trailer_video .trailer-swiper .swiper-slide {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+#content .trailer_video .trailer-swiper .swiper-slide a {
+  display: block;
+  position: relative;
 }
 
 
 #content .trailer_video .trailer-swiper .swiper-slide img {
+
   width: 100%;
   height: 100%;
+  max-width: 800px;
   object-fit: contain;
   object-position: center;
   border-radius: 20px;
+  filter: brightness(120%);
+  transition: all 0.5s ease;
+}
+
+
+#content .trailer_video .trailer-swiper .fa-youtube {
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50% -50%);
+  font-size: var(--font-60px);
+  color: #ff0000;
+  transition: all 0.5s ease;
+}
+
+
+
+#content .trailer_video .trailer-swiper .swiper-slide a:hover .fa-youtube {
+  transform: translate(-50% -50%);
+  transform: scale(1.2);
+}
+
+#content .trailer_video .trailer-swiper .swiper-slide a:hover img {
+  filter: brightness(120%);
 }
 
 #content .trailer_video .trailer-swiper .swiper-slide p {
   width: 100%;
-  padding: 25px;
-  font-size: var(--font-30px);
-  line-height: 2.8rem;
+  max-width: 800px;
+  font-size: var(--font-24px);
+  line-height: 2.5rem;
 }
 
 
-#content .trailer_video .trailer-swiper .swiper-scrollbar{
+#content .trailer_video .trailer-swiper .swiper-scrollbar {
+  width: 90%;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
   color: var(--color-point1);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
+#content .trailer_video .trailer-swiper .swiper-scrollbar .swiper-scrollbar-drag {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-point1), var(--color-point2));
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+/* 노래 영상 유튜브  */
 
 #content .youtube_container h3 {
   width: 90%;
@@ -94,13 +154,72 @@
 }
 
 #content .youtube_container .trailer_youtube {
-  width: 90%;
+  width: 80%;
   margin: 70px auto 150px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   gap: 3%;
+  perspective: 1700px;
+  cursor: pointer;
 }
+
+#content .youtube_container .trailer_youtube img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#content .youtube_container .trailer_youtube:nth-of-type(1) img,
+#content .youtube_container .trailer_youtube:nth-of-type(3) img,
+#content .youtube_container .trailer_youtube:nth-of-type(5) img {
+  transform: translateX(20px) rotateY(20deg);
+}
+
+#content .youtube_container .trailer_youtube:nth-of-type(2) img,
+#content .youtube_container .trailer_youtube:nth-of-type(4) img {
+  transform: translateX(20px) rotateY(-20deg);
+}
+
+#content .youtube_container .trailer_youtube::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 5px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#content .youtube_container .trailer_youtube:nth-of-type(1)::before,
+#content .youtube_container .trailer_youtube:nth-of-type(3)::before,
+#content .youtube_container .trailer_youtube:nth-of-type(5)::before {
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
+}
+
+#content .youtube_container .trailer_youtube:nth-of-type(2)::before,
+#content .youtube_container .trailer_youtube:nth-of-type(4)::before {
+  background: linear-gradient(90deg, var(--color-point2), var(--color-sub1));
+}
+
+
+#content .youtube_container .trailer_youtube:hover::before {
+  width: 150%;
+  border-radius: 20px;
+}
+
+#content .youtube_container .trailer_youtube:hover img {
+  transform: translateY(0px) rotateX(0deg);
+  filter: brightness(110%);
+}
+
+
 
 #content .youtube_container .trailer_youtube dl dt {
   font-family: "Orbitron", "sans-serif";
@@ -109,6 +228,7 @@
   line-height: 4rem;
   margin-bottom: 30px;
   font-weight: 800;
+  transition: all 0.3s ease-in-out;
 }
 
 #content .youtube_container .trailer_youtube dl dd {
@@ -116,12 +236,27 @@
   line-height: 2.4rem;
 }
 
-#content .youtube_container .trailer_youtube img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+#content .youtube_container .trailer_youtube:hover:nth-of-type(1) dt,
+#content .youtube_container .trailer_youtube:hover:nth-of-type(3) dt,
+#content .youtube_container .trailer_youtube:hover:nth-of-type(5) dt {
+  background: linear-gradient(360deg, var(--color-point1), var(--color-sub1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+
+
+#content .youtube_container .trailer_youtube:hover:nth-of-type(2) dt,
+#content .youtube_container .trailer_youtube:hover:nth-of-type(4) dt {
+  background: linear-gradient(360deg, var(--color-point2), var(--color-sub1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+/* 음악  */
 
 #content .trailer_music_container {
   width: 90%;
@@ -138,6 +273,7 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 3%;
 }
@@ -147,15 +283,40 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 2%;
 }
 
 #content .trailer_music_container .trailer_music_content .trailer_music img {
   width: 100%;
   height: 100%;
+  max-width: 450px;
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
 }
+
+#content .trailer_music_container .trailer_music_content .trailer_music dt {
+  font-size: var(--font-36px);
+  margin: 20px 0;
+}
+
+#content .trailer_music_container .trailer_music_content .trailer_music dd {
+  font-size: var(--font-24px);
+  margin: 20px 0;
+}
+
+#content .trailer_music_container .trailer_music_content .trailer_music .trailer_play {
+  font-size: var(--font-24px);
+
+  i {
+    padding: 5px 10px;
+
+  }
+}
+
 
 /* 
 
@@ -164,8 +325,7 @@
 
 
 */
-@media screen and (max-width: 1280px) {
-}
+@media screen and (max-width: 1280px) {}
 
 /* 
 
@@ -185,8 +345,7 @@
 
 
 */
-@media screen and (max-width: 1150px) {
-}
+@media screen and (max-width: 1150px) {}
 
 /* 
 
@@ -205,8 +364,7 @@
 
 
 */
-@media screen and (max-width: 855px) {
-}
+@media screen and (max-width: 855px) {}
 
 /* 
 
@@ -224,8 +382,7 @@
 
 
 */
-@media screen and (max-width: 667px) {
-}
+@media screen and (max-width: 667px) {}
 
 /* 
 
@@ -243,8 +400,7 @@
 
 
 */
-@media screen and (max-width: 565px) {
-}
+@media screen and (max-width: 565px) {}
 
 /* 
 
@@ -257,5 +413,4 @@
 
 
 */
-@media screen and (max-width: 467px) {
-}
+@media screen and (max-width: 467px) {}

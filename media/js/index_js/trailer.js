@@ -68,9 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	function setupDesktopLayout() {
 		const pcHTML = `
         <div class="trailer_pc_layout">
-        	<div class="pc_main_display">
-            	<img id="pcMainImage" src="${trailers[0].mainImage}" alt="${ trailers[0].title}">
-            	<div class="play_icon" data-youtubeid="${trailers[0].youtubeId}"><i class="fa-brands fa-youtube"></i></div> 
+        	<div class="pc_main_display"> 
+				<div class="play_icon" data-youtubeid="${trailers[0].youtubeId}">
+            		<img id="pcMainImage" src="${trailers[0].mainImage}" alt="${trailers[0].title}">
+            		<i class="fa-brands fa-youtube"></i>
+				</div> 
 			</div>
           <dl id="pcMainInfo">
             <dt>${trailers[0].title}</dt>
@@ -82,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li data-index="${index}" class="${index === 0 ? "selected" : ""}">
               <img src="${trailer.thumbImage}" alt="${trailer.title}">
             </li>`
-		  ).join("")}
+		).join("")}
         </ul>
       `;
 		trailerWrapper.innerHTML = pcHTML;
@@ -137,12 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		  </div>
         </div>
       `;
-	  
+
 		trailerWrapper.innerHTML = swiperHTML;
 
 		trailerSwiper = new Swiper(".trailer-swiper", {
-			
-			
+
+
 			loop: true,
 
 			autoplay: {

@@ -59,7 +59,6 @@
     ],
     "storyDescription2": "The truth they learned was not of betrayal, but of an unspoken pain. Watching her flee, they could only stare at her retreating back, their hearts breaking. They were left to face the unbearable silence, knowing they couldn't follow her."
   },
-
   {
     "id": "saja_boys",
     "groupName": "SAJA BOYS",
@@ -130,7 +129,6 @@
         ]
       }
     ],
-
     "backImage": [
       "./images/sub2/sub2_back3.avif",
       "./images/sub2/sub2_back4.avif"
@@ -147,7 +145,6 @@
     ],
     "storyDescription2": "The Lion Boys, who appeared to stop the Gate of Souls, are steadily achieving their goals. They are now turning the Huntrix's crisis into an opportunity, preparing to deliver the final blow."
   },
-
   {
     "id": "other",
     "groupName": "OTHER",
@@ -157,7 +154,7 @@
         "age": "long time",
         "mbti": "ENTJ",
         "position": "Producer",
-        "description": "The ultimate villain, an ancient King of Evil Spirits, and ruler of the demon realm, also serving as the Deadboys' producer. He can monitor and forcefully summon evil spirits, making escape impossible. As the final antagonist, Guima also possesses the power to enchant with whispers.",
+        "description": "The ultimate villain, an ancient King of Evil Spirits, and ruler of the demon realm, also serving as the Saja boys' producer. He can monitor and forcefully summon evil spirits, making escape impossible. As the final antagonist, Gwima also possesses the power to enchant with whispers.",
         "images": [
           "./images/sub2/sub2_35.avif",
           "./images/sub2/sub2_36.avif",
@@ -218,7 +215,6 @@
         ]
       }
     ],
-
     "backImage": [
       "./images/sub2/sub2_back6.avif",
       "./images/sub2/sub2_back5.avif"

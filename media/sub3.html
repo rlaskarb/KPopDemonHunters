@@ -91,15 +91,14 @@
 
       <div class="trailer_video">
         <h3>
-          K-pop Demon Hunters <br />
-          : The Official Trailer
+          OFFICIAL TRAILER
         </h3>
 
         <div class="trailer-swiper swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <a href="#">
-                <img src="./images/sub3/sub3_trailer.avif" alt="trailer_img" />
+              <a href="#" data-youtube-id="AzCAwdp1uIQ">
+                <img src="./images/sub3/sub3.avif" alt="trailer_img" />
                 <i class="fa-brands fa-youtube"></i>
               </a>
               <p>
@@ -111,8 +110,8 @@
             </div>
 
             <div class="swiper-slide">
-              <a href="#">
-                <img src="./images/sub3/sub3_trailer2.avif" alt="trailer_img" />
+              <a href="#" data-youtube-id="xQnsFqn44uo">
+                <img src="./images/sub3/sub3_1.avif" alt="trailer_img" />
                 <i class="fa-brands fa-youtube"></i>
               </a>
               <p class="korea">
@@ -132,9 +131,12 @@
       </div>
 
       <div class="youtube_container">
-        <h3>youtube trailer</h3>
+        <h3>MUSIC VIDEO</h3>
         <div class="trailer_youtube">
-          <img src="./images/sub3/golden2.avif" alt="golden2youtobeimg" />
+          <a href="#" data-youtube-id="OwpgvSo_G0g">
+            <img src="./images/sub3/golden2.avif" alt="golden2youtobeimg" />
+            <i class="fa-brands fa-youtube"></i>
+          </a>
           <dl>
             <dt>HUNTR/X - Golden</dt>
             <dd>
@@ -155,10 +157,16 @@
               steal the souls of its listeners.
             </dd>
           </dl>
-          <img src="./images/sub3/sodapop2.avif" alt="sodapop2youtobeimg" />
+          <a href="#" data-youtube-id="aNad2Ml2Lfw">
+            <img src="./images/sub3/sodapop2.avif" alt="sodapop2youtobeimg" />
+            <i class="fa-brands fa-youtube"></i>
+          </a>
         </div>
         <div class="trailer_youtube">
-          <img src="./images/sub3/youridol2.avif" alt="youridol2youtobeimg" />
+          <a href="#" data-youtube-id="1xhi2mi5cfk">
+            <img src="./images/sub3/youridol2.avif" alt="youridol2youtobeimg" />
+            <i class="fa-brands fa-youtube"></i>
+          </a>
           <dl>
             <dt>SAJA BOYS - Your Idol</dt>
             <dd>
@@ -178,11 +186,17 @@
               attention but a clear command: Watch how it’s done.
             </dd>
           </dl>
-          <img src="./images/sub3/howitdone2.avif" alt="howitdone2youtobeimg" />
-          <i class="fa-brands fa-youtube"></i>
+          <a href="#" data-youtube-id="uo1YZXlP3O8">
+            <img src="./images/sub3/howitdone2.avif" alt="howitdone2youtobeimg" />
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+
         </div>
         <div class="trailer_youtube">
-          <img src="./images/sub3/whatitsoundlike2.avif" alt="whatitsoundlike2youtobeimg" />
+          <a href="#" data-youtube-id="Ug_pv5-r1js">
+            <img src="./images/sub3/whatitsoundlike2.avif" alt="whatitsoundlike2youtobeimg" />
+            <i class="fa-brands fa-youtube"></i>
+          </a>
           <dl>
             <dt>HUNTR/X - What It Sound Like</dt>
             <dd>
@@ -195,38 +209,44 @@
       </div>
 
       <div class="trailer_music_container">
-        <h3>K-Pop's Scene-Stealer Soundtracks</h3>
+        <h3>SCENE STEALERS</h3>
         <div class="trailer_music_content">
-          <div class="trailer_music">
+          <div class="trailer_music" data-youtube-id="2iyZPfsKhTU">
             <a href="#">
               <img src="./images/sub3/sub3_music2.avif" alt="trailer_music_img" />
-              <dl>
-                <dt>TWICE</dt>
-                <dd>Strategy</dd>
-              </dl>
-              <div class="trailer_play">
-                <i class="fa-solid fa-play"></i>
-                <i class="fa-solid fa-stop"></i>
-              </div>
             </a>
+            <dl>
+              <dt>TWICE</dt>
+              <dd>Strategy</dd>
+            </dl>
+            <div class="trailer_play">
+              <i class="fa-solid fa-play"></i>
+              <i class="fa-solid fa-pause"></i>
+              <i class="fa-solid fa-stop"></i>
+            </div>
+
           </div>
 
-          <div class="trailer_music">
+          <div class="trailer_music" data-youtube-id="9WcrnBN_Hyk">
             <a href="#">
               <img src="./images/sub3/sub3_music1.avif" alt="trailer_music_img" />
-              <dl>
-                <dt class="korea">멜로망스</dt>
-                <dd class="korea">사랑인가봐</dd>
-              </dl>
-              <div class="trailer_play">
-                <i class="fa-solid fa-play"></i>
-                <i class="fa-solid fa-stop"></i>
-              </div>
             </a>
+            <dl>
+              <dt class="korea">멜로망스</dt>
+              <dd class="korea">사랑인가봐</dd>
+            </dl>
+            <div class="trailer_play">
+              <i class="fa-solid fa-play"></i>
+              <i class="fa-solid fa-pause"></i>
+              <i class="fa-solid fa-stop"></i>
+            </div>
+
           </div>
         </div>
       </div>
     </article>
+
+
 
     <footer id="footerArea">
       <a class="top_move" href="#">
@@ -266,12 +286,24 @@
     </footer>
   </div>
 
+
+  <div id="youtube-modal">
+    <span class="close-btn">&times</span>
+    <div id="youtube-player"></div>
+  </div>
+
+  <div id="audio-player" class="hidden"></div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="./js/sub_js/sub_img_back.js"></script>
   <script src="./js/index_js/top_button.js"></script>
   <script src="./js/index_js/nav.js"></script>
   <script src="./js/sub_js/textani.js"></script>
   <script src="./js/sub_js/sub3_trailer_swiper.js"></script>
+  <script src="./js/sub_js/sub3_modal.js"></script>
+  <script src="./js/sub_js/sub3_music.js"></script>
 </body>
 
 </html>

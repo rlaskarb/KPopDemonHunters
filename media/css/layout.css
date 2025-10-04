@@ -353,17 +353,19 @@
 
 #content .pc_main_display {
   position: relative;
+
   cursor: pointer;
   width: 100%;
 }
 
 #content .pc_main_display img {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   border-radius: 20px;
 }
 
-#content .pc_main_display .play_icon {
+#content .pc_main_display .fa-youtube {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -373,7 +375,7 @@
   transition: transform 0.3s;
 }
 
-#content .pc_main_display:hover .play_icon {
+#content .pc_main_display:hover .fa-youtube {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -759,25 +761,27 @@
   }
 
   #content .characters_content dt {
-    min-width: 130px;
-    min-height: 50px;
-    font-size: var(--font-28px);
+    min-width: 100px;
+    min-height: 30px;
+    padding-top: 5px;
+    font-size: var(--font-22px);
   }
 
   #content .characters_content dd {
-    min-width: 130px;
-    min-height: 50px;
-    font-size: var(--font-28px);
+    min-width: 100px;
+    min-height: 30px;
+    padding-top: 5px;
+    font-size: var(--font-22px);
   }
 
   #content .description_overlay {
-    font-size: var(--font-26px);
-    line-height: 1.6rem;
+    font-size: var(--font-26x);
+    line-height: 1.4rem;
   }
 
   /* TRAILER 섹션  */
 
-  .pc_main_display .play_icon {
+  #content .pc_main_display .youtube {
     font-size: var(--font-60px);
   }
 
@@ -917,22 +921,22 @@
   }
 
   #content .characters_content dt {
-    min-width: 120px;
-    min-height: 40px;
-    font-size: var(--font-22px);
-    padding-top: 7px;
+    min-width: 80px;
+    min-height: 30px;
+    padding-top: 5px;
+    font-size: var(--font-18px);
   }
 
   #content .characters_content dd {
-    min-width: 120px;
-    min-height: 40px;
-    font-size: var(--font-22px);
-    padding-top: 7px;
+    min-width: 80px;
+    min-height: 30px;
+    padding-top: 5px;
+    font-size: var(--font-18px);
   }
 
   #content .description_overlay {
-    font-size: var(--font-18px);
-    line-height: 1.3rem;
+    font-size: var(--font-20x);
+    line-height: 1.2rem;
   }
 
   #content .characters_content:nth-of-type(4),
@@ -1131,22 +1135,23 @@
   }
 
   #content .characters_content dt {
-    min-width: 80px;
-    min-height: 30px;
-    font-size: var(--font-18px);
-    padding-top: 4px;
+    min-width: 60px;
+    min-height: 20px;
+    font-size: var(--font-16px);
+    padding-top: 0;
   }
 
   #content .characters_content dd {
-    min-width: 80px;
-    min-height: 30px;
-    font-size: var(--font-18px);
-    padding-top: 4px;
+    min-width: 60px;
+    min-height: 20px;
+    font-size: var(--font-16px);
+    padding-top: 0;
   }
 
   #content .description_overlay {
-    font-size: var(--font-16px);
-    line-height: 1.1rem;
+    text-align: left;
+    font-size: var(--font-14px);
+    line-height: 1rem;
   }
 
   /* TRAILER 섹션  */

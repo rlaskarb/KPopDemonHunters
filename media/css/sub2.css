@@ -66,6 +66,23 @@
   padding: 15px 20px;
 }
 
+#content .sub_nav.fixed {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  z-index: 10;
+  background: var(--color-main);
+  font-size: var(--font-40px);
+  border-radius: 15px;
+}
+
+#content .sub_nav.fixed a {
+  padding: 15px 25px;
+}
+
+
 #content .sub_nav li a.current,
 #content .sub_nav li a:hover {
   background: linear-gradient(70deg, var(--color-point1), var(--color-sub1));
@@ -228,7 +245,7 @@
   height: 650px;
   margin-bottom: 5%;
   border-radius: 20px;
-  background-position: center center;
+  background-position: center 100px;
 }
 
 /* 이미지2: 드러나게 만들 이미지 */
@@ -244,12 +261,7 @@
   background-position: center 100px;
 }
 
-#content .blind-image.image1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
+
 
 /* 스토리 섹션 */
 #content .story-section {
@@ -316,6 +328,17 @@
     font-size: var(--font-34px);
   }
 
+  #content .sub_nav.fixed {
+    top: -100px;
+    width: 90%;
+    font-size: var(--font-34px);
+  }
+
+  #content .sub_nav.fixed a {
+    padding: 10px 0px;
+  }
+
+
   #content .character-group-header {
     font-size: var(--font-50px);
   }
@@ -380,6 +403,16 @@
     font-size: var(--font-28px);
   }
 
+  #content .sub_nav.fixed {
+    top: -100px;
+    width: 90%;
+    font-size: var(--font-28px);
+  }
+
+  #content .sub_nav.fixed a {
+    padding: 10px 0px;
+  }
+
   #content .character-group-header {
     width: 90%;
     margin: 0 auto;
@@ -408,18 +441,9 @@
     line-height: 1.5rem;
   }
 
-  /* 배경 이미지 */
 
-  #content .blind-image.image1 {
-    background-size: contain;
-    height: 600px;
-  }
 
-  /* 이미지2: 드러나게 만들 이미지 */
-  #content .blind-image.image2 {
-    background-size: contain;
-    height: 600px;
-  }
+
 
   /* 스토리 섹션 */
 
@@ -471,6 +495,17 @@
     gap: 2%;
     font-size: var(--font-24px);
     font-weight: 800;
+  }
+
+
+  #content .sub_nav.fixed {
+    top: -100px;
+    width: 90%;
+    font-size: var(--font-22px);
+  }
+
+  #content .sub_nav.fixed a {
+    padding: 10px 0px;
   }
 
   #content .sub_nav li a {
@@ -528,18 +563,9 @@
     display: none;
   }
 
-  /* 배경 이미지 */
-
-  .blind-image.image1 {
-    height: 500px;
-    background-position: 50% 50%;
-  }
 
 
-  .blind-image.image2 {
-    height: 500px;
-    background-position: center center;
-  }
+
 
   /* 스토리 섹션 */
 
@@ -606,6 +632,16 @@
     font-weight: 800;
   }
 
+  #content .sub_nav.fixed {
+    top: -100px;
+    width: 100%;
+    font-size: var(--font-18px);
+  }
+
+  #content .sub_nav.fixed a {
+    padding: 10px 0px;
+  }
+
   #content .sub_nav li a {
     color: var(--color-point1);
     padding: 15px 20px;
@@ -651,23 +687,6 @@
     line-height: 1.3rem;
   }
 
-
-  .blind-image.image1 {
-    height: 500px;
-    background-position: 50% 50%;
-  }
-
-  .blind-image.image1 img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-  }
-
-  .blind-image.image2 {
-    height: 500px;
-    background-position: center center;
-  }
 
 
   /* 스토리 섹션 */
@@ -719,6 +738,18 @@
     font-size: var(--font-26px);
   }
 
+  #content .sub_nav.fixed {
+    top: -100px;
+    width: 100%;
+    flex-direction: row;
+    font-size: var(--font-16px);
+  }
+
+  #content .sub_nav.fixed a {
+    padding: 5px 0px;
+  }
+
+
   #content .sub_nav li {
     width: 70%;
     margin: 10px 0;
@@ -760,7 +791,7 @@
     display: none;
   }
 
-  /* 배경 이미지 */
+  /* 스토리 */
 
   #content .story-section h3 {
     font-size: var(--font-30px);
@@ -827,14 +858,7 @@
     font-size: var(--font-30px);
   }
 
-  /* 배경 이미지 */
-  .blind-image.image1 {
-    height: 400px;
-  }
 
-  .blind-image.image2 {
-    height: 400px;
-  }
 
   /* 스토리 섹션 */
 
@@ -873,6 +897,19 @@
     font-size: var(--font-20px);
   }
 
+  #content .sub_nav.fixed {
+    top: -100px;
+    width: 100%;
+    flex-direction: row;
+    gap: 1%;
+    font-size: var(--font-14px);
+  }
+
+  #content .sub_nav.fixed a {
+    padding: 5px 0px;
+  }
+
+
   #content .sub_nav li {
     width: 90%;
     margin-bottom: 3%;
@@ -887,14 +924,7 @@
     font-size: var(--font-30px);
   }
 
-  /* 배경 이미지 */
-  .blind-image.image1 {
-    height: 400px;
-  }
 
-  .blind-image.image2 {
-    height: 400px;
-  }
 
   /* 스토리 섹션 */
 

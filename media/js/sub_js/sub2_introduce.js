@@ -224,6 +224,23 @@ function renderContent(groupId) {
 	    <p>${selectedGroup.storyDescription2}</p>
 	`;
   contentContainer.appendChild(storySection);
-
-
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("#headerArea");
+  const subNav = document.querySelector('.sub_nav');
+  const navTop = window.scrollY;
+
+  window.addEventListener('scroll', function () {
+    const scrollTop = window.scrollY;
+
+    if (scrollTop >= navTop + 1300) {
+      header.style.display = 'none';
+      subNav.classList.add('fixed');
+    } else {
+      header.style.display = "";
+      subNav.classList.remove('fixed');
+    }
+  });
+})

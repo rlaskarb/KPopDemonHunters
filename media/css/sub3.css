@@ -324,7 +324,10 @@
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
+
 }
+
+
 
 #content .trailer_music_container .trailer_music_content .trailer_music dt {
   font-size: var(--font-36px);
@@ -350,14 +353,44 @@
   display: none;
 }
 
-.trailer_music.playing .fa-play {
+#content .trailer_music.playing .fa-play {
   display: none;
 }
 
-.trailer_music.playing .fa-pause,
-.trailer_music.playing .fa-stop {
+#content .trailer_music.playing .fa-pause,
+#content .trailer_music.playing .fa-stop {
   display: inline-block;
 }
+
+@keyframes layered-glow-effect {
+
+  0%,
+  100% {
+    box-shadow:
+
+      0 0 5px 5px var(--color-sub1),
+
+      0 0 10px 10px var(--color-point2),
+
+      0 0 10px 15px var(--color-point1);
+  }
+
+  50% {
+    box-shadow:
+
+      0 0 20px 10px var(--color-point1),
+
+      0 0 20px 20px var(--color-sub1),
+
+      0 0 20px 30px var(--color-point2);
+  }
+}
+
+#content .trailer_music.playing img {
+  animation: layered-glow-effect 2.5s ease-in-out infinite;
+}
+
+
 
 /* 모달창  */
 #youtube-modal {

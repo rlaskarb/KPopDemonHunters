@@ -14,11 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
             iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`
             iframe.title = 'YouTube video player';
             iframe.frameBorder = '0';
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture -in -picture; web - share";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
             iframe.allowFullscreen = true;
 
-            // 플레이어 컨테이너를 비우고 새로 만든 iframe 추가
-            player.innerHTML = '';
+            // 플레이어 내부에 기존 iframe이 있는지 확인
+            const iframeCheck = player.querySelector('iframe');
+            if (iframeCheck) {
+                // 있다면 해당 iframe만 제거합니다.
+                player.removeChild(iframeCheck);
+            }
             player.appendChild(iframe);
             //모달창 보여주기
             modal.style.display = 'flex';

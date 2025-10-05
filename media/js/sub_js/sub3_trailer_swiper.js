@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function () {
     spaceBetween: 0,
 
     scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+      el: '.swiper-scrollbar',
+    },
   });
 });

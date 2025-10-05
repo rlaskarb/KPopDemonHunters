@@ -41,6 +41,7 @@
 html {
   font-size: var(--font-18px);
   scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 body {

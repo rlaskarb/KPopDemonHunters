@@ -41,6 +41,10 @@ function createTabMenu() {
   tabMenu.addEventListener("click", function (event) {
     event.preventDefault();
     const clickedElement = event.target.closest("a");
+    window.scrollTo({
+      top: subNavTopPosition,
+      behavior: 'smooth'
+    });
     const groupId = clickedElement.dataset.groupId;
     renderContent(groupId);
 
@@ -99,15 +103,16 @@ function renderContent(groupId) {
 
   // 케릭터 카드 렌더링
 
-  selectedGroup.characters.forEach(function (character) {
-    // 새로운 케릭터 카드 컨테이너를 만든다.
+  selectedGroup.characters.forEach(function (character, index) {
+
+
     const characterCard = document.createElement("div");
-    characterCard.className = "character-card-grid";
+    characterCard.className = "character-card-grid animate-on-scroll animate-fade-in-up";
+    characterCard.style.transitionDelay = `${index * 150}ms`;
 
     const cardContent = document.createElement("div");
     cardContent.className = "character-card-content";
 
-    // 카드에 들어갈 모든 요소를 만들고 조립한다.
     const swiperArea = document.createElement("div");
     swiperArea.className = "character-swiper-area";
 
@@ -117,7 +122,7 @@ function renderContent(groupId) {
     const swiperWrapper = document.createElement("div");
     swiperWrapper.className = "swiper-wrapper";
 
-    // img 돌리기
+
     character.images.slice(0, 2).forEach(function (imagePath) {
       const slide = document.createElement("div");
       slide.className = "swiper-slide";
@@ -128,11 +133,11 @@ function renderContent(groupId) {
       swiperWrapper.appendChild(slide);
     });
 
-    // 스와이퍼 구조 완성
+
     swiperContainer.appendChild(swiperWrapper);
     swiperArea.appendChild(swiperContainer);
 
-    // 3. (소개글 1 영역)
+
     const infoArea = document.createElement("div");
     infoArea.className = "character-info-area";
     infoArea.innerHTML = `
@@ -142,13 +147,13 @@ function renderContent(groupId) {
    			<p>Position : ${character.position}</p>
     `;
 
-    // 4. 소개글 2 영역
+
 
     const descriptionArea = document.createElement("div");
     descriptionArea.className = "character-description-area";
     descriptionArea.innerHTML = `<p>${character.description}</p>`;
 
-    // 5. 나머지 이미지 영역
+
 
     const video1 = document.createElement("video");
     video1.className = "character-image1-area";
@@ -165,7 +170,7 @@ function renderContent(groupId) {
     img2.alt = `${character.name} img2`;
     image2Area.appendChild(img2);
 
-    // 6. 모든 요소 메인 컨테이너 추가
+    // 모든 요소 메인 컨테이너 추가
 
     cardContent.appendChild(swiperArea);
     cardContent.appendChild(infoArea);
@@ -210,20 +215,48 @@ function renderContent(groupId) {
   // 이 코드를 storySection 생성 코드 바로 위에 추가
   contentContainer.appendChild(blindContainer);
 
+
   //  스토리 섹션 반복
   const storySection = document.createElement("div");
   storySection.className = "story-section";
   storySection.innerHTML = `
-	    <h3>${selectedGroup.storyTitle}</h3>
-	    <p>${selectedGroup.storyDescription}</p>
-	    <div class="story-grid-images">
-	        ${selectedGroup.storyImg
-      .map((imgSrc) => `<img src="${imgSrc}" alt="스토리 이미지">`)
+	   <h3 class="animate-on-scroll animate-fade-in-up">${selectedGroup.storyTitle}</h3>
+      <p class="animate-on-scroll animate-fade-in-up" style="transition-delay: 150ms;">${selectedGroup.storyDescription}</p>
+      <div class="story-grid-images">
+          ${selectedGroup.storyImg
+      .map(
+        (imgSrc, index) =>
+          `<div class="story-image-wrapper animate-on-scroll animate-slide-in-left">
+                   <img src="${imgSrc}" alt="스토리 이미지" style="transition-delay: ${index * 300}ms;">
+                 </div>`
+      )
       .join("")}
-	    </div>
-	    <p>${selectedGroup.storyDescription2}</p>
-	`;
+      </div>
+      <p class="animate-on-scroll animate-fade-in-up" style="transition-delay: 300ms;">${selectedGroup.storyDescription2}</p>
+  `;
   contentContainer.appendChild(storySection);
+  observerNewAni();
+}
+
+//동적으로 추가된 요소에 애니메이션 observer를 다 적용하는 함수
+function observerNewAni() {
+  const aniElements = document.querySelectorAll('.animate-on-scroll:not(.is-visible)');
+  if (aniElements.length > 0) {
+    const aniObserver = new IntersectionObserver(function (entries, observe) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // observe.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    aniElements.forEach(function (el) {
+      aniObserver.observe(el);
+    });
+  }
+
 }
 
 
@@ -231,6 +264,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("#headerArea");
   const subNav = document.querySelector('.sub_nav');
   const navTop = window.scrollY;
+
+  let = subNavTopPosition = 0;
+  if (subNav) {
+    subNavTopPosition = navTop + 1000;
+  }
 
   window.addEventListener('scroll', function () {
     const scrollTop = window.scrollY;
@@ -243,4 +281,6 @@ document.addEventListener("DOMContentLoaded", function () {
       subNav.classList.remove('fixed');
     }
   });
-})
+
+
+});

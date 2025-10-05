@@ -619,10 +619,10 @@
 @media screen and (max-width: 855px) {
   #content h2 {
     position: absolute;
-    top: -350px;
+    top: -500px;
     width: 100%;
     text-align: center;
-    font-size: var(--font-40px);
+    font-size: var(--font-44px);
     color: var(--main-font);
   }
 
@@ -648,7 +648,7 @@
   }
 
   #content .character-group-header {
-    font-size: var(--font-40px);
+    font-size: var(--font-36px);
   }
 
   #content #character_content .character-card-grid .character-card-content {
@@ -728,7 +728,7 @@
 */
 @media screen and (max-width: 667px) {
   #content h2 {
-    top: -350px;
+    top: -450px;
     font-size: var(--font-40px);
   }
 
@@ -779,7 +779,7 @@
   }
 
   #content #character_content .character-card-grid .character-info-area h4 {
-    font-size: var(--font-36px);
+    font-size: var(--font-40px);
   }
 
   #content #character_content .character-card-grid .character-info-area p {
@@ -794,7 +794,7 @@
   /* 스토리 */
 
   #content .story-section h3 {
-    font-size: var(--font-30px);
+    font-size: var(--font-40px);
     margin-bottom: 15px;
   }
 
@@ -855,7 +855,7 @@
   }
 
   #content .character-group-header {
-    font-size: var(--font-30px);
+    font-size: var(--font-36px);
   }
 
 
@@ -865,8 +865,8 @@
   #content .story-section p:nth-last-of-type(1) {
     width: 90%;
     margin: 100px auto 100px;
-    font-size: var(--font-20px);
-    line-height: 1.5rem;
+    font-size: var(--font-18px);
+    line-height: 1.4rem;
   }
 }
 
@@ -936,6 +936,6 @@
   #content .story-section p:nth-last-of-type(1) {
     margin: 100px auto 100px;
     font-size: var(--font-18px);
-    line-height: 1.3rem;
+    line-height: 1.2rem;
   }
 }

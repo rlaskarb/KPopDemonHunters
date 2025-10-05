@@ -506,12 +506,45 @@
   align-items: center;
 }
 
+
+#content .trailer_popup .youtube_iframe_wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 1500px;
+
+
+}
+
+
+#content .trailer_popup .close_btn {
+  position: absolute;
+  top: -2rem;
+  right: 1rem;
+  font-size: var(--font-30px);
+  cursor: pointer;
+  z-index: 160;
+  color: var(--color-sub1)
+}
+
+#content .trailer_popup .close_btn .fa-xmark {
+  transition: all 0.5s ease-in-out;
+}
+
+
+#content .trailer_popup .close_btn:hover .fa-xmark {
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: rotate(360deg);
+}
+
+
 #content .trailer_popup .youtube_iframe {
   position: relative;
   width: 100%;
-  height: 100%;
-  max-width: 1500px;
-  max-height: 850px;
+  height: 0;
+  padding-top: 56.25%;
 }
 
 #content .trailer_popup .youtube_iframe iframe {
@@ -520,22 +553,10 @@
   height: 100%;
   top: 0;
   left: 0;
+  border: none;
+  border-radius: 30px;
 }
 
-#content .trailer_popup .close_btn {
-  position: absolute;
-  top: 3%;
-  right: 3%;
-  font-size: var(--font-40px);
-  color: var(--color-sub1);
-  z-index: 100;
-  transition: all 0.3s ease;
-}
-
-#content .trailer_popup .close_btn:hover {
-  transform: scale(1.2);
-  color: var(--color-sub1);
-}
 
 /* NEWS 섹션 */
 #content .news {
@@ -785,13 +806,7 @@
     font-size: var(--font-60px);
   }
 
-  #content .trailer_popup .youtube_iframe {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 1050px;
-    max-height: 600px;
-  }
+
 
   /* NEWS 섹션 */
   #content .news {
@@ -979,13 +994,6 @@
     background: var(--color-point1);
   }
 
-  #content .trailer_popup .youtube_iframe {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 900px;
-    max-height: 550px;
-  }
 
   /* NEWS 섹션 */
   #content .news {
@@ -1170,13 +1178,7 @@
     color: red;
   }
 
-  #content .trailer_popup .youtube_iframe {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 750px;
-    max-height: 450px;
-  }
+
 
   /* NEWS 섹션 */
   #content .news {
@@ -1373,13 +1375,7 @@
     color: red;
   }
 
-  #content .trailer_popup .youtube_iframe {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 750px;
-    max-height: 450px;
-  }
+
 
   /* NEWS 섹션 */
   #content .news {

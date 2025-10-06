@@ -52,3 +52,40 @@ window.addEventListener("resize", () => {
 		initMasonry();
 	}, 250);
 });
+
+
+// 애니매이션 효과 
+
+document.addEventListener("DOMContentLoaded", function () {
+	const grid = document.querySelector(".grid");
+	const gridItems = document.querySelectorAll(".grid-item");
+
+	imagesLoaded(grid, function () {
+		const msnry = new Masonry(grid, {
+			itemSelector: '.grid-item',
+			columnWidth: '.grid-sizer',
+			gutter: 10, //사이간격
+			percentPosition: true
+		});
+		setupScrollAnimation();
+	});
+
+	function setupScrollAnimation() {
+		if (!gridItems.length) return;
+
+		const aniObserver = new IntersectionObserver(function (enties, observer) {
+			enties.forEach(function (entry) {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('is-visible');
+				} else {
+					entry.target.classList.remove('is-visible');
+				}
+			});
+		}, { threshold: 0.1 });
+
+		gridItems.forEach(function (item, index) {
+			item.style.transitionDelay = `${index * 50}ms`;
+			aniObserver.observe(item);
+		});
+	}
+});

@@ -80,12 +80,25 @@
   display: none;
 }
 
+
 #content {
   width: 100%;
   margin: 0 auto;
   background: rgba(44, 0, 62, 0.9);
   position: relative;
+  /* min-height: 100vh;
+  padding: 100px 50px;  */
 }
+
+/* #interactive-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+} */
+
 
 #content>section {
   margin: 0 auto;
@@ -211,8 +224,8 @@
   top: 0;
   left: -10%;
   width: 120%;
-  height: 60px;
-  background: linear-gradient(90deg, var(--color-point1), var(--color-point2));
+  height: 30px;
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
   animation: rift-effect-top 5s ease-in-out infinite;
 }
 
@@ -223,8 +236,8 @@
   bottom: 0;
   left: -10%;
   width: 120%;
-  height: 60px;
-  background: linear-gradient(90deg, var(--color-point2), var(--color-point1));
+  height: 30px;
+  background: linear-gradient(90deg, var(--color-sub1), var(--color-point1));
   animation: rift-effect-bottom 5s ease-in-out infinite;
 }
 
@@ -269,12 +282,9 @@
   margin: 0 auto;
 }
 
-#content .trailer {
-  width: 90%;
-  margin: 0 auto;
-}
 
-#content .trailer_container {
+
+#content .characters_container {
   width: 80%;
   margin: 0 auto;
   display: grid;
@@ -650,8 +660,8 @@
   top: 0;
   left: -10%;
   width: 120%;
-  height: 60px;
-  background: linear-gradient(90deg, var(--color-point1), var(--color-point2));
+  height: 30px;
+  background: linear-gradient(90deg, var(--color-sub1), var(--color-point1));
   animation: rift-effect-top 5s ease-in-out infinite;
 }
 
@@ -662,8 +672,8 @@
   bottom: 0;
   left: -10%;
   width: 120%;
-  height: 60px;
-  background: linear-gradient(90deg, var(--color-point2), var(--color-point1));
+  height: 30px;
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
   animation: rift-effect-bottom 5s ease-in-out infinite;
 }
 
@@ -696,6 +706,7 @@
 
 #content .news_content img {
   width: 100%;
+  max-height: 350px;
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
@@ -718,7 +729,7 @@
 #content .news_content p {
   font-size: var(--font-20px);
   font-weight: 500;
-  line-height: 2rem;
+  line-height: 1.7rem;
   margin-top: 30px;
   color: #333;
 }
@@ -745,6 +756,10 @@
 
 #content .news_content:nth-of-type(6) {
   grid-area: f;
+
+  img {
+    max-height: 350px;
+  }
 }
 
 #content .news_content {

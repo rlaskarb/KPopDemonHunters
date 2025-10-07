@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		}, { threshold: 0.1 });
 
 		gridItems.forEach(function (item, index) {
-			item.style.transitionDelay = `${index * 50}ms`;
+			item.style.transitionDelay = `${index * 70}ms`;
 			aniObserver.observe(item);
 		});
 	}

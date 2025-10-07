@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach(function (entery) {
         if (entery.isIntersecting) {
           entery.target.classList.add("is-visible");
-          observer.unobserve(entery.target); // 컷
+          // observer.unobserve(entery.target); 
+        } else {
+          entery.target.classList.remove("is-visible")
         }
       });
     },
@@ -48,22 +50,4 @@ document.addEventListener("DOMContentLoaded", function () {
   miraVideo.playbackRate = 0.4;
 });
 
-// // abut 텍스트 이미지 애니매이션 효과
-// document.addEventListener("DOMContentLoaded", function () {
-//   const targetElement = document.querySelector("#content h2");
-//   const text = targetElement.textContent;
-//   targetElement.textContent = ""; // 원래 텍스트를 비운다.
-//   targetElement.classList.add("typing-bounce");
 
-//   //    한글자 씩 나타나게 하는 효과
-//   let index = 0;
-//   const typingEffect = setInterval(function () {
-//     if (index < text.length) {
-//       targetElement.textContent += text.charAt(index);
-//       targetElement.style.opacity = 1;
-//       index++;
-//     } else {
-//       clearInterval(typingEffect); //멈춰!
-//     }
-//   }, 300);
-// });

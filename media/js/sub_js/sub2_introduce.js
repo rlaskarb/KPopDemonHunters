@@ -43,7 +43,7 @@ function createTabMenu() {
     const clickedElement = event.target.closest("a");
     window.scrollTo({
       top: subNavTopPosition,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
     const groupId = clickedElement.dataset.groupId;
     renderContent(groupId);
@@ -67,7 +67,6 @@ function handleBlindScroll() {
     const containerTop = container.getBoundingClientRect().top; // 위치추적
     const scrollReveal = 100; // 화면상단에 100px 안으로 들어왔을때
 
-
     if (containerTop < scrollReveal) {
       const revealPercentage = (scrollReveal - containerTop) / scrollReveal;
       image2.style.clipPath = `inset(${100 - revealPercentage * 100}% 0 0)`;
@@ -78,7 +77,6 @@ function handleBlindScroll() {
 }
 
 window.addEventListener("scroll", handleBlindScroll);
-
 
 // 콘텐츠 렌더링 함수(핵심)
 function renderContent(groupId) {
@@ -104,10 +102,9 @@ function renderContent(groupId) {
   // 케릭터 카드 렌더링
 
   selectedGroup.characters.forEach(function (character, index) {
-
-
     const characterCard = document.createElement("div");
-    characterCard.className = "character-card-grid animate-on-scroll animate-fade-in-up";
+    characterCard.className =
+      "character-card-grid animate-on-scroll animate-fade-in-up";
     characterCard.style.transitionDelay = `${index * 150}ms`;
 
     const cardContent = document.createElement("div");
@@ -122,7 +119,6 @@ function renderContent(groupId) {
     const swiperWrapper = document.createElement("div");
     swiperWrapper.className = "swiper-wrapper";
 
-
     character.images.slice(0, 2).forEach(function (imagePath) {
       const slide = document.createElement("div");
       slide.className = "swiper-slide";
@@ -133,10 +129,8 @@ function renderContent(groupId) {
       swiperWrapper.appendChild(slide);
     });
 
-
     swiperContainer.appendChild(swiperWrapper);
     swiperArea.appendChild(swiperContainer);
-
 
     const infoArea = document.createElement("div");
     infoArea.className = "character-info-area";
@@ -147,13 +141,9 @@ function renderContent(groupId) {
    			<p>Position : ${character.position}</p>
     `;
 
-
-
     const descriptionArea = document.createElement("div");
     descriptionArea.className = "character-description-area";
     descriptionArea.innerHTML = `<p>${character.description}</p>`;
-
-
 
     const video1 = document.createElement("video");
     video1.className = "character-image1-area";
@@ -176,7 +166,7 @@ function renderContent(groupId) {
     cardContent.appendChild(infoArea);
     cardContent.appendChild(descriptionArea);
     cardContent.appendChild(video1);
-    cardContent.appendChild(image2Area)
+    cardContent.appendChild(image2Area);
 
     characterCard.appendChild(cardContent);
     contentContainer.appendChild(characterCard);
@@ -215,24 +205,31 @@ function renderContent(groupId) {
   // 이 코드를 storySection 생성 코드 바로 위에 추가
   contentContainer.appendChild(blindContainer);
 
-
   //  스토리 섹션 반복
   const storySection = document.createElement("div");
   storySection.className = "story-section";
   storySection.innerHTML = `
-	   <h3 class="animate-on-scroll animate-fade-in-up">${selectedGroup.storyTitle}</h3>
-      <p class="animate-on-scroll animate-fade-in-up" style="transition-delay: 150ms;">${selectedGroup.storyDescription}</p>
+	   <h3 class="animate-on-scroll animate-fade-in-up">${
+       selectedGroup.storyTitle
+     }</h3>
+      <p class="animate-on-scroll animate-fade-in-up" style="transition-delay: 150ms;">${
+        selectedGroup.storyDescription
+      }</p>
       <div class="story-grid-images">
           ${selectedGroup.storyImg
-      .map(
-        (imgSrc, index) =>
-          `<div class="story-image-wrapper animate-on-scroll animate-slide-in-left">
-                   <img src="${imgSrc}" alt="스토리 이미지" style="transition-delay: ${index * 300}ms;">
+            .map(
+              (imgSrc, index) =>
+                `<div class="story-image-wrapper animate-on-scroll animate-slide-in-left">
+                   <img src="${imgSrc}" alt="스토리 이미지" style="transition-delay: ${
+                  index * 300
+                }ms;">
                  </div>`
-      )
-      .join("")}
+            )
+            .join("")}
       </div>
-      <p class="animate-on-scroll animate-fade-in-up" style="transition-delay: 300ms;">${selectedGroup.storyDescription2}</p>
+      <p class="animate-on-scroll animate-fade-in-up" style="transition-delay: 300ms;">${
+        selectedGroup.storyDescription2
+      }</p>
   `;
   contentContainer.appendChild(storySection);
   observerNewAni();
@@ -240,29 +237,32 @@ function renderContent(groupId) {
 
 //동적으로 추가된 요소에 애니메이션 observer를 다 적용하는 함수
 function observerNewAni() {
-  const aniElements = document.querySelectorAll('.animate-on-scroll:not(.is-visible)');
+  const aniElements = document.querySelectorAll(
+    ".animate-on-scroll:not(.is-visible)"
+  );
   if (aniElements.length > 0) {
-    const aniObserver = new IntersectionObserver(function (entries, observe) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          // observe.unobserve(entry.target);
-        } else {
-          entry.target.classList.remove('is-visible');
-        }
-      });
-    }, { threshold: 0.1 });
+    const aniObserver = new IntersectionObserver(
+      function (entries, observe) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            // observe.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove("is-visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
     aniElements.forEach(function (el) {
       aniObserver.observe(el);
     });
   }
-
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector("#headerArea");
-  const subNav = document.querySelector('.sub_nav');
+  const subNav = document.querySelector(".sub_nav");
   const navTop = window.scrollY;
 
   let = subNavTopPosition = 0;
@@ -270,17 +270,15 @@ document.addEventListener("DOMContentLoaded", function () {
     subNavTopPosition = navTop + 1000;
   }
 
-  window.addEventListener('scroll', function () {
+  window.addEventListener("scroll", function () {
     const scrollTop = window.scrollY;
 
     if (scrollTop >= navTop + 1300) {
-      header.style.display = 'none';
-      subNav.classList.add('fixed');
+      header.style.display = "none";
+      subNav.classList.add("fixed");
     } else {
       header.style.display = "";
-      subNav.classList.remove('fixed');
+      subNav.classList.remove("fixed");
     }
   });
-
-
 });

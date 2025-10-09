@@ -9,29 +9,25 @@
 
 #imgBG {
   position: fixed;
-  /*고정=>fixed/ 스크롤처리=>absolute */
   left: 50%;
   top: 50%;
-  /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
   width: auto;
   min-width: 100%;
-  /*동영상 너비를 꽉차게*/
   height: auto;
   min-height: 100%;
-  /*동영상 높이를 꽉차게*/
   transform: translateX(-50%) translateY(-50%);
   z-index: -100;
 }
 
 #content {
   width: 100%;
-  margin: 0 auto;
   background: rgba(44, 0, 62, 0.9);
   position: relative;
+  margin: 0 auto;
   padding-bottom: 100px;
 }
 
-#content > section {
+#content>section {
   margin: 0 auto;
 }
 
@@ -53,14 +49,15 @@
 
 #content .news_container h3 {
   text-align: center;
-  font-size: var(--font-70px);
-  margin-bottom: 50px;
+  font-size: var(--font-60px);
+  margin-bottom: 150px;
 }
 
-#content .huntrix_golden {
+#content .news_container .huntrix_golden {
   width: 90%;
   margin: 0 auto;
   display: grid;
+  justify-content: center;
   grid-template-columns: minmax(320px, 800px) minmax(320px, 600px);
   grid-auto-rows: auto;
   gap: 1%;
@@ -69,10 +66,11 @@
     "a c";
 }
 
-#content .saja_bill {
+#content .news_container .saja_bill {
   width: 90%;
   margin: 0 auto;
   display: grid;
+  justify-content: center;
   grid-template-columns: minmax(320px, 600px) minmax(320px, 800px);
   grid-auto-rows: auto;
   gap: 1%;
@@ -88,23 +86,24 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2%;
-  padding-top: 4%;
+  gap: 1%;
   box-shadow: 0 0 10px 3px rgba(245, 245, 245, 0.5);
   border-radius: 20px;
 }
 
 #content .saja_grid h4,
 #content .huntrix_grid h4 {
-  font-size: var(--font-44px);
-  margin-left: 30px;
+  font-size: var(--font-40px);
+  padding: 50px 30px 10px 50px;
+
+
 }
 
 #content .saja_grid p,
 #content .huntrix_grid p {
   width: 90%;
-  font-size: var(--font-28px);
+  margin: 0 auto;
+  font-size: var(--font-26px);
   line-height: 2.5rem;
 }
 
@@ -118,12 +117,24 @@
   grid-area: c;
 }
 
+#content .huntrix_golden .huntrix_grid:nth-of-type(4) {
+  display: none;
+  grid-area: d;
+}
+
+#content .saja_bill .saja_grid:nth-of-type(4) {
+  grid-area: d;
+  display: none;
+}
+
+#content .saja_bill .saja_grid:nth-of-type(5) {
+  grid-area: e;
+  display: none;
+}
+
 #content .saja_bill img,
 #content .huntrix_golden img {
   width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 0 auto;
   object-fit: cover;
   object-position: center;
   border-radius: 20px;
@@ -148,45 +159,179 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 300px;
+  height: 700px;
   margin: 7% 0;
   border-radius: 2vw;
 }
 
-/* 아코디언 */
-#content .accordion_container {
-  display: flex;
+
+/* 에피소드  컨텐츠 */
+
+#content .episodes_container {
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+#content .episodes_container h3 {
+  padding-top: 200px;
+  text-align: center;
+  font-size: var(--font-60px);
+}
+
+#content .episodes_main {
   width: 90%;
-  max-width: 1600px;
-  max-height: 500px;
+  margin: 0 auto;
+}
+
+
+#content .sub_nav {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content .sub_nav li {
+  width: 33.33%;
+  margin: 0 auto;
+}
+
+#content .sub_nav li a {
+  font-family: "Orbitron", "sans-serif";
+  font-size: var(--font-50px);
+  line-height: 1.5rem;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+#content .sub_nav li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 7px;
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+#content .sub_nav li a:hover::after {
+  width: 100%;
+}
+
+#content .sub_nav li a:hover {
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#content .sub_nav li a.current {
+  background: linear-gradient(90deg, var(--color-point1), var(--color-sub1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#content #episodes_content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+#content #episodes_content p {
+  width: 82%;
   margin: 50px auto;
+  text-align: center;
+  font-size: var(--font-36px);
+  line-height: 3rem;
 }
 
-#contnent .accordion_item {
-  height: 100%;
-  flex: 0 1 120px;
-  margin-left: -60px;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: flex 0.5s ease;
-  cursor: pointer;
-  transition: flex 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+#content #episodes_content .episode-images {
+  width: 99%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 700px));
+  grid-auto-rows: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
 }
 
-#content .accordion_item img {
+#content .episode-images img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: 20px;
 }
 
-#content .accordion_item:first-child {
-  margin-left: 0;
+#content .episode-images .episode-image:nth-child(3) {
+  display: none;
 }
 
-#content .accordion_container .accordion_item:hover {
-  flex-basis: 500px;
+
+@media screen and (max-width: 1720px) {
+
+
+  #content h2 {
+    top: -500px;
+    font-size: var(--font-70px);
+  }
+
+  #content .news_container {
+    padding: 100px 0;
+  }
+
+  #content .news_container h3 {
+    text-align: center;
+    font-size: var(--font-50px);
+    margin-bottom: 40px;
+  }
+
+  #content .saja_grid h4,
+  #content .huntrix_grid h4 {
+    font-size: var(--font-36px);
+    padding: 50px 30px 10px 50px;
+  }
+
+  #content .saja_grid p,
+  #content .huntrix_grid p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: var(--font-24px);
+    line-height: 2rem;
+  }
+
+  /* 에피소드 컨텐츠 */
+
+  content .episodes_container h3 {
+    padding-top: 200px;
+    font-size: var(--font-60px);
+  }
+
+  #content .episodes_main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #content .sub_nav li a {
+    font-size: var(--font-50px);
+    padding: 30px;
+  }
+
+  #content #episodes_content p {
+    width: 95%;
+    font-size: var(--font-30px);
+    line-height: 2.7rem;
+  }
 }
+
+
 
 /* 
  
@@ -195,7 +340,76 @@
 
 
 */
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1292px) {
+
+  #content h2 {
+    top: -500px;
+    font-size: var(--font-70px);
+  }
+
+  #content .news_container {
+    padding: 70px 0;
+  }
+
+  #content .news_container h3 {
+    text-align: center;
+    font-size: var(--font-44px);
+    margin-bottom: 30px;
+  }
+
+  #content .saja_grid h4,
+  #content .huntrix_grid h4 {
+    font-size: var(--font-34px);
+    padding: 20px 20px 10px 50px;
+  }
+
+  #content .saja_grid p,
+  #content .huntrix_grid p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: var(--font-24px);
+    line-height: 1.6rem;
+  }
+
+
+  /* 에피소드 컨텐츠 */
+  content .episodes_container h3 {
+    padding-top: 200px;
+    font-size: var(--font-44px);
+  }
+
+  #content .episodes_main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #content .sub_nav {
+    gap: 50px;
+  }
+
+  #content .sub_nav li a {
+    font-size: var(--font-40px);
+    padding: 30px;
+  }
+
+
+  #content #episodes_content p {
+    width: 95%;
+    font-size: var(--font-26px);
+    line-height: 2.5rem;
+  }
+
+  #content #episodes_content .episode-images {
+    width: 99%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 700px));
+    gap: 1%;
+  }
+
+  #content .episode-images .episode-image:nth-child(3) {
+    display: none;
+  }
+
 }
 
 /* 
@@ -217,6 +431,164 @@
 
 */
 @media screen and (max-width: 1150px) {
+  #content h2 {
+    top: -500px;
+    font-size: var(--font-50px);
+  }
+
+  #content .news_container {
+    padding: 60px 0;
+  }
+
+  #content .news_container h3 {
+    text-align: center;
+    font-size: var(--font-40px);
+    margin-bottom: 30px;
+  }
+
+  #content .news_container .huntrix_golden {
+    width: 95%;
+    gap: 1%;
+    grid-template-areas:
+      "a d"
+      "a d";
+  }
+
+  #content .news_container .saja_bill {
+    width: 95%;
+    gap: 1%;
+    grid-template-areas:
+      "d a"
+      "e a";
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(1),
+  #content .saja_bill .saja_grid:nth-of-type(1) {
+    grid-area: a;
+    gap: 1%;
+  }
+
+  #content .saja_grid h4,
+  #content .huntrix_grid h4 {
+    font-size: var(--font-28px);
+    padding: 25px 0 10px 30px;
+  }
+
+  #content .saja_grid p,
+  #content .huntrix_grid p {
+    width: 95%;
+    margin: 0 auto;
+    font-size: var(--font-18px);
+    line-height: 1.5rem;
+    padding-bottom: 20px;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(2),
+  #content .saja_bill .saja_grid:nth-of-type(2) {
+    grid-area: b;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(3),
+  #content .saja_bill .saja_grid:nth-of-type(3) {
+    grid-area: c;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(2),
+  #content .huntrix_golden .huntrix_grid:nth-of-type(3) {
+    display: none;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(4) {
+    display: block;
+  }
+
+  #content .saja_bill .saja_grid:nth-of-type(4),
+  #content .saja_bill .saja_grid:nth-of-type(5) {
+    display: block;
+  }
+
+
+  #content .saja_bill .saja_grid:nth-of-type(2),
+  #content .saja_bill .saja_grid:nth-of-type(3) {
+    display: none;
+  }
+
+  content .episodes_container h3 {
+    padding-top: 200px;
+    font-size: var(--font-44px);
+  }
+
+  #content .episodes_main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #content .sub_nav {
+    gap: 50px;
+  }
+
+  #content .sub_nav li a {
+    font-size: var(--font-38px);
+    padding: 25px;
+  }
+
+
+  #content #episodes_content p {
+    width: 95%;
+    font-size: var(--font-30px);
+    line-height: 2.7rem;
+  }
+
+  #content #episodes_content .episode-images {
+    width: 99%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 700px));
+    gap: 1%;
+  }
+
+  #content .episode-images .episode-image:nth-child(3) {
+    display: none;
+  }
+
+
+  /* 에피소드 컨텐츠 */
+  content .episodes_container h3 {
+    padding-top: 200px;
+    font-size: var(--font-40px);
+  }
+
+  #content .episodes_main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #content .sub_nav {
+    gap: 50px;
+  }
+
+  #content .sub_nav li a {
+    font-size: var(--font-36px);
+    padding: 20px;
+  }
+
+
+  #content #episodes_content p {
+    width: 95%;
+    font-size: var(--font-26px);
+    line-height: 2.2rem;
+  }
+
+  #content #episodes_content .episode-images {
+    width: 99%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 700px));
+    gap: 1%;
+  }
+
+  #content .episode-images .episode-image:nth-child(3) {
+    display: none;
+  }
+
 }
 
 /* 
@@ -230,13 +602,140 @@
 소형 테블릿 
 
 
-
+ 
 
 
 
 
 */
 @media screen and (max-width: 855px) {
+  #content h2 {
+    top: -500px;
+    font-size: var(--font-44px);
+  }
+
+  #content .news_container {
+    padding: 60px 0;
+  }
+
+  #content .news_container h3 {
+    text-align: center;
+    font-size: var(--font-36px);
+    margin-bottom: 30px;
+  }
+
+  #content .news_container .huntrix_golden {
+    width: 95%;
+    gap: 1%;
+    grid-template-areas:
+      "b c"
+      "a a";
+  }
+
+  #content .news_container .saja_bill {
+    width: 95%;
+    gap: 1%;
+    grid-template-areas:
+      "d e"
+      "a a";
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(1),
+  #content .saja_bill .saja_grid:nth-of-type(1) {
+    grid-area: a;
+    gap: 1%;
+  }
+
+  #content .saja_grid h4,
+  #content .huntrix_grid h4 {
+    font-size: var(--font-34px);
+    text-align: center;
+    padding: 20px 0
+  }
+
+  #content .saja_grid p,
+  #content .huntrix_grid p {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 10px 10px;
+    font-size: var(--font-18px);
+    line-height: 1.5rem;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(2),
+  #content .saja_bill .saja_grid:nth-of-type(2) {
+    grid-area: b;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(3),
+  #content .saja_bill .saja_grid:nth-of-type(3) {
+    grid-area: c;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(2),
+  #content .huntrix_golden .huntrix_grid:nth-of-type(3) {
+    display: block;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(4) {
+    display: none;
+  }
+
+  #content .saja_bill .saja_grid:nth-of-type(4),
+  #content .saja_bill .saja_grid:nth-of-type(5) {
+    display: block;
+  }
+
+
+  #content .saja_bill .saja_grid:nth-of-type(2),
+  #content .saja_bill .saja_grid:nth-of-type(3) {
+    display: none;
+  }
+
+  /* 에피소드 컨텐츠 */
+  content .episodes_container h3 {
+    padding-top: 200px;
+    font-size: var(--font-36px);
+  }
+
+  #content .episodes_main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #content .sub_nav {
+    gap: 30px;
+  }
+
+  #content .sub_nav li a {
+    font-size: var(--font-30px);
+    padding: 20px;
+  }
+
+
+  #content #episodes_content p {
+    width: 95%;
+    font-size: var(--font-20px);
+    line-height: 2rem;
+  }
+
+  #content #episodes_content .episode-images {
+    width: 99%;
+    display: grid;
+    grid-template-columns: minmax(320px, 700px);
+    gap: 1%;
+  }
+
+  #content .episode-images .episode-image:nth-child(1),
+  #content .episode-images .episode-image:nth-child(2) {
+    display: none;
+  }
+
+
+  #content .episode-images .episode-image:nth-child(3) {
+    display: block;
+  }
+
 }
 
 /* 
@@ -256,6 +755,123 @@
 
 */
 @media screen and (max-width: 667px) {
+
+  #content h2 {
+    top: -450px;
+    font-size: var(--font-40px);
+  }
+
+  #content .news_container {
+    padding: 60px 0;
+  }
+
+  #content .news_container h3 {
+    text-align: center;
+    font-size: var(--font-36px);
+    margin-bottom: 30px;
+  }
+
+  #content .news_container .huntrix_golden {
+    width: 95%;
+    gap: 1%;
+    grid-template-columns: minmax(320px, 600px);
+    grid-template-areas:
+      "d"
+      "a";
+  }
+
+  #content .news_container .saja_bill {
+    width: 95%;
+    gap: 1%;
+    grid-template-columns: minmax(320px, 600px);
+    grid-template-areas:
+      "b"
+      "c"
+      "a";
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(1),
+  #content .saja_bill .saja_grid:nth-of-type(1) {
+    grid-area: a;
+    gap: 1%;
+  }
+
+  #content .saja_grid h4,
+  #content .huntrix_grid h4 {
+    font-size: var(--font-34px);
+    text-align: center;
+    padding: 20px 0
+  }
+
+  #content .saja_grid p,
+  #content .huntrix_grid p {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 10px 10px;
+    font-size: var(--font-18px);
+    line-height: 1.5rem;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(2),
+  #content .saja_bill .saja_grid:nth-of-type(2) {
+    grid-area: b;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(3),
+  #content .saja_bill .saja_grid:nth-of-type(3) {
+    grid-area: c;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(2),
+  #content .huntrix_golden .huntrix_grid:nth-of-type(3) {
+    display: none;
+  }
+
+  #content .huntrix_golden .huntrix_grid:nth-of-type(4) {
+    display: block;
+  }
+
+  #content .saja_bill .saja_grid:nth-of-type(4),
+  #content .saja_bill .saja_grid:nth-of-type(5) {
+    display: none;
+  }
+
+
+  #content .saja_bill .saja_grid:nth-of-type(2),
+  #content .saja_bill .saja_grid:nth-of-type(3) {
+    display: block;
+  }
+
+
+  /* 에피소드 컨텐츠 */
+  content .episodes_container h3 {
+    padding-top: 200px;
+    font-size: var(--font-34px);
+  }
+
+  #content .episodes_main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #content .sub_nav {
+    gap: 20px;
+  }
+
+  #content .sub_nav li a {
+    font-size: var(--font-28px);
+    padding: 20px;
+  }
+
+
+  #content #episodes_content p {
+    width: 95%;
+    margin: 0 auto;
+    font-size: var(--font-20px);
+    line-height: 2rem;
+  }
+
+
 }
 
 /* 
@@ -275,6 +891,38 @@
 
 */
 @media screen and (max-width: 565px) {
+
+  #content h2 {
+    top: -500px;
+    font-size: var(--font-36px);
+  }
+
+  #content .news_container {
+    padding: 60px 0;
+  }
+
+  #content .news_container h3 {
+    text-align: center;
+    font-size: var(--font-36px);
+    margin-bottom: 30px;
+  }
+
+
+  #content .saja_grid h4,
+  #content .huntrix_grid h4 {
+    font-size: var(--font-34px);
+    text-align: center;
+    padding: 20px 0p;
+  }
+
+  #content .saja_grid p,
+  #content .huntrix_grid p {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 10px 10px;
+    font-size: var(--font-18px);
+    line-height: 1.5rem;
+  }
 }
 
 /* 
@@ -288,5 +936,36 @@
 
 
 */
-@media screen and (max-width: 467px) {
+@media screen and (max-width: 450px) {
+  #content h2 {
+    top: -500px;
+    font-size: var(--font-30px);
+  }
+
+  #content .news_container {
+    padding: 60px 0;
+  }
+
+  #content .news_container h3 {
+    text-align: center;
+    font-size: var(--font-30px);
+    margin-bottom: 30px;
+  }
+
+
+  #content .saja_grid h4,
+  #content .huntrix_grid h4 {
+    font-size: var(--font-26px);
+    text-align: center;
+    padding: 20px 0p;
+  }
+
+  #content .saja_grid p,
+  #content .huntrix_grid p {
+    width: 99%;
+    margin: 0 auto;
+    padding: 0 10px 10px;
+    font-size: var(--font-16px);
+    line-height: 1.3rem;
+  }
 }

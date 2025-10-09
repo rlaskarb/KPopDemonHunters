@@ -618,12 +618,7 @@
 */
 @media screen and (max-width: 855px) {
   #content h2 {
-    position: absolute;
-    top: -500px;
-    width: 100%;
-    text-align: center;
     font-size: var(--font-44px);
-    color: var(--main-font);
   }
 
   #content .sub_nav {

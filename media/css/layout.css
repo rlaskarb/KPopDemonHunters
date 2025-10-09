@@ -292,18 +292,17 @@
   grid-auto-rows: auto;
   gap: 2%;
   grid-template-areas:
-    "a b c "
-    "d d d "
-    "e f g "
-    "h i j "
-    "k k k ";
+    "a b c"
+    "d d d"
+    "e f g"
+    "h i j"
+    "k k k";
 }
 
 #content .characters_content {
   position: relative;
   text-align: center;
   overflow: hidden;
-  border-radius: 8px;
   border-radius: 20px;
 }
 
@@ -324,24 +323,24 @@
 }
 
 #content .characters_content dt {
-  min-width: 155px;
-  min-height: 50px;
-  font-size: var(--font-30px);
-  font-weight: 800;
+  min-width: 110px;
+  min-height: 30px;
+  font-size: var(--font-24px);
+  font-weight: 700;
   color: var(--color-main);
   background: var(--color-sub1);
-  padding-top: 10px;
-  border-radius: 15px 0 0 0;
+  padding: 7px 3px;
+  border-radius: 10px 0 0 0;
 }
 
 #content .characters_content dd {
-  min-width: 155px;
-  min-height: 50px;
-  font-size: var(--font-30px);
-  font-weight: 800;
+  min-width: 110px;
+  min-height: 30px;
+  font-size: var(--font-24px);
+  font-weight: 700;
   color: var(--main-font);
   background: var(--color-point1);
-  padding-top: 10px;
+  padding: 7px 3px;
   border-radius: 0 0 15px 0;
 }
 
@@ -358,7 +357,7 @@
   padding: 15px;
   color: var(--color-sub1);
   font-size: var(--font-30px);
-  line-height: 2.6rem;
+  line-height: 2rem;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
@@ -416,6 +415,7 @@
 #content .characters_content:nth-child(11) {
   grid-area: k;
 }
+
 
 /* TRAILER 섹션  */
 #content .trailer {
@@ -916,28 +916,25 @@
   #content .characters_content dt {
     min-width: 100px;
     min-height: 30px;
-    padding-top: 5px;
-    font-size: var(--font-22px);
+    font-size: var(--font-24px);
+    font-weight: 700;
+    padding: 7px 3px;
+
   }
 
   #content .characters_content dd {
     min-width: 100px;
     min-height: 30px;
-    padding-top: 5px;
-    font-size: var(--font-22px);
+    font-size: var(--font-24px);
+    font-weight: 700;
+    padding: 7px 3px;
   }
 
   #content .description_overlay {
-    font-size: var(--font-26x);
-    line-height: 1.4rem;
+    font-size: var(--font-28px);
+    line-height: 2rem;
+
   }
-
-  /* TRAILER 섹션  */
-
-  #content .pc_main_display .youtube {
-    font-size: var(--font-60px);
-  }
-
 
 
   /* NEWS 섹션 */
@@ -1055,29 +1052,33 @@
     grid-auto-rows: auto;
     gap: 1%;
     grid-template-areas:
-      "a b c "
-      "e f g "
-      "h i j ";
+      "a b c"
+      "e f g"
+      "h i j";
   }
 
   #content .characters_content dt {
     min-width: 80px;
-    min-height: 30px;
-    padding-top: 5px;
-    font-size: var(--font-18px);
+    min-height: 20px;
+    font-size: var(--font-20px);
+    font-weight: 700;
+    padding: 3px 3px;
+
   }
 
   #content .characters_content dd {
     min-width: 80px;
-    min-height: 30px;
-    padding-top: 5px;
-    font-size: var(--font-18px);
+    min-height: 20px;
+    font-size: var(--font-20px);
+    font-weight: 700;
+    padding: 2px 3px;
   }
 
   #content .description_overlay {
-    font-size: var(--font-20x);
-    line-height: 1.2rem;
+    font-size: var(--font-26px);
+    line-height: 2rem;
   }
+
 
   #content .characters_content:nth-of-type(4),
   #content .characters_content:nth-of-type(11) {
@@ -1270,20 +1271,22 @@
     min-width: 60px;
     min-height: 20px;
     font-size: var(--font-16px);
-    padding-top: 0;
+    font-weight: 700;
+    padding: 3px;
+
   }
 
   #content .characters_content dd {
     min-width: 60px;
     min-height: 20px;
     font-size: var(--font-16px);
-    padding-top: 0;
+    font-weight: 700;
+    padding: 2px;
   }
 
   #content .description_overlay {
-    text-align: left;
-    font-size: var(--font-14px);
-    line-height: 1rem;
+    font-size: var(--font-24px);
+    line-height: 2rem;
   }
 
   /* TRAILER 섹션  */
@@ -1446,12 +1449,11 @@
     grid-template-areas:
       "a b"
       "c e"
-      "f j";
+      "f g"
+      "h i";
   }
 
-  #content .characters_content:nth-of-type(7),
-  #content .characters_content:nth-of-type(8),
-  #content .characters_content:nth-of-type(9) {
+  #content .characters_content:nth-of-type(10) {
     display: none;
   }
 
@@ -1573,10 +1575,6 @@
   }
 
   /* ABOUT 영역 */
-  /* 
-  #content .about {
-    padding-top: 50px;
-  } */
 
   #content .about h3,
   #content .characters h3,
@@ -1601,11 +1599,6 @@
     margin-top: -20px;
   }
 
-  #content .description_overlay {
-    font-size: var(--font-16px);
-    line-height: 1rem;
-  }
-
   /* trailer */
   #content .trailer-swiper .swiper-slide dt {
     font-size: var(--font-24px);
@@ -1623,25 +1616,7 @@
   } */
 
   #content .news_content h4 {
-    font-size: var(--font-20px);
-  }
-
-  #content .news_container {
-    width: 90%;
-    margin: -20px auto 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-    gap: 2%;
-    grid-template-areas:
-      "a a"
-      "b b";
-  }
-
-  #content .news_content:nth-of-type(3),
-  #content .news_content:nth-of-type(4),
-  #content .news_content:nth-of-type(5) {
-    display: none;
+    font-size: var(--font-26px);
   }
 
   /* GALLERY 섹션 */
@@ -1680,24 +1655,26 @@
 
   /* characters */
   #content .characters_content dt {
-    min-width: 60px;
-    min-height: 20px;
-    font-size: var(--font-16px);
-    padding-top: 1px;
+    min-width: 45px;
+    min-height: 5px;
+    font-size: var(--font-14px);
+    padding: 0 2px;
+
   }
 
   #content .characters_content dd {
-    min-width: 60px;
-    min-height: 20px;
-    font-size: var(--font-16px);
-    padding-top: 1px;
+    min-width: 45px;
+    min-height: 5px;
+    font-size: var(--font-14px);
+    padding: 0 2px;
   }
 
   #content .description_overlay {
-    font-size: var(--font-14px);
-    line-height: 0.9rem;
-    text-align: left;
+    font-size: var(--font-18px);
+    justify-content: flex-start;
+    line-height: 1rem;
   }
+
 
   /* trailer */
 
@@ -1721,5 +1698,10 @@
     transform: translate(-50%, -150%);
     font-size: var(--font-40px);
     color: red;
+  }
+
+
+  #content .news_content h4 {
+    font-size: var(--font-20px);
   }
 }

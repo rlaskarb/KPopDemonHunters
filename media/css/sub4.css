@@ -195,9 +195,9 @@
 
 #content .sub_nav li a {
   font-family: "Orbitron", "sans-serif";
-  font-size: var(--font-50px);
+  font-size: var(--font-44px);
   line-height: 1.5rem;
-  padding: 30px;
+  padding: 30px 25px;
   text-align: center;
   position: relative;
   transition: all 0.3s ease-in-out;
@@ -240,11 +240,11 @@
 }
 
 #content #episodes_content p {
-  width: 82%;
+  width: 90%;
   margin: 50px auto;
   text-align: center;
-  font-size: var(--font-36px);
-  line-height: 3rem;
+  font-size: var(--font-28px);
+  line-height: 2.1rem;
 }
 
 #content #episodes_content .episode-images {
@@ -267,6 +267,30 @@
 
 #content .episode-images .episode-image:nth-child(3) {
   display: none;
+}
+
+
+/* 애니메이션 효과 */
+.scroll-ani{
+  opacity: 0;
+  transition: opacity 1s ease-out , transform 1s ease-out; 
+}
+
+.scroll-ani.ain-fade-in-up{
+  transform: translateY(50px);
+}
+
+.scroll-ani.ani-slide-in-left{
+  transform: translateX(-50px);
+}
+
+.scroll-ani.ani-slide-in-right{
+  transform: translateX(50px);
+}
+
+.scroll-ani.is-visible{
+  opacity: 1;
+  transform: translate(0,0);
 }
 
 @media screen and (max-width: 1720px) {
@@ -312,15 +336,18 @@
   }
 
   #content .sub_nav li a {
-    font-size: var(--font-50px);
-    padding: 30px;
+    font-size: var(--font-40px);
+    padding: 30px 10px;
   }
 
   #content #episodes_content p {
     width: 95%;
-    font-size: var(--font-30px);
-    line-height: 2.7rem;
+     margin: 50px auto;
+    font-size: var(--font-24px);
+    line-height: 2rem;
   }
+
+
 }
 
 /* 
@@ -376,15 +403,18 @@
   }
 
   #content .sub_nav li a {
-    font-size: var(--font-40px);
-    padding: 30px;
+    font-size: var(--font-36px);
+    padding: 20px;
   }
 
   #content #episodes_content p {
     width: 95%;
-    font-size: var(--font-26px);
-    line-height: 2.5rem;
+    margin: 30px auto;
+    font-size: var(--font-20px);
+    line-height: 2rem;
   }
+
+
 
   #content #episodes_content .episode-images {
     width: 99%;
@@ -556,8 +586,8 @@
 
   #content #episodes_content p {
     width: 95%;
-    font-size: var(--font-26px);
-    line-height: 2.2rem;
+    font-size: var(--font-18px);
+    line-height: 1.7rem;
   }
 
   #content #episodes_content .episode-images {
@@ -693,9 +723,10 @@
   }
 
   #content #episodes_content p {
-    width: 95%;
-    font-size: var(--font-20px);
-    line-height: 2rem;
+    width: 99%;
+    padding: 6px;
+    font-size: var(--font-18px);
+    line-height: 1.5rem;
   }
 
   #content #episodes_content .episode-images {
@@ -838,11 +869,11 @@
   }
 
   #content #episodes_content p {
-    width: 95%;
+    width: 99%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 5px;
     font-size: var(--font-18px);
-    line-height: 1.6rem;
+    line-height: 1.rem;
   }
 }
 
@@ -915,11 +946,11 @@
   }
 
   #content #episodes_content p {
-    width: 95%;
+    width: 99%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 0px;
     font-size: var(--font-18px);
-    line-height: 1.6rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -964,5 +995,34 @@
     padding: 0 10px 10px;
     font-size: var(--font-16px);
     line-height: 1.3rem;
+  }
+
+
+    /* 에페소드 */
+  content .episodes_container h3 {
+    padding-top: 200px;
+    font-size: var(--font-30px);
+  }
+
+  #content .episodes_main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #content .sub_nav {
+    gap: 10%;
+  }
+
+  #content .sub_nav li a {
+    font-size: var(--font-20px);
+    padding: 20px 0;
+  }
+
+  #content #episodes_content p {
+    width: 99%;
+    margin: 0 auto;
+    padding: 5px 0;
+    font-size: var(--font-16px);
+    line-height: 1.2rem;
   }
 }

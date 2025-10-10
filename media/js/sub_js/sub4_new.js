@@ -3,33 +3,33 @@ const episodeData = [
         id: 'food',
         navTitle: 'FOOD',
         title: 'Fuel for the Hunt',
-        description: 'Every hunter needs their fuel. From spicy ramen that ignites your spirit to sweet treats that celebrate a victory, discover the essential eats that power the world\'s greatest demon hunters.',
+        description: "The great ramen war is on. It's a legendary showdown every Korean knows, as two rival companies battle for the throne. The nation holds its breath, waiting to see which brand will reign supreme. I've already secured my box of Nongshim Shin Ramyun. What about you? Have you picked a side?",
         images: [
             "./images/sub4/sub4_3.avif",
             "./images/sub4/sub4_4.avif",
-            "./images/sub4/sub4_4.avif"
+            "./images/sub4/sub4_4_1.avif"
         ]
     },
     {
         id: 'couple',
         navTitle: 'COUPLE',
         title: 'Partners in Destiny',
-        description: 'Two souls, one mission. Explore the powerful bonds and dynamic synergies between hunters who fight side-by-side against the encroaching darkness.',
+        description: "Let's be real—the 'will-they-won't-they' tension is the best part of any story. The chemistry between Rumi & Jinu has fans on the edge of their seats, while the enigmatic pull between Zoey & Mystery leaves us guessing. Will these fan-favorite ships finally set sail?",
         images: [
             "./images/sub4/sub4_7.avif",
             "./images/sub4/sub4_8.avif",
-            "./images/sub4/sub4_8.avif"
+            "./images/sub4/sub4_8_1.avif"
         ]
     },
     {
         id: 'voice',
         navTitle: 'VOICE',
         title: 'Echoes of Power',
-        description: 'A hunter\'s voice can be their greatest weapon. Listen to the battle cries, secret whispers, and powerful incantations that turn the tide of any fight.',
+        description: "These are the voices that took our heroes to the top of the Billboard charts. But just revealing them would be too easy, right? So, we've prepared a game for the true fans. Take your guess: Who is the real voice behind the one and only Rumi?",
         images: [
             "./images/sub4/sub4_9.avif",
             "./images/sub4/sub4_10.avif",
-            "./images/sub4/sub4_10.avif"
+            "./images/sub4/sub4_10_1.avif"
         ]
     }
 ];

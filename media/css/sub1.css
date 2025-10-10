@@ -122,6 +122,9 @@
 #content .saja_boys_container .saja_boys_content_swiper img,
 #content .duffy_container .duffy_content_swiper img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   border-radius: 20px;
 }
 
@@ -129,8 +132,8 @@
 #content .saja_boys_container .saja_boys_content_swiper dl,
 #content .duffy_container .duffy_content_swiper dl {
   width: 100%;
-  padding: 0 30px;
-  margin: 10px auto;
+  padding:  50px 20px;
+  margin: 0 auto;
 }
 
 #content .huntrx_container .huntrx_content_swiper dt,
@@ -140,6 +143,7 @@
   color: var(--main-font);
   font-size: var(--font-36px);
   line-height: 2rem;
+  padding-bottom: 20px;
 }
 
 #content .huntrx_container .huntrx_content_swiper dd,
@@ -265,13 +269,24 @@
     line-height: 1.7rem;
   }
 
+
+  #content .huntrx_container .huntrx_content_swiper dl,
+  #content .saja_boys_container .saja_boys_content_swiper dl,
+  #content .duffy_container .duffy_content_swiper dl {
+  width: 100%;
+  padding:  30px 20px;
+  margin: 0 auto;
+}
+
+
+
   #content .huntrx_container .huntrx_content_swiper dt,
   #content .saja_boys_container .saja_boys_content_swiper dt,
   #content .duffy_container .duffy_content_swiper dt {
     font-size: var(--font-34px);
-    line-height: 3rem;
-    margin-bottom: 30px;
-    font-weight: 800;
+    line-height: 2rem;
+    margin-bottom: 5px;
+    
   }
 
   #content .huntrx_container .huntrx_content_swiper dd,
@@ -280,6 +295,8 @@
     font-size: var(--font-18px);
     line-height: 1.5rem;
   }
+
+
 }
 
 /*
@@ -484,11 +501,20 @@
     line-height: 1.3rem;
   }
 
+
+ #content .huntrx_container .huntrx_content_swiper dl,
+  #content .saja_boys_container .saja_boys_content_swiper dl,
+  #content .duffy_container .duffy_content_swiper dl {
+    padding: 15px 0 0 0;
+  }
+
+
   #content .huntrx_container .huntrx_content_swiper dt,
   #content .saja_boys_container .saja_boys_content_swiper dt,
   #content .duffy_container .duffy_content_swiper dt {
     font-size: var(--font-28px);
     line-height: 2rem;
+    margin-bottom: 0;
   }
 
   #content .huntrx_container .huntrx_content_swiper dd,
@@ -496,6 +522,7 @@
   #content .duffy_container .duffy_content_swiper dd {
     font-size: var(--font-16px);
     line-height: 1.2rem;
+    margin-bottom: 10px;
   }
 }
 
@@ -543,7 +570,7 @@
   #content .huntrx_container .huntrx_content_swiper dl,
   #content .saja_boys_container .saja_boys_content_swiper dl,
   #content .duffy_container .duffy_content_swiper dl {
-    padding: 0 20px;
+    padding: 15px 0 0 0;
   }
 
   #content .huntrx_container .huntrx_content_swiper dt,
@@ -551,6 +578,7 @@
   #content .duffy_container .duffy_content_swiper dt {
     font-size: var(--font-22px);
     line-height: 2rem;
+    margin-bottom: -10px;
   }
 
   #content .huntrx_container .huntrx_content_swiper dd,
@@ -670,7 +698,7 @@
   #content .huntrx_container .huntrx_content_swiper dt,
   #content .saja_boys_container .saja_boys_content_swiper dt,
   #content .duffy_container .duffy_content_swiper dt {
-    font-size: var(--font-18px);
+    font-size: var(--font-20px);
     line-height: 2rem;
   }
 
@@ -678,7 +706,7 @@
   #content .saja_boys_container .saja_boys_content_swiper dd,
   #content .duffy_container .duffy_content_swiper dd {
     font-size: var(--font-16px);
-    line-height: 1.3rem;
+    line-height: 1.2rem;
   }
 
   /* story */

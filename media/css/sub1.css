@@ -132,7 +132,7 @@
 #content .saja_boys_container .saja_boys_content_swiper dl,
 #content .duffy_container .duffy_content_swiper dl {
   width: 100%;
-  padding:  50px 20px;
+  padding: 50px 20px;
   margin: 0 auto;
 }
 
@@ -218,7 +218,7 @@
 #content .duffy_container .duffy_content li>img {
   width: 100%;
   height: 100%;
-  max-height: 260px;
+  max-height: 270px;
   min-height: 200px;
   border-radius: 20px;
   object-fit: cover;
@@ -226,8 +226,12 @@
   display: block;
 }
 
-#content .swiper-wrapper .swiper-slide img {
-  max-height: 300px;
+
+#content .swiper-wrapper .swiper-slide img,
+#content .huntrx_container .huntrx_content .huntrx_card:nth-child(5) img,
+#content .saja_boys_container .saja_boys_content .saja_boys_card:nth-child(5) img,
+#content .duffy_container .duffy_content .duffy_card:nth-child(5) img {
+  max-height: 500px;
 }
 
 #content .huntrx_container .huntrx_content .huntrx_card:nth-child(1) .huntrx_content_swiper {
@@ -273,10 +277,10 @@
   #content .huntrx_container .huntrx_content_swiper dl,
   #content .saja_boys_container .saja_boys_content_swiper dl,
   #content .duffy_container .duffy_content_swiper dl {
-  width: 100%;
-  padding:  30px 20px;
-  margin: 0 auto;
-}
+    width: 100%;
+    padding: 30px 20px;
+    margin: 0 auto;
+  }
 
 
 
@@ -286,7 +290,7 @@
     font-size: var(--font-34px);
     line-height: 2rem;
     margin-bottom: 5px;
-    
+
   }
 
   #content .huntrx_container .huntrx_content_swiper dd,
@@ -502,7 +506,7 @@
   }
 
 
- #content .huntrx_container .huntrx_content_swiper dl,
+  #content .huntrx_container .huntrx_content_swiper dl,
   #content .saja_boys_container .saja_boys_content_swiper dl,
   #content .duffy_container .duffy_content_swiper dl {
     padding: 15px 0 0 0;

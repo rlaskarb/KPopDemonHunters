@@ -95,9 +95,10 @@
 
 #content .story_container .story_content img {
   width: 100%;
+  margin: 0 auto;
   object-fit: cover;
   object-position: center;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 /* huntrx ,saja_boys,duffy */
@@ -232,6 +233,7 @@
 #content .saja_boys_container .saja_boys_content .saja_boys_card:nth-child(5) img,
 #content .duffy_container .duffy_content .duffy_card:nth-child(5) img {
   max-height: 500px;
+  min-height: 200px;
 }
 
 #content .huntrx_container .huntrx_content .huntrx_card:nth-child(1) .huntrx_content_swiper {
@@ -320,6 +322,27 @@
 
 */
 @media screen and (max-width: 1280px) {
+  #content .story {
+    width: 90%;
+  }
+
+  #content .story .story_container {
+    width: 90%;
+  }
+
+  /* huntrx ,saja_boys,duffy */
+
+  #content .huntrx_container,
+  #content .saja_boys_container,
+  #content .duffy_container {
+    width: 95%;
+  }
+
+  #content .huntrx_container .huntrx_content,
+  #content .saja_boys_container .saja_boys_content,
+  #content .duffy_container .duffy_content {
+    width: 95%;
+  }
 
   #content .story h3,
   #content .huntrx_container h3,
@@ -422,7 +445,6 @@
   #content .story .story_container {
     width: 90%;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
@@ -437,7 +459,7 @@
   #content .huntrx_container,
   #content .saja_boys_container,
   #content .duffy_container {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     padding-top: 100px;
   }
@@ -445,7 +467,7 @@
   #content .huntrx_container .huntrx_content,
   #content .saja_boys_container .saja_boys_content,
   #content .duffy_container .duffy_content {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -594,12 +616,12 @@
 
   /* story */
   #content .story {
-    width: 90%;
+    width: 95%;
     padding-top: 70px;
   }
 
   #content .story .story_container {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
 
     display: grid;
@@ -616,7 +638,7 @@
   #content .huntrx_container,
   #content .saja_boys_container,
   #content .duffy_container {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     padding-top: 100px;
   }
@@ -624,7 +646,7 @@
   #content .huntrx_container .huntrx_content,
   #content .saja_boys_container .saja_boys_content,
   #content .duffy_container .duffy_content {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -680,7 +702,7 @@
   #content .saja_boys_container h3,
   #content .duffy_container h3 {
     font-size: var(--font-36px);
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
 
   #content .story_container .story_content dl dt {
@@ -693,11 +715,7 @@
     line-height: 1.1rem;
   }
 
-  #content .huntrx_container .huntrx_content_swiper dl,
-  #content .saja_boys_container .saja_boys_content_swiper dl,
-  #content .duffy_container .duffy_content_swiper dl {
-    padding: 0 10px;
-  }
+
 
   #content .huntrx_container .huntrx_content_swiper dt,
   #content .saja_boys_container .saja_boys_content_swiper dt,
@@ -715,7 +733,7 @@
 
   /* story */
   #content .story {
-    width: 90%;
+    width: 95%;
     padding-top: 50px;
   }
 
@@ -724,7 +742,7 @@
   #content .huntrx_container,
   #content .saja_boys_container,
   #content .duffy_container {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     padding-top: 50px;
   }
@@ -746,4 +764,61 @@
 
 
 */
-@media screen and (max-width: 467px) {}
+@media screen and (max-width: 467px) {
+
+  #content h2 {
+    top: -450px;
+    font-size: var(--font-36px);
+    color: var(--main-font);
+  }
+
+  #content .story h3,
+  #content .huntrx_container h3,
+  #content .saja_boys_container h3,
+  #content .duffy_container h3 {
+    font-size: var(--font-36px);
+    /* margin-bottom: 20px; */
+  }
+
+  #content .story_container .story_content dl dt {
+    font-size: var(--font-22px);
+    line-height: 2rem;
+  }
+
+  #content .story_container .story_content dl dd {
+    font-size: var(--font-14px);
+    line-height: 1.1rem;
+  }
+
+
+
+  #content .huntrx_container .huntrx_content_swiper dt,
+  #content .saja_boys_container .saja_boys_content_swiper dt,
+  #content .duffy_container .duffy_content_swiper dt {
+    font-size: var(--font-18px);
+    line-height: 2rem;
+  }
+
+  #content .huntrx_container .huntrx_content_swiper dd,
+  #content .saja_boys_container .saja_boys_content_swiper dd,
+  #content .duffy_container .duffy_content_swiper dd {
+    font-size: var(--font-16px);
+    line-height: 1.2rem;
+  }
+
+  /* story */
+  #content .story {
+    width: 95%;
+    padding-top: 50px;
+  }
+
+  /* huntrx ,saja_boys,duffy */
+
+  #content .huntrx_container,
+  #content .saja_boys_container,
+  #content .duffy_container {
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+}

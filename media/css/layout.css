@@ -109,7 +109,7 @@
 #content .about {
   width: 90%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding-bottom: 100px;
 }
 
 #content .about h3,
@@ -229,7 +229,7 @@
   animation: rift-effect-top 5s ease-in-out infinite;
 }
 
-/* 아래쪽 경계선 (차원의 균열 #2) */
+
 #content .characters::after {
   content: '';
   position: absolute;
@@ -241,10 +241,10 @@
   animation: rift-effect-bottom 5s ease-in-out infinite;
 }
 
-/* 위쪽 경계선 애니메이션 */
+
 @keyframes rift-effect-top {
   0% {
-    /* clip-path는 요소를 특정 모양으로 잘라내는 속성입니다. */
+
     clip-path: polygon(0 0, 100% 0, 100% 15%, 80% 5%, 65% 20%, 40% 5%, 25% 15%, 0 5%);
   }
 
@@ -257,7 +257,6 @@
   }
 }
 
-/* 아래쪽 경계선 애니메이션 */
 @keyframes rift-effect-bottom {
   0% {
     clip-path: polygon(0 100%, 100% 100%, 100% 85%, 80% 95%, 65% 80%, 40% 95%, 25% 85%, 0 95%);
@@ -976,9 +975,6 @@
 
   /* ABOUT 영역 */
 
-  #content .about {
-    padding: 100px 0 50px 0;
-  }
 
   #content .more-text {
     font-weight: 800;
@@ -1231,7 +1227,8 @@
   /* ABOUT 영역 */
 
   #content .about {
-    padding: 80px 0 0 0;
+    padding-bottom: 60px;
+    margin-top: -50px;
   }
 
   #content .about h3,
@@ -1363,7 +1360,7 @@
   /* ABOUT 영역 */
 
   #content .about {
-    padding: 50px 0 30px 0;
+    padding-bottom: 10px;
   }
 
   #content .about h3,
@@ -1628,6 +1625,12 @@
 
 /* 더이상 조절은 없다  */
 @media screen and (max-width: 467px) {
+
+  #content .about {
+    padding-bottom: 10px;
+    margin-top: -100px;
+  }
+
 
   #content .about h3,
   #content .characters h3,

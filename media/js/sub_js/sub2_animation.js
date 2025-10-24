@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 //요소가 뷰포트에 들어왔는지 확인
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visble');
-                     observer.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 } 
                 
                 // else {

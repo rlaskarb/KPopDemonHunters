@@ -24,10 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach(function (entery) {
         if (entery.isIntersecting) {
           entery.target.classList.add("is-visible");
-          // observer.unobserve(entery.target); 
-        } else {
-          entery.target.classList.remove("is-visible")
-        }
+           observer.unobserve(entery.target); 
+        } 
+        
+        // else {
+        //   entery.target.classList.remove("is-visible")
+        // }
       });
     },
     { threshold: 0.1 }

@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (entry.isIntersecting) {
         entry.target.classList.add("active");
 
-        // observer.unobserve(entry.target);
-      } else {
-        entry.target.classList.remove("active")
-      }
+         observer.unobserve(entry.target);
+      } 
+      
+      // else {
+      //   entry.target.classList.remove("active")
+      // }
     });
   };
 

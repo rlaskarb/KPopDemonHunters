@@ -7,10 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 //요소가 뷰포트에 들어왔는지 확인
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visble');
-                    // observer.unobserve(entry.target);
-                } else {
-                    entry.target.classList.remove('is-visible');
-                }
+                     observer.unobserve(entry.target);
+                } 
+                
+                // else {
+                //     entry.target.classList.remove('is-visible');
+                // }
             });
         }, { threshold: 0.1, });
         animated.forEach(function (el) {

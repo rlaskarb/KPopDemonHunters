@@ -59,12 +59,6 @@ jQuery 등 외부 라이브러리 없이 오직 순수 JavaScript(ES6+)와 CSS�
 <br/>
 
 
-### 📊 성능 및 표준 검사 결과
-
-<img width="23%" alt="성능 최적화" src="./img/L.png"> &nbsp; 
-<img width="23%" alt="W3C CSS 검사" src="./img/css.png"> &nbsp; 
-<img width="23%" alt="Nu HTML 검사" src="./img/html.png"> &nbsp; 
-<img width="23%" alt="웹 접근성 검사" src="./img/J.png">
 
 
 ### Front-end

@@ -59,25 +59,12 @@ jQuery 등 외부 라이브러리 없이 오직 순수 JavaScript(ES6+)와 CSS�
 <br/>
 
 
-<table>
-  <tr>
-    <td width="30%" valign="top"> 
-      <p align="center"><b>성능 최적화 이미지</b></p> 
-      <p align="center">
-        <img width="100%" alt="성능" src="https://github.com/rlaskarb/KPopDemonHunters/blob/main/img/L.png?raw=true" /> 
-      </p>
-    </td>
-    
-    <td width="70%" valign="top">
-      <p align="center"><b>웹 표준 및 접근성 검사</b></p>
-      <p align="center">
-        <img width="32%" alt="html" src="https://github.com/rlaskarb/KPopDemonHunters/blob/main/img/html.png?raw=true" />
-        <img width="32%" alt="css" src="https://github.com/rlaskarb/KPopDemonHunters/blob/main/img/css.png?raw=true" />
-        <img width="32%" alt="접근성" src="https://github.com/rlaskarb/KPopDemonHunters/blob/main/img/J.png?raw=true" />
-      </p>
-    </td>
-  </tr>
-</table>
+### 📊 성능 및 표준 검사 결과
+
+<img width="23%" alt="성능 최적화" src="./img/L.png"> &nbsp; 
+<img width="23%" alt="W3C CSS 검사" src="./img/css.png"> &nbsp; 
+<img width="23%" alt="Nu HTML 검사" src="./img/html.png"> &nbsp; 
+<img width="23%" alt="웹 접근성 검사" src="./img/J.png">
 
 
 ### Front-end

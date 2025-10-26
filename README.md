@@ -71,9 +71,14 @@ jQuery 등 외부 라이브러리 없이 오직 순수 JavaScript(ES6+)와 CSS�
     <td width="70%" valign="top">
       <p align="center"><b>웹 표준 및 접근성 검사</b></p>
       <p align="center">
-        <img width="32%" alt="Group 76" src="https://github.com/user-attachments/assets/9a747297-5efc-4b6e-bc2d-c2ab669f5732" />
+      
+        <img width="32%" alt="Group 76" src="https://github.com/user-attachments/assets/8471df23-19ea-429b-8275-5f34e89400d2" />
+        
         <img width="32%" alt="Group 75 (1)" src="https://github.com/user-attachments/assets/94ec26d1-46c3-4fc6-849a-bb1de74d704d" />
+        
         <img width="32%" alt="Group 77" src="https://github.com/user-attachments/assets/1d4ab22f-6c84-4d11-8569-226b81879e9b" />
+        <img width="460" height="539" alt="Group 76"  />
+
       </p>
     </td>
   </tr>

@@ -64,16 +64,16 @@ jQuery 등 외부 라이브러리 없이 오직 순수 JavaScript(ES6+)와 CSS�
     <td width="30%" valign="top"> 
       <p align="center"><b>성능 최적화 이미지</b></p> 
       <p align="center">
-        <img width="100%"  alt="성능" src="https://github.com/user-attachments/assets/dbd42a07-800c-443e-99a2-ba225aee4377" />
+        <img width="100%"  alt="성능" src="https://github.com/rlaskarb/KPopDemonHunters/blob/main/img/L.png" />
       </p>
     </td>
 
     <td width="70%" valign="top">
       <p align="center"><b>웹 표준 및 접근성 검사</b></p>
       <p align="center">
-      <img width="32%"  alt="html" src="https://github.com/user-attachments/assets/fd3aeb30-769b-4f77-930d-457c63e31691" />
-      <img width="32%"  alt="css" src="https://github.com/user-attachments/assets/54f53493-fe0f-4ff9-ac0d-112657d9d3c4" />
-      <img width="32%"  alt="접근성" src="https://github.com/user-attachments/assets/1457c705-aaca-45b6-8216-ce5de8ec20f0" />
+      <img width="32%"  alt="html" src="https://github.com/rlaskarb/KPopDemonHunters/blob/main/img/html.png" />
+      <img width="32%"  alt="css" src="https://github.com/rlaskarb/KPopDemonHunters/blob/main/img/css.png" />
+      <img width="32%"  alt="접근성" src="https://github.com/rlaskarb/KPopDemonHunters/blob/main/img/J.png" />
       </p>
     </td>
   </tr>

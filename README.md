@@ -75,3 +75,25 @@ jQuery 등 외부 라이브러리 없이 오직 순수 JavaScript(ES6+)와 CSS�
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-333333?style=for-the-badge&logo=figma&logoColor=white)
+
+
+<br>
+<hr>
+<br>
+
+
+<a name = "기능-설명"></a>
+## 📌 기능 설명
+
+- 스토리보드 PFG 파일
+[storyboard.pdf](https://github.com/user-attachments/files/23164465/storyboard.pdf)
+
+
+그리드 레이아웃 및 미디어 쿼리로  각 해상별 이미지 변화 및 최적화 를 진행 하였습니다. 
+![내용글20](https://github.com/user-attachments/assets/d1858392-1f6a-4a29-8c83-bb654e4f37ee)
+![22](https://github.com/user-attachments/assets/283c4740-144b-4be8-bb29-14bc8e724e64)
+
+
+
+
+

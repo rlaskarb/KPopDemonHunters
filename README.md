@@ -12,13 +12,12 @@ https://github.com/user-attachments/assets/5ea9852e-72f8-4a75-84e3-e02714c9edfb
 ## 🧭 빠른 이동
 
 - [프로젝트 소개](#프로젝트-소개)
-- [프로젝트 일정](#프로젝트-일정)
 - [기술 스택](#기술-스택)
 - [기능 설명](#기능-설명)
 
-
-<hr/>
-<br/>
+<br>
+<hr>
+<br>
 
 <a name = "프로젝트-소개"></a>
 ## 📌 프로젝트 소개
@@ -56,11 +55,15 @@ jQuery 등 외부 라이브러리 없이 오직 순수 JavaScript(ES6+)와 CSS�
 
   W3C 유효성 검사를 통과하고 시맨틱 마크업 원칙을 철저히 준수하여 개발의 기본을 지켰습니다.
 
-<br/>
+![20](https://github.com/user-attachments/assets/ef7e89a9-ee4d-4a56-b0e6-8d91ab4376b9)
+
+<br>
+<hr>
+<br>
 
 
-
-
+<a name = "기술-스택"></a>
+## 📌 기술 스택
 ### Front-end
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)

@@ -90,7 +90,7 @@ jQuery 등 외부 라이브러리 없이 오직 순수 JavaScript(ES6+)와 CSS�
 
 
 그리드 레이아웃 및 미디어 쿼리로  각 해상별 이미지 변화 및 최적화 를 진행 하였습니다. 
-![내용글20](https://github.com/user-attachments/assets/d1858392-1f6a-4a29-8c83-bb654e4f37ee)
+![21](https://github.com/user-attachments/assets/79b50ffd-62a6-4fce-b034-64d172bfdbf7)
 ![22](https://github.com/user-attachments/assets/283c4740-144b-4be8-bb29-14bc8e724e64)
 
 

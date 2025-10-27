@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/5ea9852e-72f8-4a75-84e3-e02714c9edfb
 - [프로젝트 소개](#프로젝트-소개)
 - [기술 스택](#기술-스택)
 - [기능 설명](#기능-설명)
-
+- [K-PopDemonHunters 보러가기 ](https://rlaskarb20.mycafe24.com/media/)
 <br>
 <hr>
 <br>

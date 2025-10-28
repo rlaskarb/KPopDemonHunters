@@ -55,7 +55,7 @@ W3C 유효성 검사를 통과하고 시맨틱 마크업 원칙을 철저히 준
 
 ![20](https://github.com/user-attachments/assets/ef7e89a9-ee4d-4a56-b0e6-8d91ab4376b9)
 
-### Lighthouse 100점 달성 및 마크업 및 접근성 검사 통과
+### Lighthouse 중 Performance 100 달성 및 마크업 및 접근성 검사 통과
 
 <br>
 <hr>

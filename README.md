@@ -25,16 +25,15 @@ https://github.com/user-attachments/assets/5ea9852e-72f8-4a75-84e3-e02714c9edfb
 <a name = "프로젝트-소개"></a>
 ## 📌 프로젝트 소개
 
-K-Pop 아이돌 컨셉의 데몬 헌터 팬 사이트 형식으로 제작된 고성능 반응형 웹 포트폴리오입니다.
+K-Pop 데몬 헌터스 팬 사이트 형식으로 제작된 고성능 반응형 웹 포트폴리오입니다.
 
-jQuery 등 외부 라이브러리 없이 오직 순수 JavaScript(ES6+)와 CSS만을 사용하여, 
+순수 JavaScript(ES6+)와  최소한의 라이브러리 를 사용하며 그외 애니매이션 효과를 직접 CSS을 사용하여 제작하였습니다. 
 
-모든 디바이스에서 최적의 사용자 경험을 제공하고 Lighthouse 95점 이상이라는 성능 목표를 달성하는 데 집중했습니다.
+모든 디바이스에서 최적의 사용자 경험을 제공하고 Lighthouse 95점 이상이라는 점수를 달성하였습니다.
 
 <br/>
 
 ### ⚙️ 직접 구현한 핵심 기능 
-성능 최적화 중심의 반응형 UI/UX 설계 및 순수 JavaScript 구현
 
 #### ✨ 반응형 구현
 jQuery 없이 순수 JavaScript와 Media Query, Flexbox/Grid를 활용하여 <br> 
